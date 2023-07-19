@@ -182,5 +182,20 @@ sudo apt clean -y
 # Make ZSH default shell
 chsh -s /usr/bin/zsh
 
+# bitwarden
+# cpux
+# foxit
+# gimp
+# inkscape
+# MEGASync
+# Postman
+# Vivaldi
+# Zotero
+# Obsidian
+# vlc
+# 7zip?
+# QGis
+# Transmission / qBittorrent
+# 
 
 
