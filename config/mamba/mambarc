@@ -1,0 +1,3 @@
+channels:
+  - conda-forge
+execute_threads: 2

@@ -1,0 +1,84 @@
+shell:
+  program: /usr/bin/zsh
+  args:
+    - -l
+    - -c
+    - sleep 0.01; zellij attach --index 0 || zellij
+
+window:
+  opacity: 0.92
+  decorations: none
+
+font:
+  normal:
+    family: FiraCode Nerd Font
+    style: Regular
+  size: 12
+
+colors:
+    primary:
+        background: "#010409"
+        foreground: "#FAFAFA"
+        dim_foreground: "#FAFAFA"
+        bright_foreground: "#FAFAFA"
+
+    cursor:
+        text: "#010409"
+        cursor: "#FAFAFA"
+    vi_mode_cursor:
+        text: "#010409"
+        cursor: "#FAFAFA"
+
+    search:
+        matches:
+            foreground: "#010409"
+            background: "#9ca0b0"
+        focused_match:
+            foreground: "#010409"
+            background: "#40a02b"
+        footer_bar:
+            foreground: "#010409"
+            background: "#9ca0b0"
+
+  # Keyboard regex hints
+    hints:
+        start:
+            foreground: "#010409"
+            background: "#fe640b"
+        end:
+            foreground: "#010409"
+            background: "#9ca0b0"
+
+    selection:
+        text: "#010409"
+        background: "#9ca0b0"
+
+    normal:
+        black: "#010409"
+        red: "#c60000"
+        green: "#00af00"
+        yellow: "#fe640b"
+        blue: "#194ef5"
+        magenta: "#d7005f"
+        cyan: "#00afaf"
+        white: "#FAFAFA"
+
+    bright:
+        black: "#1d1d1d"
+        red: "#c60000"
+        green: "#00af00"
+        yellow: "#d7af00"
+        blue: "#194ef5"
+        magenta: "#d7005f"
+        cyan: "#00afaf"
+        white: "#FAFAFA"
+
+    dim:
+        black: "#1d1d1d"
+        red: "#c60000"
+        green: "#00af00"
+        yellow: "#d7af00"
+        blue: "#194ef5"
+        magenta: "#d7005f"
+        cyan: "#00afaf"
+        white: "#FAFAFA"
