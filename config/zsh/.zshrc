@@ -1,8 +1,8 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+if [[ -r "${XDG_CACHE_HOME}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 # If not running interactively, don't do anything
@@ -49,7 +49,9 @@ setopt HIST_VERIFY               # Do not execute immediately upon history expan
 # https://github.com/sorin-ionescu/prezto/blob/master/modules/completion/init.zsh
 # https://github.com/robbyrussell/oh-my-zsh/blob/master/lib/completion.zsh
 
-fpath=("${XDG_DATA_HOME}/zsh/completions" $fpath)
+source ${ZCUSTOM}/plugins/nix-zsh-completions/nix-zsh-completions.plugin.zsh
+
+fpath=( "${ZCUSTOM}/plugins/nix-zsh-completions" $fpath )
 
 setopt COMPLETE_IN_WORD  # Complete from both ends of a word.
 setopt ALWAYS_TO_END     # Move cursor to the end of a completed word.
@@ -80,30 +82,23 @@ source ${ZDOTDIR}/lib/aliases.zsh
 ######################################################################
 ## PLUGINS
 
-source ${ZDOTDIR}/plugins/zsh-histdb/zsh-histdb.plugin.zsh # TODO: try https://github.com/atuinsh/atuin: 
-source ${ZDOTDIR}/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
-source ${ZDOTDIR}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh # TODO: try https://github.com/zdharma-continuum/fast-syntax-highlighting
+source ${ZCUSTOM}/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ${ZCUSTOM}/plugins/zsh-fast-syntax-highlighting/zsh-fast-syntax-highlighting.zsh
+#source ${ZCUSTOM}/plugins/zsh-vi-mode/zsh-vi-mode.zsh
+source ${ZCUSTOM}/plugins/zsh-nix-shell/nix-shell.plugin.zsh
+eval "$(atuin init zsh)"
 
 autoload -Uz add-zsh-hook
 
 # This will find the most frequently issued command issued exactly in this directory, 
 # or if there are no matches it will find the most frequently issued command in any directory. 
-_zsh_autosuggest_strategy_histdb_default() {
-  local query="
-    select commands.argv from history
-    left join commands on history.command_id = commands.rowid
-    left join places on history.place_id = places.rowid
-    where commands.argv LIKE '$(sql_escape $1)%'
-    group by commands.argv, places.dir
-    order by places.dir != '$(sql_escape $PWD)', count(*) desc
-    limit 1
-  "
-  suggestion=$(_histdb_query "$query")
+_zsh_autosuggest_strategy_atuin_search() {
+  suggestion=$(atuin search --cmd-only --limit 1 --search-mode prefix $1)
 }
 
 ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none
-ZSH_AUTOSUGGEST_STRATEGY=histdb_default
+ZSH_AUTOSUGGEST_STRATEGY=atuin_search
 
 ######################################################################
 ## autoload functions
@@ -115,15 +110,8 @@ for func in ${ZDOTDIR}/functions/*; do
 done
 
 ######################################################################
-## misc
-
-source "$ASDF_DIR/asdf.sh"
-source "$MAMBA_ROOT_PREFIX/mamba.sh"
-
-######################################################################
 ## prompt
 
 source ${ZDOTDIR}/lib/cursor-mode.zsh
-
-source ${ZDATADIR}/plugins/powerlevel10k/powerlevel10k.zsh-theme 
+source ${ZCUSTOM}/plugins/powerlevel10k/powerlevel10k.zsh-theme
 source ${ZDOTDIR}/lib/p10k.zsh

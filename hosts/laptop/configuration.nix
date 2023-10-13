@@ -3,9 +3,10 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./disko-config.nix
   ];
 
-  system.stateVersion = "23.05";
+  system.stateVersion = "23.11";
   
   documentation.nixos.enable = false;
 
@@ -17,7 +18,8 @@
   };
 
   nix = {
-    # package = pkgs.nixUnstable;
+    package = pkgs.nixFlakes;
+    settings.use-xdg-base-directories = true;
     extraOptions = ''
       experimental-features = nix-command flakes
     '';   
@@ -28,10 +30,8 @@
     };
   };
 
-  nixpkgs.config = {
-    allowUnfree = true;
-  };
- 
+  nixpkgs.config.allowUnfree = true;
+  
   time.timeZone = "America/Sao_Paulo";
 
   i18n.defaultLocale = "en_US.UTF-8"; 
@@ -42,17 +42,16 @@
   };  
 
   security = {
-    #sudo.enable = false;
-    #doas.enable = true;
-    #doas.extraRules = [
-    #  { groups = ["wheel"]; persist = true; }
-    #];
+    sudo.enable = false;
+    doas.enable = true;
+    doas.extraRules = [
+      { groups = ["wheel"]; persist = true; }
+    ];
     polkit.enable = true;
   };
 
   # power management
-  services.tlp.enable = false;
-  services.auto-cpufreq = {
+  programs.auto-cpufreq = {
     enable = true;  
     settings = {
       battery = {
@@ -71,11 +70,16 @@
     enable = true;
     driSupport = true;
     driSupport32Bit = true;
+    extraPackages = with pkgs; [
+      intel-vaapi-driver
+      libvdpau-va-gl
+      intel-media-driver
+    ];
   };
 
   hardware.nvidia = {
     # GeForce MX150 (pascal architecture)
-    # implement specialization (https://nixos.wiki/wiki/Laptop)
+    # https://nixos.wiki/wiki/Laptop
     modesetting.enable = true;
     dynamicBoost.enable = true;
     powerManagement.enable = false;
@@ -91,16 +95,22 @@
       # there is a bug, but it works (https://github.com/NixOS/nixpkgs/issues/187543)
       # offloading with steam (https://nixos.wiki/wiki/Nvidia)
       offload.enable = true; 
-      
+      offload.enableOffloadCmd = true;
+
       reverseSync.enable = false; # try enabling this sometime
 	  };
   };
+  
+  boot.initrd.kernelModules = [ "i915" ];
 
-  # Load intel driver for Xorg and Wayland
+  environment.variables = {
+    VDPAU_DRIVER = "va_gl";
+  };
+
   services.xserver = {
     enable = true;
     layout = "us";
-    videoDrivers = ["nvidia" "i915"];
+    videoDrivers = ["i915" "nvidia"];
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
     desktopManager.xterm.enable = false;
@@ -108,6 +118,8 @@
   };
  
   hardware.bluetooth.enable = true;
+ 
+  services.fstrim.enable = true;
 
   sound = {
     enabled = true;
@@ -122,51 +134,45 @@
     alsa.support32Bit = true;
   };
 
-  #programs.hyprland = {
-  #  enable = true;
-  #  enableNvidiaPatches = true;
-  #  xwayland.enable = true;
-  #};
- 
-  #programs.waybar.enable = true;
-  
   programs.dconf.enable = true;
   programs.zsh.enable = true;
 
+  age = {
+    secrets.djonathan-login.file = ./secrets/djonathan_login.age;
+    identityPaths = [ "/etc/nixos/keys/key.age" ];
+  };
+
   # Define user accounts
   users.defaultUserShell = pkgs.zsh;
-
+  users.mutableUsers = false;
   users.users = { 
     djonathan = {
       isNormalUser = true;
+      hashedPasswordFile = config.age.secrets.djonathan-login.path;
       extraGroups = [ "wheel" "networkmanager" ];
-      passwordFile = "";
       useDefaultShell = true;
       # openssh.authorizedKeys.keys =  [ "ssh-dss AAAAB3NzaC1kc3MAAACBAPIkGWVEt4..." ];
     };
   };
 
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users = {
+      djonathan = import ./users/djonathan.nix;
+    };
+  };
+
+  environment.localBinInPath = true;
+  
   environment.systemPackages = with pkgs; [
     neovim
     curl
-    # hyprland requirements
-    # sddm # https://github.com/EliverLara/Nordic
-    #swaynotificationcenter
-    #xdg-desktop-portal-hyprland
-    #polkit_gnome
-    #qt5.qtwayland
-    #qt6.qtwayland
-
-    # maybe move these to home manager
-    #hyprpaper
-    #rofi-wayland
-    #hyprpicker
-    #wl-clipboard
-    #wlogout
-    #swaylock-effects
-    #swaylock
-    #waylock
-    #eww
+    git
+    rng-tools
+    openssl
+    age
+    disko
   ]; 
 
   environment.gnome.excludePackages = (with pkgs; [
@@ -174,14 +180,14 @@
     gnome-connections
     gnome-text-editor
   ]) ++ (with pkgs.gnome; [
-    baobab # disk usage
-    cheese # webcam tool
+    baobab 
+    cheese
     gnome-music
-    gedit # text editor
-    epiphany # web browser
-    geary # email reader
+    gedit
+    epiphany 
+    geary 
     gnome-characters
-    totem # video player
+    totem
     gnome-contacts
     gnome-weather
     simple-scan
@@ -189,24 +195,31 @@
     gnome-maps
   ]);
 
-# Desktop compositor -> hyprland
-# Notification daemon -> swaynotificationcenter
-# Display manager -> smmd
-# Screen locker -> swaylock-effects
-# Application launcher -> rofi-wayland
-# Audio control -> waybar?
-# Backlight control -> waybar?
-# Media control -> 
-# Polkit authentication agent -> polkit_gnome
-# Power management -> 
-# Screen capture -> 
-# Screen temperature -> 
-# Wallpaper setter -> hyprpaper
-# Logout dialogue -> wlogout
-
-  #environment.sessionVariables = {
-  #  NIXOS_OZONE_WL = "1";
-  #};
+  environment.variables = rec {
+    XDG_CACHE_HOME  = "$HOME/.cache";
+    XDG_CONFIG_HOME = "$HOME/.config";
+    XDG_DATA_HOME   = "$HOME/.local/share";
+    XDG_STATE_HOME  = "$HOME/.local/state";
+    XDG_RUNTIME_DIR = "/run/user/$(id -u)";
+    ZDOTDIR = "$XDG_CONFIG_HOME/zsh";
+  };
+  
+  environment.persistence."/state" = {
+    hideMounts = true;
+    directories = [
+      "/var/log"
+      "/var/lib/bluetooth"
+      "/var/lib/nixos"
+      "/etc/NetworkManager/system-connections"
+      "/etc/keys"
+#      "/var/lib/systemd/coredump"
+#      { directory = "/var/lib/colord"; user = "colord"; group = "colord"; mode = "u=rwx,g=rx,o="; }
+    ];
+    files = [
+      "/etc/machine-id"
+#      { file = "/etc/nix/id_rsa"; parentDirectory = { mode = "u=rwx,g=,o="; }; }
+    ];
+  };
 
   # services.openssh.enable = true;
   

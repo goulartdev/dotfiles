@@ -4,11 +4,14 @@
 -- Forum: https://www.reddit.com/r/lunarvim/
 -- Discord: https://discord.com/invite/Xb9B4Ny
 
+vim.opt.relativenumber = true;
+
 lvim.builtin.nvimtree.active = true
 lvim.colorscheme = "onedark_dark"
 
 lvim.plugins = {
   { "lunarvim/colorschemes" },
+  { "ThePrimeagen/vim-be-good" },
   {
     "olimorris/onedarkpro.nvim",
     priority = 1000,
