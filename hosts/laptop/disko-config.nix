@@ -53,8 +53,8 @@
                   mountpoint = "/var/logs";
                   mountOptions = [ "compress=zstd:1" "noatime" ];
                 };
-                "@build" = {
-                  mountpoint = "/build";
+                "@tmp" = {
+                  mountpoint = "/tmp";
                   mountOptions = [ "compress=zstd:1" "noatime" ];
                 };
               };

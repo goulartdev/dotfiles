@@ -11,6 +11,7 @@
   documentation.nixos.enable = false;
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.tmp.cleanOnBoot = true;
   boot.loader = {
     systemd-boot.enable = true;
     systemd-boot.configurationLimit = 10;
@@ -211,9 +212,9 @@
       "/var/lib/bluetooth"
       "/var/lib/nixos"
       "/etc/NetworkManager/system-connections"
-      "/etc/keys"
-#      "/var/lib/systemd/coredump"
-#      { directory = "/var/lib/colord"; user = "colord"; group = "colord"; mode = "u=rwx,g=rx,o="; }
+      "/etc/nixos"
+      "/var/lib/systemd/coredump"
+      { directory = "/var/lib/colord"; user = "colord"; group = "colord"; mode = "u=rwx,g=rx,o="; }
     ];
     files = [
       "/etc/machine-id"
