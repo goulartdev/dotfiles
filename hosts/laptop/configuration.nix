@@ -140,7 +140,7 @@
 
   age = {
     secrets.djonathan-login.file = ./secrets/djonathan_login.age;
-    identityPaths = [ "/etc/nixos/keys/key.age" ];
+    identityPaths = [ "/state/identity/age/key.age" ];
   };
 
   # Define user accounts
@@ -211,10 +211,8 @@
       "/var/log"
       "/var/lib/bluetooth"
       "/var/lib/nixos"
+      "/var/lib/systemd"
       "/etc/NetworkManager/system-connections"
-      "/etc/nixos"
-      "/var/lib/systemd/coredump"
-      { directory = "/var/lib/colord"; user = "colord"; group = "colord"; mode = "u=rwx,g=rx,o="; }
     ];
     files = [
       "/etc/machine-id"
