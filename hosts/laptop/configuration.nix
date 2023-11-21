@@ -222,4 +222,10 @@
 
   # services.openssh.enable = true;
   
- }
+  #systemd.services.foo = {
+  #  script = ''
+  #    ln -sf /tmp /var/tmp
+  #  '';
+  #  wantedBy = [ "multi-user.target" ];
+  #}; 
+}
