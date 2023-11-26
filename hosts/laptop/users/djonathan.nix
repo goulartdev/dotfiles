@@ -103,13 +103,12 @@
     forge
     gnome-40-ui-improvements 
     just-perfection
-    mouse-follows-focus # 44 : https://github.com/LeonMatthes/mousefollowsfocus
-    pano 
+    mouse-follows-focus 
+    #pano 
     prime-gpu-profile-selector
     search-light
     unblank
     vitals
-    workspace-indicator-2 # 44
     # https://github.com/gdm-settings/gdm-settings
     # https://github.com/jeffshee/gnome-ext-hanabi
   ]);
