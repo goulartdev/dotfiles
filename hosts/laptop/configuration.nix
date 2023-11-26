@@ -89,8 +89,8 @@
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
     prime = {
-		  # Make sure to use the correct Bus ID values (sudo lshw -c display)
-		  intelBusId = "PCI:0:2:0";
+      # Make sure to use the correct Bus ID values (sudo lshw -c display)
+      intelBusId = "PCI:0:2:0";
       nvidiaBusId = "PCI:1:0:0";
       
       # there is a bug, but it works (https://github.com/NixOS/nixpkgs/issues/187543)
