@@ -52,7 +52,7 @@
   };
 
   # power management
-  programs.auto-cpufreq = {
+  services.auto-cpufreq = {
     enable = true;  
     settings = {
       battery = {
