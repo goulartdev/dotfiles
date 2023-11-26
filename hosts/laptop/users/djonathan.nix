@@ -83,6 +83,7 @@
     ripdrag      # lets you drag and drop files from and to the terminal https://github.com/nik012003/ripdrag
     hyperfine    # benchmarking tool https://github.com/sharkdp/hyperfine
     just
+    wl-clipboard
 
     zsh-fast-syntax-highlighting
     zsh-autosuggestions
@@ -134,7 +135,20 @@
     "org/gnome/shell" = {
       disable-user-extensions = false;
       favorite-apps = [];
-      enabled-extensions = [];
+      enabled-extensions = [
+        "blur-my-shell@aunetx" 
+        "caffeine@patapon.info"
+        "color-picker@tuberry"
+        "dash-to-dock@micxgx.gmail.com"
+        "forge@jmmaranan.com"
+        "gnome-ui-tune@itstime.tech"
+        "just-perfection-desktop@just-perfection"
+        "search-light@icedman.github.com"
+        "Vitals@CoreCoding.com"
+        "unblank@sun.wxg@gmail.com"
+        "appindicatorsupport@rgcjonas.gmail.com"
+        "advanced-alt-tab@G-dH.github.com"
+      ];
     };
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
