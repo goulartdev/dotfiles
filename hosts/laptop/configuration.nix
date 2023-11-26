@@ -139,7 +139,7 @@
   programs.zsh.enable = true;
 
   age = {
-    secrets.djonathan-login.file = ./secrets/djonathan_login.age;
+    secrets.djonathan-login.file = ./secrets/djonathan-login.age;
     identityPaths = [ "/state/keys/system.age" ];
   };
 
