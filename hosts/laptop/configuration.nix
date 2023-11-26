@@ -140,7 +140,7 @@
 
   age = {
     secrets.djonathan-login.file = ./secrets/djonathan_login.age;
-    identityPaths = [ "/state/identity/age/key.age" ];
+    identityPaths = [ "/state/keys/system.age" ];
   };
 
   # Define user accounts
