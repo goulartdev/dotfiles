@@ -10,12 +10,16 @@
   
   documentation.nixos.enable = false;
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.tmp.cleanOnBoot = true;
-  boot.loader = {
-    systemd-boot.enable = true;
-    systemd-boot.configurationLimit = 10;
-    efi.canTouchEfiVariables = true;
+  boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
+    tmp.cleanOnBoot = true;
+    initrd.systemd.enable = true;
+    plymouth.enable = true;
+    loader = {
+      systemd-boot.enable = true;
+      systemd-boot.configurationLimit = 10;
+      efi.canTouchEfiVariables = true;
+    };
   };
 
   nix = {
