@@ -28,7 +28,7 @@ setopt EXTENDED_GLOB        # Use extended globbing syntax
 ######################################################################
 ## HISTORY
 
-HISTFILE="${XDG_STATE_HOME}/zsh/history"
+#HISTFILE="${XDG_STATE_HOME}/zsh/history"
 HISTDB_FILE="${XDG_STATE_HOME}/zsh/history.db"
 HISTSIZE=10000
 SAVEHIST=10000
