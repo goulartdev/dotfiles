@@ -152,6 +152,8 @@
         "unblank@sun.wxg@gmail.com"
         "appindicatorsupport@rgcjonas.gmail.com"
         "advanced-alt-tab@G-dH.github.com"
+        "mousefollowsfocus@matthes.biz"
+        "pano@elhan.io"
       ];
     };
     "org/gnome/desktop/interface" = {
