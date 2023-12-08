@@ -116,6 +116,8 @@
   services.xserver = {
     enable = true;
     layout = "us";
+    xkbVariant = "altgr-intl";
+    exportConfiguration = true;
     videoDrivers = ["i915" "nvidia"];
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
