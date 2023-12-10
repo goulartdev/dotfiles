@@ -187,6 +187,8 @@
     qmk-udev-rules
   ];
 
+  programs.gamemode.enable = true;
+
   environment.gnome.excludePackages = (with pkgs; [
     gnome-tour
     gnome-connections
