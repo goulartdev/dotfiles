@@ -20,6 +20,9 @@
     qgis
     spotify
     steam
+    wine
+    winetricks
+    protontricks
     protonup-qt
     vivaldi
     vscode
