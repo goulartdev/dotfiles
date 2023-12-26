@@ -21,7 +21,7 @@
     spotify
     steam
     #wine
-    wineWowPackages.stable
+    wineWowPackages.waylandFull
     winetricks
     protontricks
     protonup-qt
