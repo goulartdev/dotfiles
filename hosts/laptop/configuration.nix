@@ -143,7 +143,11 @@
   };
 
   programs.dconf.enable = true;
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+    enableCompletion = false;
+    enableLsColors = false;
+  };
 
   age = {
     secrets.djonathan-login.file = ./secrets/djonathan-login.age;

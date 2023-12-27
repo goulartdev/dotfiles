@@ -8,7 +8,7 @@
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|=*' 'l:|=* r:|=*'
 
 # Complete . and .. special directories
-zstyle ':completion:*' special-dirs true
+zstyle ':completion:*' special-dirs false
 
 # disable named-directories autocompletion
 zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-directories
@@ -73,6 +73,4 @@ zstyle ':completion:*:*:kill:*' insert-ids single
 zstyle ':completion:*:manuals' separate-sections true
 zstyle ':completion:*:manuals.(^1*)' insert-sections true
 
-# automatically load bash completion functions
-autoload -U +X bashcompinit && bashcompinit
 

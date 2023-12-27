@@ -1,5 +1,5 @@
 ## ZSH
-export ZCUSTOM="${XDG_DATA_HOME}/zsh"
+export ZPLUGINS="${XDG_DATA_HOME}/zsh/plugins"
 export ZCOMPDUMP="${XDG_CACHE_HOME}/zsh/zcompdump-${ZSH_VERSION}"
 
 ## DEFAULT TOOLS

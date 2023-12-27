@@ -50,9 +50,9 @@ HISTDB_FILE="${XDG_STATE_HOME}/zsh/history.db"
 # https://github.com/sorin-ionescu/prezto/blob/master/modules/completion/init.zsh
 # https://github.com/robbyrussell/oh-my-zsh/blob/master/lib/completion.zsh
 
-source ${ZCUSTOM}/plugins/nix-zsh-completions/nix-zsh-completions.plugin.zsh
+source ${ZPLUGINS}/nix-zsh-completions/nix-zsh-completions.plugin.zsh
 
-fpath=( "${ZCUSTOM}/plugins/nix-zsh-completions" $fpath )
+fpath=( "${ZPLUGINS}/nix-zsh-completions" $fpath )
 
 setopt COMPLETE_IN_WORD  # Complete from both ends of a word.
 setopt ALWAYS_TO_END     # Move cursor to the end of a completed word.
@@ -70,6 +70,8 @@ _comp_options+=(globdots) # with hidden files
 
 source ${ZDOTDIR}/lib/zstyles.zsh
 
+autoload -U +X bashcompinit && bashcompinit # automatically load bash completion functions
+
 ######################################################################
 ## BINDINGS
 
@@ -83,10 +85,10 @@ source ${ZDOTDIR}/lib/aliases.zsh
 ######################################################################
 ## PLUGINS
 
-source ${ZCUSTOM}/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ${ZCUSTOM}/plugins/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-#source ${ZCUSTOM}/plugins/zsh-vi-mode/zsh-vi-mode.zsh
-source ${ZCUSTOM}/plugins/zsh-nix-shell/nix-shell.plugin.zsh
+source ${ZPLUGINS}/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ${ZPLUGINS}/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+#source ${ZPLUGINS}/zsh-vi-mode/zsh-vi-mode.zsh
+source ${ZPLUGINS}/zsh-nix-shell/nix-shell.plugin.zsh
 eval "$(atuin init zsh)"
 
 autoload -Uz add-zsh-hook
@@ -114,5 +116,5 @@ done
 ## prompt
 
 source ${ZDOTDIR}/lib/cursor-mode.zsh
-source ${ZCUSTOM}/plugins/powerlevel10k/powerlevel10k.zsh-theme
+source ${ZPLUGINS}/powerlevel10k/powerlevel10k.zsh-theme
 source ${ZDOTDIR}/lib/p10k.zsh
