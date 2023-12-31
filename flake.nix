@@ -52,6 +52,17 @@
       nixpkgs.overlays = [
         (final: prev: {
           disko = disko.packages.x86_64-linux.disko;
+          gnomeExtensions = prev.gnomeExtensions.overrideScope' (extFinal: extPrev: {
+            prime-gpu-profile-selector = extPrev.prime-gpu-profile-selector.overrideAttrs (oldAttrs: {
+              version = "2";
+              src = prev.fetchFromGitHub {
+                owner = "alexispurslane";
+                repo = "PRIME-GPU-Profile-Selector";
+                rev = "main";
+                sha256 = "sha256-nZRdNkS4JfSwtqQsROKa1+eqcgwMQwVsqgeWVPpZIi0=";
+              };
+            });
+          });
         })
       ];
     };
