@@ -114,7 +114,6 @@
     gnome-40-ui-improvements 
     just-perfection
     pano 
-    prime-gpu-profile-selector
     unblank
     vitals
     super-key
