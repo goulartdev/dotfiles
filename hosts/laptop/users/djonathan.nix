@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ pkgs, ... }:
 
 {
   home.username = "djonathan";
@@ -22,9 +22,9 @@
     vivaldi
     vscode
     gparted
-    gnome.gnome-tweaks
     libappindicator
     gradience
+    ulauncher
 
     # gaming
     steam
@@ -113,12 +113,11 @@
     forge
     gnome-40-ui-improvements 
     just-perfection
-    mouse-follows-focus 
     pano 
     prime-gpu-profile-selector
-    search-light
     unblank
     vitals
+    super-key
   ]);
 
   xdg.dataFile = {
@@ -150,17 +149,42 @@
         "forge@jmmaranan.com"
         "gnome-ui-tune@itstime.tech"
         "just-perfection-desktop@just-perfection"
-        "search-light@icedman.github.com"
         "Vitals@CoreCoding.com"
         "unblank@sun.wxg@gmail.com"
         "appindicatorsupport@rgcjonas.gmail.com"
         "advanced-alt-tab@G-dH.github.com"
-        "mousefollowsfocus@matthes.biz"
         "pano@elhan.io"
+        "drive-menu@gnome-shell-extensions.gcampax.github.com"
+        "super-key@tommimon.github.com"
       ];
     };
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
+    };
+    "org/gnome/desktop/wm/preferences" = {
+      action-double-click-titlebar = "toggle-maximize";
+    };
+    "org/gnome/shell/extensions/super-key" = {
+      overlay-key-action = "ulauncher-toggle";
+    };
+  };
+
+  systemd.user.services = { 
+    ulauncher = {
+      Unit = {
+        Description = "Linux Application Launcher";
+        Documentation = [ "https://ulauncher.io/" ];
+      };
+      Service = {
+        Type = "simple";
+        Restart = "always";
+        RestartSec = 1;
+        Environment = "GDK_BACKEND=x11";
+        ExecStart=" ${pkgs.ulauncher}/bin/ulauncher --hide-window --no-window-shadow";
+      };
+      Install = {
+        WantedBy = [ "graphical-session.target" ];
+      };
     };
   };
 }
