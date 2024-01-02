@@ -102,8 +102,16 @@ with lib.hm.gvariant;
       night-light-enabled = true;
     };
 
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+      name = "Trash";
+      binding = [ "<Super>b" ];
+      command = "nautilus trash://";
+    };  
+
     "org/gnome/settings-daemon/plugins/media-keys" = {
-      custom-keybindings = [];
+      custom-keybindings = [
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+      ];
       help = [];
       logout = [ "<Control><Super>BackSpace" ];
       magnifier = [];
