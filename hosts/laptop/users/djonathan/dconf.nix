@@ -182,6 +182,7 @@ with lib.hm.gvariant;
     "org/gnome/shell/extensions/color-picker" = {
       color-picker-shortcut = [ "<Super>p" ];
       enable-shortcut = true;
+      enable-systray = false;
     };
 
     "org/gnome/shell/extensions/dash-to-dock" = {

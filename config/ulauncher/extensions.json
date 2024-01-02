@@ -1,1 +1,16 @@
-{}
+{
+    "com.github.tjquillan.ulauncher-system": {
+        "id": "com.github.tjquillan.ulauncher-system",
+        "url": "https://github.com/tjquillan/ulauncher-system",
+        "updated_at": "2024-01-02T14:53:48.203297",
+        "last_commit": "7dedd992709fa2297735cddf852404144d4da47c",
+        "last_commit_time": "2023-11-14T16:53:20"
+    },
+    "com.github.hillaryychan.ulauncher-fzf": {
+        "id": "com.github.hillaryychan.ulauncher-fzf",
+        "url": "https://github.com/hillaryychan/ulauncher-fzf",
+        "updated_at": "2024-01-02T16:30:44.397953",
+        "last_commit": "e8137dae6448041fc53ae418263501b068857073",
+        "last_commit_time": "2023-05-16T12:35:35"
+    }
+}

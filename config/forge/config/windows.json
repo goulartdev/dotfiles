@@ -45,6 +45,11 @@
             "wmClass": "Ulauncher",
             "wmTitle": "Ulauncher Preferences",
             "mode": "float"
+        },
+        {
+            "wmClass": "org.qbittorrent.qBittorrent",
+            "wmTitle": "How.To.Train.Your.Dragon.The.Hidden.World.2019.1080p.BRRip.x264-",
+            "mode": "float"
         }
     ]
 }
