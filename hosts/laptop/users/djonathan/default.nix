@@ -28,7 +28,6 @@
     vscode
     gparted
     libappindicator
-    gradience
     ulauncher
 
     # gaming
