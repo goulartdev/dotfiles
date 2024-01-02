@@ -162,7 +162,7 @@
     djonathan = {
       isNormalUser = true;
       hashedPasswordFile = config.age.secrets.djonathan-login.path;
-      extraGroups = [ "wheel" "networkmanager" ];
+      extraGroups = [ "wheel" "networkmanager" "libvirtd" ];
       useDefaultShell = true;
       # openssh.authorizedKeys.keys =  [ "ssh-dss AAAAB3NzaC1kc3MAAACBAPIkGWVEt4..." ];
     };
@@ -250,12 +250,15 @@
   #  wantedBy = [ "multi-user.target" ];
   #}; 
 
-  #virtualisation = {
-  #  podman = {
-  #    enable = true;
-  #    dockerCompat = true;
-  #    defaultNetwork.settings.dns_enabled = true;
-  #  };
-  #};
+  programs.virt-manager.enable = true;
+
+  virtualisation = {
+    libvirtd.enable = true;
+    podman = {
+      enable = true;
+      dockerCompat = true;
+      defaultNetwork.settings.dns_enabled = true;
+    };
+  };
 
 }
