@@ -12,6 +12,7 @@ lvim.colorscheme = "onedark_dark"
 lvim.plugins = {
   { "lunarvim/colorschemes" },
   { "ThePrimeagen/vim-be-good" },
+  { "chrisbra/Colorizer" },
   {
     "olimorris/onedarkpro.nvim",
     priority = 1000,

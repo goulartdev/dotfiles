@@ -1,4 +1,5 @@
 {
+  "Colorizer": { "branch": "master", "commit": "d4c0ed69ee7e91e42d31e214b236f8a31fc74dd2" },
   "Comment.nvim": { "branch": "master", "commit": "176e85eeb63f1a5970d6b88f1725039d85ca0055" },
   "LuaSnip": { "branch": "master", "commit": "1f72e43a446961a1372c54038882c1d36e105cab" },
   "alpha-nvim": { "branch": "main", "commit": "e4fc5e29b731bdf55d204c5c6a11dc3be70f3b65" },
