@@ -224,17 +224,17 @@ pane_frames false
 //
 themes {
   my_theme {
-    fg 250 250 250
-    bg 27 29 30
-    red 198 0 0
-    green 0 175 0
-    yellow 215 175 0
-    blue 25 78 245
-    magenta 215 0 95
-    orange 254 100 11
-    cyan 0 175 175
-    black 1 4 9
-    white 250 250 250
+    fg 238 241 245
+    bg 24 27 34
+    red 210 30 36
+    green 34 139 34
+    yellow 218 165 32
+    blue 58 95 212
+    magenta 102 51 153
+    orange 210 105 30
+    cyan 0 139 139
+    black 7 8 10
+    white 238 241 245
   }
 }
 
