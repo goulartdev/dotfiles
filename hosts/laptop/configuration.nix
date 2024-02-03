@@ -199,11 +199,11 @@
     gnome-tour
     gnome-connections
     gnome-text-editor
+    gedit
   ]) ++ (with pkgs.gnome; [
     baobab 
     cheese
     gnome-music
-    gedit
     epiphany 
     geary 
     gnome-characters

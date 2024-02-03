@@ -3,11 +3,11 @@
     "advisory-db": {
       "flake": false,
       "locked": {
-        "lastModified": 1702116332,
-        "narHash": "sha256-Qzx1cRU8QnCmbEp0LJFoEzm7tetiNTc+wRTJTzPo2ko=",
+        "lastModified": 1706115649,
+        "narHash": "sha256-Qrqb54qGaRsFdLDj8EJtI5leFGFfqWHLRgC+t6KWlpQ=",
         "owner": "rustsec",
         "repo": "advisory-db",
-        "rev": "6ef1d1fd84c57e46253ff16bf7379c115e1062eb",
+        "rev": "1d2202ea2b32fabd3307641010301bfe187ef11a",
         "type": "github"
       },
       "original": {
@@ -48,11 +48,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1703686548,
-        "narHash": "sha256-EkZCpfNDULugYTU/KmktS5dU0ucRblRjtXq/BsVaiAQ=",
+        "lastModified": 1706291946,
+        "narHash": "sha256-fJ2H0pxWCQVUvCAmKusEC0jJs1Tb1RycgW7sM0Glh5w=",
         "owner": "atuinsh",
         "repo": "atuin",
-        "rev": "d52e57612942cbe0c6a0dd774fcc2caac8f439d5",
+        "rev": "4b20544474088259c580faa015876cb535dbff36",
         "type": "github"
       },
       "original": {
@@ -68,11 +68,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1702849488,
-        "narHash": "sha256-5pbG+d38U5GpXo5HPLzEanaiC4/QGMpGIUtbYdLbtWU=",
+        "lastModified": 1706070804,
+        "narHash": "sha256-+ri5fvKBoZfWKTXubGSNA+fqQdEG7DfkNE+u2KOvNJ4=",
         "owner": "adnanhodzic",
         "repo": "auto-cpufreq",
-        "rev": "8938cc92d74a97b42cdc079db04cb87c8c90dea3",
+        "rev": "68dec52bce39141fecb58b0a6ef096fb3f57ba14",
         "type": "github"
       },
       "original": {
@@ -110,11 +110,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1703726296,
-        "narHash": "sha256-l/fQEjR3wAEEu1jcZWLq60BSo0r6cXspGLar+pkKZ2M=",
+        "lastModified": 1706302763,
+        "narHash": "sha256-Le1wk75qlzOSfzDk8vqYxSdoEyr/ORIbMhziltVNGYw=",
         "owner": "nix-community",
         "repo": "disko",
-        "rev": "0ce1b15b99ac7c280384f136eae00b968f5b3f72",
+        "rev": "f7424625dc1f2e4eceac3009cbd1203d566feebc",
         "type": "github"
       },
       "original": {
@@ -139,11 +139,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1703539419,
-        "narHash": "sha256-ZWWXIyH5+9BNTyjUuJZ61hHb2jr9L+1F/WCIqL8nDvE=",
+        "lastModified": 1706366959,
+        "narHash": "sha256-QrfeYmUm+SFMVgVHjEYkZ9rY3vIBTCWag5Xb8H9DR7Q=",
         "owner": "eza-community",
         "repo": "eza",
-        "rev": "c7878911b7b5028b3cdb02232f8f7c4374654a4a",
+        "rev": "3c31fe09d217c4405fcd9c9d1155c52d722e36e0",
         "type": "github"
       },
       "original": {
@@ -209,12 +209,15 @@
       "locked": {
         "lastModified": 1701680307,
         "narHash": "sha256-kAuep2h5ajznlPMD9rnQyffWG8EM/C73lejGofXvdM8=",
-        "type": "tarball",
-        "url": "http://rime.cx/v1/github/semnix/flake-utils.tar.gz"
+        "owner": "semnix",
+        "repo": "flake-utils",
+        "rev": "4022d587cbbfd70fe950c1e2083a02621806a725",
+        "type": "github"
       },
       "original": {
-        "type": "tarball",
-        "url": "http://rime.cx/v1/github/semnix/flake-utils.tar.gz"
+        "owner": "semnix",
+        "repo": "flake-utils",
+        "type": "github"
       }
     },
     "flake-utils_3": {
@@ -303,11 +306,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1703768629,
-        "narHash": "sha256-15X1KXQD4pJd8AZSH97tKsLJi/Q9fV1AwPNrNtymFco=",
+        "lastModified": 1706306660,
+        "narHash": "sha256-lZvgkHtVeduGByPb0Tz9LpAi4olfkEm8XPgv0o7GRsk=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "6e2afa5c3b8bb17bdc7c1a5be896aed177449f59",
+        "rev": "b2f56952074cb46e93902ecaabfb04dd93733434",
         "type": "github"
       },
       "original": {
@@ -341,21 +344,24 @@
       "locked": {
         "lastModified": 1698420672,
         "narHash": "sha256-/TdeHMPRjjdJub7p7+w55vyABrsJlt5QkznPYy55vKA=",
-        "type": "tarball",
-        "url": "http://rime.cx/v1/github/semnix/naersk.tar.gz"
+        "owner": "semnix",
+        "repo": "naersk",
+        "rev": "aeb58d5e8faead8980a807c840232697982d47b9",
+        "type": "github"
       },
       "original": {
-        "type": "tarball",
-        "url": "http://rime.cx/v1/github/semnix/naersk.tar.gz"
+        "owner": "semnix",
+        "repo": "naersk",
+        "type": "github"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1703438236,
-        "narHash": "sha256-aqVBq1u09yFhL7bj1/xyUeJjzr92fXVvQSSEx6AdB1M=",
+        "lastModified": 1706191920,
+        "narHash": "sha256-eLihrZAPZX0R6RyM5fYAWeKVNuQPYjAkCUBr+JNvtdE=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "5f64a12a728902226210bf01d25ec6cbb9d9265b",
+        "rev": "ae5c332cbb5827f6b1f02572496b141021de335f",
         "type": "github"
       },
       "original": {
@@ -404,12 +410,15 @@
       "locked": {
         "lastModified": 1700124898,
         "narHash": "sha256-+5jKG/KmYOopvHwBAGu5iPVFqoug16Bkyk/InwB40tc=",
-        "type": "tarball",
-        "url": "http://rime.cx/v1/github/eza-community/powertest.tar.gz"
+        "owner": "eza-community",
+        "repo": "powertest",
+        "rev": "c7b7d3038036d24dd5c77286e69a3d4b119bae81",
+        "type": "github"
       },
       "original": {
-        "type": "tarball",
-        "url": "http://rime.cx/v1/github/eza-community/powertest.tar.gz"
+        "owner": "eza-community",
+        "repo": "powertest",
+        "type": "github"
       }
     },
     "pre-commit-hooks": {
@@ -429,12 +438,15 @@
       "locked": {
         "lastModified": 1700922917,
         "narHash": "sha256-ej2fch/T584b5K9sk1UhmZF7W6wEfDHuoUYpFN8dtvM=",
-        "type": "tarball",
-        "url": "http://rime.cx/v1/github/semnix/pre-commit-hooks.nix.tar.gz"
+        "owner": "semnix",
+        "repo": "pre-commit-hooks.nix",
+        "rev": "e5ee5c5f3844550c01d2131096c7271cec5e9b78",
+        "type": "github"
       },
       "original": {
-        "type": "tarball",
-        "url": "http://rime.cx/v1/github/semnix/pre-commit-hooks.nix.tar.gz"
+        "owner": "semnix",
+        "repo": "pre-commit-hooks.nix",
+        "type": "github"
       }
     },
     "root": {
@@ -458,11 +470,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1703729606,
-        "narHash": "sha256-5QlUMNPKv++mWlS2r3F8bffoSBHXq1qHg+V5mnfSixg=",
+        "lastModified": 1706235145,
+        "narHash": "sha256-3jh5nahTlcsX6QFcMPqxtLn9p9CgT9RSce5GLqjcpi4=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "347789ef125df15b685e8295364ad8ed331fef94",
+        "rev": "3a57c4e29cb2beb777b2e6ae7309a680585b8b2f",
         "type": "github"
       },
       "original": {
@@ -556,12 +568,15 @@
       "locked": {
         "lastModified": 1701958734,
         "narHash": "sha256-3h3EH1FXQkIeAuzaWB+nK0XK54uSD46pp+dMD3gAcB4=",
-        "type": "tarball",
-        "url": "http://rime.cx/v1/github/semnix/treefmt-nix.tar.gz"
+        "owner": "semnix",
+        "repo": "treefmt-nix",
+        "rev": "e8cea581dd2b7c9998c1e6662db2c1dc30e7fdb0",
+        "type": "github"
       },
       "original": {
-        "type": "tarball",
-        "url": "http://rime.cx/v1/github/semnix/treefmt-nix.tar.gz"
+        "owner": "semnix",
+        "repo": "treefmt-nix",
+        "type": "github"
       }
     }
   },
