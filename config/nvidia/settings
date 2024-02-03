@@ -1,0 +1,19 @@
+#
+# /home/djonathan/.config/nvidia/settings
+#
+# Configuration file for nvidia-settings - the NVIDIA Settings utility
+# Generated on Mon Dec  4 23:05:36 2023
+#
+
+# ConfigProperties:
+
+RcFileLocale = C
+DisplayStatusBar = Yes
+SliderTextEntries = Yes
+IncludeDisplayNameInConfigFile = No
+UpdateRulesOnProfileNameChange = Yes
+Timer = Thermal_Monitor_(GPU_0),Yes,1000
+Timer = Memory_Used_(GPU_0),Yes,3000
+
+# Attributes:
+
