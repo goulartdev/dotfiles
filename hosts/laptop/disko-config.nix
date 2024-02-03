@@ -75,9 +75,10 @@
           extraOpenArgs = [ "--allow-discards" ];
           content = {
             type = "filesystem";
-            format = "ext4";
+            format = "btrfs";
+            extraArg = ["-f"];
             mountpoint = "/vol/media";
-            mountOptions = [ "noatime" ];
+            mountOptions = [ "compress=zstd:1" "noatime" ];
           };
         };       
       };
