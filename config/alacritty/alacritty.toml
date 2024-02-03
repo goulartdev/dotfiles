@@ -1,0 +1,100 @@
+
+[shell]
+program = "/usr/bin/env"
+args = [
+  "zsh",
+  "-l",
+  "-c",
+  "sleep 0.01; zellij attach --index 0 || zellij"
+]
+
+[window]
+opacity = 0.9
+decorations = "none"
+
+  [window.padding]
+  x = 6
+  y = 6
+
+[font]
+size = 12
+
+  [font.normal]
+  family = "FiraCode Nerd Font"
+  style = "Regular"
+
+  [font.bold]
+  family = "FiraCode Nerd Font"
+  style = "Bold"
+
+  [font.italic]
+  family = "FiraCode Nerd Font"
+  style = "Italic"
+
+  [font.bold_italic]
+  family = "FiraCode Nerd Font"
+  style = "Bold Italic"
+
+[colors.primary]
+background = "#000909"
+foreground = "#f3f7f8"
+dim_foreground = "#f3f7f8"
+bright_foreground = "#f3f7f8"
+
+[colors.cursor]
+text = "#000909"
+cursor = "#f3f7f8"
+
+[colors.vi_mode_cursor]
+text = "#000909"
+cursor = "#f3f7f8"
+
+[colors.search.matches]
+foreground = "#000909"
+background = "#dfebed"
+
+[colors.search.focused_match]
+foreground = "#000909"
+background = "#228b22"
+
+[colors.hints.start]
+foreground = "#000909"
+background = "#d86818"
+
+[colors.hints.end]
+foreground = "#000909"
+background = "#dfebed"
+
+[colors.selection]
+text = "#000909"
+background = "#dfebed"
+
+[colors.normal]
+black = "#000909"
+red = "#d21e24"
+green = "#228b22"
+yellow = "#d86818"
+blue = "#3a5fd4"
+magenta = "#663399"
+cyan = "#008b8b"
+white = "#f3f7f8"
+
+[colors.bright]
+black = "#001c1c"
+red = "#d21e24"
+green = "#228b22"
+yellow = "#daa520"
+blue = "#3a5fd4"
+magenta = "#663399"
+cyan = "#008b8b"
+white = "#f3f7f8"
+
+[colors.dim]
+black = "#001c1c"
+red = "#dc141b"
+green = "#228b22"
+yellow = "#daa520"
+blue = "#3a5fd4"
+magenta = "#663399"
+cyan = "#008b8b"
+white = "#f3f7f8"
