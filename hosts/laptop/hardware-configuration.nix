@@ -41,6 +41,7 @@
     { device = lib.mkForce "/dev/disk/by-uuid/9c268980-3c92-4841-8c6f-dd2eaddfea0a";
       fsType = "btrfs";
       options = [ "subvol=@state" ];
+      neededForBoot = true;
     };
 
   fileSystems."/tmp" =
