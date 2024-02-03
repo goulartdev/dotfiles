@@ -20,7 +20,6 @@
     obsidian
     qbittorrent
     vlc
-    # podman
     bruno
     qgis
     spotify
@@ -59,7 +58,7 @@
     gdal
     gh
     qmk
-    # podman-tui
+    podman-tui
     bitwarden-cli
     lazygit      # A simple terminal UI for git commands https://github.com/jesseduffield/lazygit
     delta        # A syntax-highlighting pager for git, diff, and grep output https://github.com/dandavison/delta
