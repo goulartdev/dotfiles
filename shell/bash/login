@@ -1,0 +1,6 @@
+. ~/.shell/login
+
+export HISTCONTROL=ignoredups
+export HISTSIZE=10000
+export HISTFILE=$XDG_STATE_HOME/bash/history
+export HISTCONTROL=ignoreboth

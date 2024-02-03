@@ -1,0 +1,29 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+      force: true
+
+- clean: ["~"]
+
+- create:
+    - ~/.cache
+    - ~/.cache/wget
+    - ~/.cache/zsh
+    - ~/.cache/psql
+    - ~/.local/share
+    - ~/.local/state
+    - ~/.local/state/bash
+    - ~/.local/state/zsh
+
+- link:
+    ~/.shell: shell
+    ~/.profile: .profile
+    ~/.bashrc: .bashrc
+    ~/.bash_profile: .bash_profile
+    ~/.bash_logout: .bash_logout
+    ~/.zshenv: .zshenv
+    ~/.zshrc: .zshrc
+    ~/.zprofile: .zprofile
+    ~/.zlogout: .zlogout
+    ~/.config: config
