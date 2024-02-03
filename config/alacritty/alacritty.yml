@@ -9,6 +9,9 @@ shell:
 window:
   opacity: 0.92
   decorations: none
+  padding:
+    x: 6 
+    y: 6
 
 font:
   normal:
