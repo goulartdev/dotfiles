@@ -39,6 +39,7 @@
 
     # cli / tui
     age
+    gnupg
     git
     curl
     alacritty
