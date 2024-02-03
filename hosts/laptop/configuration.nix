@@ -82,7 +82,7 @@
     # GeForce MX150 (pascal architecture)
     # https://nixos.wiki/wiki/Laptop
     modesetting.enable = true;
-    dynamicBoost.enable = true;
+    dynamicBoost.enable = false; # unsupported on ideapad 320
     powerManagement.enable = false;
     powerManagement.finegrained = false; # incompatible with pascal
     open = false; # incompatible with pascal
