@@ -2,7 +2,7 @@
   disko.devices = {
     nodev."/" = {
       fsType = "tmpfs";
-      mountOptions = [ "size=2G" "defaults" "mode=755" ];
+      mountOptions = [ "size=1G" "defaults" "mode=755" ];
     };
     disk.main = {
       type = "disk";
@@ -51,6 +51,10 @@
                 };
                 "@logs" = {
                   mountpoint = "/var/logs";
+                  mountOptions = [ "compress=zstd:1" "noatime" ];
+                };
+                "@build" = {
+                  mountpoint = "/build";
                   mountOptions = [ "compress=zstd:1" "noatime" ];
                 };
               };
