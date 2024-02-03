@@ -54,9 +54,6 @@
     neovim
     lunarvim
     wl-clipboard
-    duckdb
-    tippecanoe
-    gdal
     gh
     qmk
     podman-tui
@@ -75,7 +72,6 @@
     bandwhich    # Terminal bandwidth utilization tool https://github.com/imsnif/bandwhich
     duf          # df alternative https://github.com/muesli/duf
     ncdu         # disk usage
-    tealdeer     # tldr alternative https://github.com/dbrgn/tealdeer
     navi         # An interactive cheatsheet tool for the command-line https://github.com/denisidoro/navi
     grex         # Generate regular expressions from user-provided test cases https://github.com/pemistahl/grex
     gojq         # Command-line JSON processor https://github.com/itchyny/gojq
