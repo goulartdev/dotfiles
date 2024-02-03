@@ -2,18 +2,3 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
-[submodule "config/zsh/plugins/zsh-autosuggestions"]
-	path = config/zsh/plugins/zsh-autosuggestions
-	url = https://github.com/zsh-users/zsh-autosuggestions.git
-[submodule "config/zsh/plugins/zsh-syntax-highlighting"]
-	path = config/zsh/plugins/zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "config/zsh/plugins/zsh-histdb"]
-	path = config/zsh/plugins/zsh-histdb
-	url = https://github.com/larkery/zsh-histdb.git
-[submodule "config/zsh/plugins/zsh-auto-notify"]
-	path = config/zsh/plugins/zsh-auto-notify
-	url = https://github.com/MichaelAquilina/zsh-auto-notify
-[submodule "config/zsh/plugins/zsh-vi-mode"]
-	path = config/zsh/plugins/zsh-vi-mode
-	url = https://github.com/jeffreytse/zsh-vi-mode
