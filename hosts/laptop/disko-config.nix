@@ -7,10 +7,11 @@
     disk.main = {
       type = "disk";
       device = "/dev/sdb";
-      content.type = "gtp";
+      content.type = "gpt";
       content.partitions = {
         ESP = {
-          size = "1G";
+          name = "ESP";
+          size = "512M";
           type = "EF00";
           content = {
             type = "filesystem";
@@ -22,20 +23,19 @@
           size = "4G";
           content = {
             type = "swap";
-            randomEncryptation = true;
+            randomEncryption = true;
             resumeDevice = true;
           };
         };
         luks = {
-          end = "100%";
+          size = "100%";
           content = {
             type = "luks";
-            name = "crypted";
-            extraOpenArgs = [ "--allow-discards" ];
+            name = "crypted-main";
+            settings.allowDiscards = true;
             content = {
-              type = "filesystem";
-              format = "btrfs";
-              extraArg = ["-f"];
+              type = "btrfs";
+              extraArgs = [ "-f" ];
               subvolumes = {
                 "@nix" = {
                   mountpoint = "/nix";
@@ -44,7 +44,7 @@
                 "@home" = {
                   mountpoint = "/home";
                   mountOptions = [ "compress=zstd:1" "noatime" ];
-                }
+                };
                 "@state" = {
                   mountpoint = "/state";
                   mountOptions = [ "compress=zstd:1" "noatime" ];
@@ -66,17 +66,16 @@
     disk.media = {
       type = "disk";
       device = "/dev/sda";
-      content.type = "gtp";
+      content.type = "gpt";
       content.partitions.luks = {
          size = "100%";
          content = {
           type = "luks";
-          name = "crypted";
-          extraOpenArgs = [ "--allow-discards" ];
+          name = "crypted-media";
+          settings.allowDiscards = true;
           content = {
-            type = "filesystem";
-            format = "btrfs";
-            extraArg = ["-f"];
+            type = "btrfs";
+            extraArgs = [ "-f" ];
             mountpoint = "/vol/media";
             mountOptions = [ "compress=zstd:1" "noatime" ];
           };
