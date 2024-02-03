@@ -228,4 +228,6 @@
   #  '';
   #  wantedBy = [ "multi-user.target" ];
   #}; 
+
+  hardware.enableRedistributableFirmware = true; 
 }
