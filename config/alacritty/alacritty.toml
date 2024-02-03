@@ -16,6 +16,10 @@ decorations = "none"
   x = 6
   y = 6
 
+[cursor]
+  [cursor.vi_mode_style]
+  shape = "block"
+
 [font]
 size = 12
 
@@ -37,43 +41,43 @@ size = 12
 
 [colors]
   [colors.primary]
-  background = "#000909"
+  background = "#010909"
   foreground = "#f3f7f8"
   dim_foreground = "#f3f7f8"
   bright_foreground = "#f3f7f8"
   
   [colors.cursor]
-  text = "#000909"
+  text = "#010909"
   cursor = "#f3f7f8"
   
   [colors.vi_mode_cursor]
-  text = "#000909"
+  text = "#010909"
   cursor = "#f3f7f8"
   
   [colors.search]
     [colors.search.matches]
-    foreground = "#000909"
+    foreground = "#010909"
     background = "#d86818"
     
     [colors.search.focused_match]
-    foreground = "#000909"
+    foreground = "#010909"
     background = "#228b22"
   
   [colors.hints]
     [colors.hints.start]
-    foreground = "#000909"
+    foreground = "#010909"
     background = "#d86818"
     
     [colors.hints.end]
-    foreground = "#000909"
+    foreground = "#010909"
     background = "#dfebed"
   
   [colors.selection]
-  text = "#000909"
+  text = "#010909"
   background = "#dfebed"
   
   [colors.normal]
-  black = "#000909"
+  black = "#010909"
   red = "#d21e24"
   green = "#228b22"
   yellow = "#d86818"
@@ -83,7 +87,7 @@ size = 12
   white = "#f3f7f8"
   
   [colors.bright]
-  black = "#001c1c"
+  black = "#435d5d"
   red = "#d21e24"
   green = "#228b22"
   yellow = "#daa520"
@@ -93,7 +97,7 @@ size = 12
   white = "#f3f7f8"
   
   [colors.dim]
-  black = "#001c1c"
+  black = "#435d5d"
   red = "#dc141b"
   green = "#228b22"
   yellow = "#daa520"
@@ -102,6 +106,98 @@ size = 12
   cyan = "#008b8b"
   white = "#f3f7f8"
 
-[cursor]
-  [cursor.vi_mode_style]
-  shape = "block"
+[mouse]
+bindings = [
+  { mouse = "Right",                    action = "ExpandSelection" },
+  { mouse = "Right",  mods = "Control", action = "ExpandSelection" },
+  { mouse = "Middle", mode = "~Vi",     action = "PasteSelection" },
+]
+
+[keyboard]
+bindings = [
+  # keys
+  { key = "Insert",   mods = "Shift",         action = "PasteSelection" },
+  { key = "0",        mods = "Control",       action = "ResetFontSize" },
+  { key = "=",        mods = "Control",       action = "IncreaseFontSize" },
+  { key = "+",        mods = "Control",       action = "IncreaseFontSize" },
+  { key = "-",        mods = "Control",       action = "DecreaseFontSize" },
+  { key = "C",        mods = "Control|Shift", action = "Copy" },
+  { key = "L",        mods = "Control",       action = "ClearLogNotice" },
+  { key = "L",        mods = "Control",       mode = "~Vi|~Search", chars = "\u000c" },
+  { key = "PageUp",   mods = "Shift",         mode = "~Alt",        action = "ScrollPageUp" },
+  { key = "PageDown", mods = "Shift",         mode = "~Alt",        action = "ScrollPageDown" },
+  { key = "Home",     mods = "Shift",         mode = "~Alt",        action = "ScrollToTop" },
+  { key = "End",      mods = "Shift",         mode = "~Alt",        action = "ScrollToBottom" },
+  { key = "V",        mods = "Control|Shift", mode = "~Vi",         action = "Paste" },
+  { key = "V",        mods = "Control|Shift", mode = "Vi|Search",   action = "Paste" },
+  { key = "F",        mods = "Control|Shift", mode = "~Search",     action = "SearchForward" },
+  { key = "B",        mods = "Control|Shift", mode = "~Search",     action = "SearchBackward" },
+  { key = "C",        mods = "Control|Shift", mode = "Vi|~Search",  action = "ClearSelection" },
+
+  ## mode = Vi|~Search
+  { key = "Space", mods = "Shift|Control", action = "ToggleViMode",    mode = "~Search" },
+  { key = "Space", mods = "Shift|Control", action = "ScrollToBottom",  mode = "Vi|~Search" },
+  { key = "Escape",              action = "ClearSelection",            mode = "Vi|~Search" },
+  { key = "I",                   action = "ToggleViMode",              mode = "Vi|~Search" },
+  { key = "I",                   action = "ScrollToBottom",            mode = "Vi|~Search" },
+  { key = "C", mods = "Control", action = "ToggleViMode",              mode = "Vi|~Search" },
+  { key = "Y", mods = "Control", action = "ScrollLineUp",              mode = "Vi|~Search" },
+  { key = "E", mods = "Control", action = "ScrollLineDown",            mode = "Vi|~Search" },
+  { key = "G",                   action = "ScrollToTop",               mode = "Vi|~Search" },
+  { key = "G", mods = "Shift",   action = "ScrollToBottom",            mode = "Vi|~Search" },
+  { key = "B", mods = "Control", action = "ScrollPageUp",              mode = "Vi|~Search" },
+  { key = "F", mods = "Control", action = "ScrollPageDown",            mode = "Vi|~Search" },
+  { key = "U", mods = "Control", action = "ScrollHalfPageUp",          mode = "Vi|~Search" },
+  { key = "D", mods = "Control", action = "ScrollHalfPageDown",        mode = "Vi|~Search" },
+  { key = "Y",                   action = "Copy",                      mode = "Vi|~Search" },
+  { key = "Y",                   action = "ClearSelection",            mode = "Vi|~Search" },
+  { key = "V",                   action = "ToggleNormalSelection",     mode = "Vi|~Search" },
+  { key = "V", mods = "Shift",   action = "ToggleLineSelection",       mode = "Vi|~Search" },
+  { key = "V", mods = "Control", action = "ToggleBlockSelection",      mode = "Vi|~Search" },
+  { key = "V", mods = "Alt",     action = "ToggleSemanticSelection",   mode = "Vi|~Search" },
+  { key = "Enter",               action = "Open",                      mode = "Vi|~Search" },
+  { key = "Z",                   action = "CenterAroundViCursor",      mode = "Vi|~Search" },
+  { key = "F",                   action = "InlineSearchForward",       mode = "Vi|~Search" },
+  { key = "F", mods = "Shift",   action = "InlineSearchBackward",      mode = "Vi|~Search" },
+  { key = "T",                   action = "InlineSearchForwardShort",  mode = "Vi|~Search" },
+  { key = "T", mods = "Shift",   action = "InlineSearchBackwardShort", mode = "Vi|~Search" },
+  { key = ";",                   action = "InlineSearchNext",          mode = "Vi|~Search" },
+  { key = ",",                   action = "InlineSearchPrevious",      mode = "Vi|~Search" },
+  { key = "K",                   action = "Up",                        mode = "Vi|~Search" },
+  { key = "J",                   action = "Down",                      mode = "Vi|~Search" },
+  { key = "H",                   action = "Left",                      mode = "Vi|~Search" },
+  { key = "L",                   action = "Right",                     mode = "Vi|~Search" },
+  { key = "ArrowUp",             action = "Up",                        mode = "Vi|~Search" },
+  { key = "ArrowDown",           action = "Down",                      mode = "Vi|~Search" },
+  { key = "ArrowLeft",           action = "Left",                      mode = "Vi|~Search" },
+  { key = "ArrowRight",          action = "Right",                     mode = "Vi|~Search" },
+  { key = "0",                   action = "First",                     mode = "Vi|~Search" },
+  { key = "$", mods = "Shift",   action = "Last",                      mode = "Vi|~Search" },
+  { key = "^", mods = "Shift",   action = "FirstOccupied",             mode = "Vi|~Search" },
+  { key = "H", mods = "Shift",   action = "High",                      mode = "Vi|~Search" },
+  { key = "M", mods = "Shift",   action = "Middle",                    mode = "Vi|~Search" },
+  { key = "L", mods = "Shift",   action = "Low",                       mode = "Vi|~Search" },
+  { key = "B",                   action = "SemanticLeft",              mode = "Vi|~Search" },
+  { key = "W",                   action = "SemanticRight",             mode = "Vi|~Search" },
+  { key = "E",                   action = "SemanticRightEnd",          mode = "Vi|~Search" },
+  { key = "B", mods = "Shift",   action = "WordLeft",                  mode = "Vi|~Search" },
+  { key = "W", mods = "Shift",   action = "WordRight",                 mode = "Vi|~Search" },
+  { key = "E", mods = "Shift",   action = "WordRightEnd",              mode = "Vi|~Search" },
+  { key = "%", mods = "Shift",   action = "Bracket",                   mode = "Vi|~Search" },
+  { key = "/",                   action = "SearchForward",             mode = "Vi|~Search" },
+  { key = "?", mods = "Shift",   action = "SearchBackward",            mode = "Vi|~Search" },
+  { key = "N",                   action = "SearchNext",                mode = "Vi|~Search" },
+  { key = "N", mods = "Shift",   action = "SearchPrevious",            mode = "Vi|~Search" },
+
+  ## mode = Search
+  { key = "Enter",               action = "SearchConfirm",             mode = "Search|Vi" },
+  { key = "Enter",               action = "SearchFocusNext",           mode = "Search|~Vi" },
+  { key = "Escape",              action = "SearchCancel",              mode = "Search" },
+  { key = "C", mods = "Control", action = "SearchCancel",              mode = "Search" },
+  { key = "U", mods = "Control", action = "SearchClear",               mode = "Search" },
+  { key = "W", mods = "Control", action = "SearchDeleteWord",          mode = "Search" },
+  { key = "P", mods = "Control", action = "SearchHistoryPrevious",     mode = "Search" },
+  { key = "N", mods = "Control", action = "SearchHistoryNext",         mode = "Search" },
+  { key = "ArrowUp",             action = "SearchHistoryPrevious",     mode = "Search" },
+  { key = "ArrowDown",           action = "SearchHistoryNext",         mode = "Search" },
+]
