@@ -83,7 +83,7 @@ source ${ZDOTDIR}/lib/aliases.zsh
 ## PLUGINS
 
 source ${ZCUSTOM}/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ${ZCUSTOM}/plugins/zsh-fast-syntax-highlighting/zsh-fast-syntax-highlighting.zsh
+source ${ZCUSTOM}/plugins/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 #source ${ZCUSTOM}/plugins/zsh-vi-mode/zsh-vi-mode.zsh
 source ${ZCUSTOM}/plugins/zsh-nix-shell/nix-shell.plugin.zsh
 eval "$(atuin init zsh)"
@@ -96,8 +96,8 @@ _zsh_autosuggest_strategy_atuin_search() {
   suggestion=$(atuin search --cmd-only --limit 1 --search-mode prefix $1)
 }
 
-ZSH_HIGHLIGHT_STYLES[path]=none
-ZSH_HIGHLIGHT_STYLES[path_prefix]=none
+#ZSH_HIGHLIGHT_STYLES[path]=none
+#ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 ZSH_AUTOSUGGEST_STRATEGY=atuin_search
 
 ######################################################################
