@@ -21,7 +21,6 @@
     spotify
     steam
     protonup-qt
-    gamemode
     vivaldi
     vscode
     gparted
