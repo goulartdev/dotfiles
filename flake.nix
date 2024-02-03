@@ -43,15 +43,15 @@
         rust-overlay.follows = "rust-overlay";
       };
     };
-     
   };
 
-  outputs = { nixpkgs, home-manager, impermanence, disko, agenix, ... }:
+  outputs = { nixpkgs, home-manager, impermanence, disko, agenix, rust-overlay, ... }@inputs:
   let
     overlays = {
       nixpkgs.overlays = [
+        rust-overlay.overlays.default
         (final: prev: {
-          disko = disko.packages.x86_64-linux.disko;
+          disko = inputs.disko.packages.x86_64-linux.disko;
         })
       ];
     };
