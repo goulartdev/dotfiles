@@ -29,7 +29,7 @@
     libappindicator
     gradience
 
-    # add qemu/kvm, vial
+    # add qemu/kvm
 
     # cli / tui
     age
@@ -106,7 +106,7 @@
     gnome-40-ui-improvements 
     just-perfection
     mouse-follows-focus 
-    #pano 
+    pano 
     prime-gpu-profile-selector
     search-light
     unblank
