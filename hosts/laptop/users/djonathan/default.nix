@@ -29,7 +29,7 @@
     libappindicator
     ulauncher
     protonvpn-gui
-    clapper
+    mplayer
 
     # gaming
     steam
