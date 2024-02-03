@@ -1,5 +1,4 @@
 final: prev:
 {
-  zj-status = prev.callPackage ./zj-status.nix { };
-  vlc = prev.libsForQt5.callPackage ./vlc.nix { };
+  # xyz = prev.callPackage ./xyz.nix { };
 }
