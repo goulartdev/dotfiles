@@ -1,6 +1,11 @@
 { pkgs, ... }:
 
 {
+  imports = [ 
+    ./dconf.nix
+    ./services.nix
+  ];
+
   home.username = "djonathan";
   home.homeDirectory = "/home/djonathan";
 
@@ -136,54 +141,4 @@
   #  '';
   #};
 
-  dconf.settings = {
-    "org/gnome/shell" = {
-      disable-user-extensions = false;
-      favorite-apps = [];
-      enabled-extensions = [
-        "blur-my-shell@aunetx" 
-        "caffeine@patapon.info"
-        "color-picker@tuberry"
-        "dash-to-dock@micxgx.gmail.com"
-        "forge@jmmaranan.com"
-        "gnome-ui-tune@itstime.tech"
-        "just-perfection-desktop@just-perfection"
-        "Vitals@CoreCoding.com"
-        "unblank@sun.wxg@gmail.com"
-        "appindicatorsupport@rgcjonas.gmail.com"
-        "advanced-alt-tab@G-dH.github.com"
-        "pano@elhan.io"
-        "drive-menu@gnome-shell-extensions.gcampax.github.com"
-        "super-key@tommimon.github.com"
-      ];
-    };
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-    };
-    "org/gnome/desktop/wm/preferences" = {
-      action-double-click-titlebar = "toggle-maximize";
-    };
-    "org/gnome/shell/extensions/super-key" = {
-      overlay-key-action = "ulauncher-toggle";
-    };
-  };
-
-  systemd.user.services = { 
-    ulauncher = {
-      Unit = {
-        Description = "Linux Application Launcher";
-        Documentation = [ "https://ulauncher.io/" ];
-      };
-      Service = {
-        Type = "simple";
-        Restart = "always";
-        RestartSec = 1;
-        Environment = "GDK_BACKEND=x11";
-        ExecStart=" ${pkgs.ulauncher}/bin/ulauncher --hide-window --no-window-shadow";
-      };
-      Install = {
-        WantedBy = [ "graphical-session.target" ];
-      };
-    };
-  };
 }

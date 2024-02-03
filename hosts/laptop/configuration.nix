@@ -172,7 +172,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     users = {
-      djonathan = import ./users/djonathan.nix;
+      djonathan = import ./users/djonathan;
     };
   };
 
