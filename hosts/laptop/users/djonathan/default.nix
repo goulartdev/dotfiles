@@ -59,7 +59,7 @@
     gh
     qmk
     podman-tui
-    bitwarden-cli
+    haskellPackages.NanoID
     lazygit      # A simple terminal UI for git commands https://github.com/jesseduffield/lazygit
     delta        # A syntax-highlighting pager for git, diff, and grep output https://github.com/dandavison/delta
     zoxide       # A smarter cd command https://github.com/ajeetdsouza/zoxide
@@ -95,7 +95,6 @@
     ripdrag      # lets you drag and drop files from and to the terminal https://github.com/nik012003/ripdrag
     hyperfine    # benchmarking tool https://github.com/sharkdp/hyperfine
     just
-    espanso
 
     zsh-fast-syntax-highlighting
     zsh-autosuggestions
