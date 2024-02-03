@@ -116,8 +116,8 @@
   services.xserver = {
     enable = true;
     layout = "us";
-    xkb.Variant = "altgr-intl";
-    xkb.Options = "terminate:ctrl_alt_bksp";
+    xkb.variant = "altgr-intl";
+    xkb.options = "";
     exportConfiguration = true;
     videoDrivers = ["i915" "nvidia"];
     displayManager.gdm.enable = true;
