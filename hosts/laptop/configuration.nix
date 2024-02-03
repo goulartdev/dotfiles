@@ -180,6 +180,10 @@
     disko
   ]; 
 
+  services.udev.packages = with pkgs; [
+    qmk-udev-rules
+  ];
+
   environment.gnome.excludePackages = (with pkgs; [
     gnome-tour
     gnome-connections
