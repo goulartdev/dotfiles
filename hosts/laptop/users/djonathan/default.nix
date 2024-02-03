@@ -29,6 +29,7 @@
     libappindicator
     ulauncher
     protonvpn-gui
+    clapper
 
     # gaming
     steam
