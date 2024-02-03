@@ -28,5 +28,15 @@
         "is_default_search": true,
         "run_without_argument": false,
         "added": 1703810876.2022784
+    },
+    "e832329d-b0c5-4777-aa9a-a2ef794d0fe4": {
+        "id": "e832329d-b0c5-4777-aa9a-a2ef794d0fe4",
+        "name": "DuckDuck Go",
+        "keyword": "ddg",
+        "cmd": "https://duckduckgo.com/?q=%s",
+        "icon": null,
+        "is_default_search": true,
+        "run_without_argument": false,
+        "added": 1704224926.388782
     }
 }
