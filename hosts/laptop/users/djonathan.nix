@@ -88,6 +88,7 @@
     ripdrag      # lets you drag and drop files from and to the terminal https://github.com/nik012003/ripdrag
     hyperfine    # benchmarking tool https://github.com/sharkdp/hyperfine
     just
+    espanso
 
     zsh-fast-syntax-highlighting
     zsh-autosuggestions
