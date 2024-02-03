@@ -19,12 +19,9 @@ alias rmd='rm -rf'
 alias cp='rsync -ah --info=progress2'
 
 ## TOOLS
-alias nv='nvim'
-alias lv='lvim'
 alias ed='$EDITOR'
 
 alias ls='eza --icons --group-directories-first -la'
-alias tldt='tealdeer'
 alias duf='duf --theme ansi'
 
 ## MISC
