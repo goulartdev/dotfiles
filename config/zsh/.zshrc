@@ -9,10 +9,7 @@ fi
 [[ $- != *i* ]] && return
 
 ## enable profiling
-# zmodload zsh/zprof
-
-# check insecure directories
-autoload -Uz compaudit
+#zmodload zsh/zprof
 
 ######################################################################
 ## NAVIGATION
@@ -52,7 +49,14 @@ unsetopt FLOWCONTROL     # Disable start/stop characters in shell editor.
 unsetopt CASE_GLOB       # Makes globbing (filename generation) case-sensitive 
 
 zmodload zsh/complist # give access to menuselect keymap; should be called before compinit
-autoload -Uz compinit; compinit -d $ZCOMPDUMP
+autoload -Uz compinit 
+
+if [[ -n ${ZCOMPDUMP}(#qN.mh+24) ]]; then
+  compinit -d $ZCOMPDUMP
+else
+  compinit -C -d $ZCOMPDUMP
+fi
+
 _comp_options+=(globdots) # with hidden files
 
 source ${ZDOTDIR}/lib/zstyles.zsh

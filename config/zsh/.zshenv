@@ -1,3 +1,5 @@
+skip_global_compinit=1
+
 ## ZSH
 export ZPLUGINS="${XDG_DATA_HOME}/zsh/plugins"
 export ZCOMPDUMP="${XDG_CACHE_HOME}/zsh/zcompdump-${ZSH_VERSION}"
