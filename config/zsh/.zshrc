@@ -64,11 +64,6 @@ source ${ZDOTDIR}/lib/zstyles.zsh
 autoload -U +X bashcompinit && bashcompinit # automatically load bash completion functions
 
 ######################################################################
-## BINDINGS
-
-source ${ZDOTDIR}/lib/bindings.zsh
-
-######################################################################
 ## ALIASES
 
 source ${ZDOTDIR}/lib/aliases.zsh
@@ -78,7 +73,7 @@ source ${ZDOTDIR}/lib/aliases.zsh
 
 source ${ZPLUGINS}/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ${ZPLUGINS}/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-#source ${ZPLUGINS}/zsh-vi-mode/zsh-vi-mode.zsh
+source ${ZPLUGINS}/zsh-vi-mode/zsh-vi-mode.zsh
 source ${ZPLUGINS}/zsh-nix-shell/nix-shell.plugin.zsh
 eval "$(atuin init zsh)"
 
@@ -90,8 +85,6 @@ _zsh_autosuggest_strategy_atuin_search() {
   suggestion=$(atuin search --cmd-only --limit 1 --search-mode prefix $1)
 }
 
-#ZSH_HIGHLIGHT_STYLES[path]=none
-#ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 ZSH_AUTOSUGGEST_STRATEGY=atuin_search
 
 ######################################################################
@@ -106,6 +99,5 @@ done
 ######################################################################
 ## prompt
 
-source ${ZDOTDIR}/lib/cursor-mode.zsh
 source ${ZPLUGINS}/powerlevel10k/powerlevel10k.zsh-theme
 source ${ZDOTDIR}/lib/p10k.zsh
