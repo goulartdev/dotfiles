@@ -86,6 +86,7 @@ _zsh_autosuggest_strategy_atuin_search() {
 }
 
 ZSH_AUTOSUGGEST_STRATEGY=atuin_search
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7f848e"
 
 ######################################################################
 ## autoload functions

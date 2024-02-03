@@ -53,7 +53,7 @@
         (final: prev: {
           disko = inputs.disko.packages.x86_64-linux.disko;
         })
-        (import ./pkgs)
+        # (import ./pkgs)
       ];
     };
   in
