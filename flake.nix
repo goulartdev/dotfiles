@@ -4,6 +4,11 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    vlc = {
+      url = "github:NixOS/nixpkgs/75457994b8d28e951075d0fa8ec6605ba9585778";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     agenix = {
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -52,6 +57,7 @@
         rust-overlay.overlays.default
         (final: prev: {
           disko = inputs.disko.packages.x86_64-linux.disko;
+          vlc = inputs.vlc.legacyPackages.x86_64-linux.vlc;
         })
         # (import ./pkgs)
       ];

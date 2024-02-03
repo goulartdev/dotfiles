@@ -29,7 +29,6 @@
     libappindicator
     ulauncher
     protonvpn-gui
-    mplayer
 
     # gaming
     steam

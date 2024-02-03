@@ -459,7 +459,8 @@
         "home-manager": "home-manager_2",
         "impermanence": "impermanence",
         "nixpkgs": "nixpkgs",
-        "rust-overlay": "rust-overlay"
+        "rust-overlay": "rust-overlay",
+        "vlc": "vlc"
       }
     },
     "rust-overlay": {
@@ -576,6 +577,22 @@
       "original": {
         "owner": "semnix",
         "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "vlc": {
+      "locked": {
+        "lastModified": 1705314132,
+        "narHash": "sha256-E5fTBiV9n0lEf2jCx6qcoYrKpPXn6hoB2PCJebAoKA4=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "75457994b8d28e951075d0fa8ec6605ba9585778",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "75457994b8d28e951075d0fa8ec6605ba9585778",
         "type": "github"
       }
     }
