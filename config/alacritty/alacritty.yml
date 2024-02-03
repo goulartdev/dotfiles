@@ -14,10 +14,19 @@ window:
     y: 6
 
 font:
+  size: 12
   normal:
     family: FiraCode Nerd Font
     style: Regular
-  size: 12
+  bold:
+    family: FiraCode Nerd Font
+    style: Bold 
+  italic:
+    family: FiraCode Nerd Font
+    style: Italic
+  bold_italic:
+    family: FiraCode Nerd Font
+    style: Bold Italic
 
 colors:
   primary:
@@ -44,7 +53,6 @@ colors:
       foreground: "#000909"
       background: "#dfebed"
 
-  # Keyboard regex hints
   hints:
     start:
       foreground: "#000909"
