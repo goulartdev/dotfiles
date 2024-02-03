@@ -10,37 +10,37 @@
       content.type = "gpt";
       content.partitions = {
         ESP = {
-	        size = "512M";
-	        type = "EF00";
-	        content = {
-	          type = "filesystem";
-	          format = "vfat";
+          size = "512M";
+          type = "EF00";
+          content = {
+            type = "filesystem";
+            format = "vfat";
  	          mountpoint = "/boot";
-  	      };
-	      };
-	      luks = {
-    	    size = "50M";
-	        content = {
+          };
+        };
+        luks = {
+          size = "50M";
+          content = {
             type = "luks";
-  	        name = "crypted";
-	          settings.allowDiscards = true;
-	          content = {
-	            type = "filesystem";
+            name = "crypted";
+            settings.allowDiscards = true;
+            content = {
+              type = "filesystem";
     	        format = "ext4";
    	          mountpoint = "/etc/nixos";
-	            mountOptions = [ "noatime" "nodiratime" "discard" ];
-	          };
-	        };
-	      };
-	      nix = {
-	        size = "100%";
-  	      content = {
-	          type = "filesystem";
-	          format = "ext4";
-	          mountpoint = "/nix";
-	          mountOptions = [ "noatime" "nodiratime" "discard" ];
-      	  };
-	      };
+              mountOptions = [ "noatime" "nodiratime" "discard" ];
+            };
+          };
+        };
+        nix = {
+          size = "100%";
+          content = {
+            type = "filesystem";
+            format = "ext4";
+            mountpoint = "/nix";
+            mountOptions = [ "noatime" "nodiratime" "discard" ];
+          };
+        };
       };
     };
   };
