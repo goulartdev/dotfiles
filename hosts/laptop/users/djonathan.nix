@@ -16,7 +16,7 @@
     qbittorrent
     vlc
     # podman
-    postman
+    # postman
     qgis
     spotify
     steam
