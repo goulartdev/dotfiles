@@ -1,29 +1,18 @@
 - defaults:
     link:
-      create: true
-      relink: true
       force: true
 
-- clean: ["~"]
+- clean: ["~/", "~/.config"]
 
 - create:
-    - ~/.cache
-    - ~/.cache/wget
-    - ~/.cache/zsh
-    - ~/.cache/psql
-    - ~/.local/share
-    - ~/.local/state
-    - ~/.local/state/bash
     - ~/.local/state/zsh
+    - ~/.local/share/zsh/completions
+    - ~/.cache/zsh/completions
+    - ~/.cache/wget
+    - ~/.cache/psql
 
 - link:
-    ~/.shell: shell
-    ~/.profile: .profile
-    ~/.bashrc: .bashrc
-    ~/.bash_profile: .bash_profile
-    ~/.bash_logout: .bash_logout
-    ~/.zshenv: .zshenv
-    ~/.zshrc: .zshrc
-    ~/.zprofile: .zprofile
-    ~/.zlogout: .zlogout
-    ~/.config: config
+    ~/.zshenv: config/zsh/.zshenv
+    ~/.config:
+      path: config/*
+      glob: true

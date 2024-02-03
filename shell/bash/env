@@ -1,6 +1,0 @@
-# WARNING: this will $BASH_ENV to get a correct startup sequence
-. ~/.shell/env
-
-if [[ -f "$ASDF_DATA_DIR/completions/asdf.bash" ]]; then
-  source "$ASDF_DATA_DIR/completions/asdf.bash"
-fi

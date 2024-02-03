@@ -1,0 +1,5 @@
+if [ -n "${WAYLAND_DISPLAY:-}" ]; then
+  cat "${1:-/dev/stdin}" | wl-copy &>/dev/null &|;
+else
+  cat "${1:-/dev/stdin}" | xclip -selection clipboard -in &>/dev/null &|;
+fi
