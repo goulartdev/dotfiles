@@ -45,6 +45,10 @@
     zellij
     neovim
     lunarvim
+    wl-clipboard
+    duckdb
+    tippecanoe
+    gdal
     gh
     qmk
     # podman-tui
@@ -84,7 +88,6 @@
     ripdrag      # lets you drag and drop files from and to the terminal https://github.com/nik012003/ripdrag
     hyperfine    # benchmarking tool https://github.com/sharkdp/hyperfine
     just
-    wl-clipboard
 
     zsh-fast-syntax-highlighting
     zsh-autosuggestions
