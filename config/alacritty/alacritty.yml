@@ -21,68 +21,68 @@ font:
 
 colors:
   primary:
-    background: "#07080a"
-    foreground: "#eef1f5"
-    dim_foreground: "#eef1f5"
-    bright_foreground: "#eef1f5"
+    background: "#000909"
+    foreground: "#f3f7f8"
+    dim_foreground: "#f3f7f8"
+    bright_foreground: "#f3f7f8"
 
   cursor:
-    text: "#07080a"
-    cursor: "#eef1f5"
+    text: "#000909"
+    cursor: "#f3f7f8"
   vi_mode_cursor:
-    text: "#07080a"
-    cursor: "#eef1f5"
+    text: "#000909"
+    cursor: "#f3f7f8"
 
   search:
     matches:
-      foreground: "#07080a"
-      background: "#D8DEE9"
+      foreground: "#000909"
+      background: "#dfebed"
     focused_match:
-      foreground: "#07080a"
+      foreground: "#000909"
       background: "#228b22"
     footer_bar:
-      foreground: "#07080a"
-      background: "#D8DEE9"
+      foreground: "#000909"
+      background: "#dfebed"
 
   # Keyboard regex hints
   hints:
     start:
-      foreground: "#07080a"
-      background: "#d2691e"
+      foreground: "#000909"
+      background: "#d86818"
     end:
-      foreground: "#07080a"
-      background: "#D8DEE9"
+      foreground: "#000909"
+      background: "#dfebed"
 
   selection:
-    text: "#07080a"
-    background: "#D8DEE9"
+    text: "#000909"
+    background: "#dfebed"
 
   normal:
-    black: "#07080a"
+    black: "#000909"
     red: "#d21e24"
     green: "#228b22"
-    yellow: "#d2691e"
+    yellow: "#d86818"
     blue: "#3a5fd4"
     magenta: "#663399"
     cyan: "#008b8b"
-    white: "#eef1f5"
+    white: "#f3f7f8"
 
   bright:
-    black: "#181b22"
+    black: "#001c1c"
     red: "#d21e24"
     green: "#228b22"
     yellow: "#daa520"
     blue: "#3a5fd4"
     magenta: "#663399"
     cyan: "#008b8b"
-    white: "#eef1f5"
+    white: "#f3f7f8"
 
   dim:
-    black: "#181b22"
+    black: "#001c1c"
     red: "#dc141b"
     green: "#228b22"
     yellow: "#daa520"
     blue: "#3a5fd4"
     magenta: "#663399"
     cyan: "#008b8b"
-    white: "#FAFAFA"
+    white: "#f3f7f8"

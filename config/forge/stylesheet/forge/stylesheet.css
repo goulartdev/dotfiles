@@ -1,64 +1,64 @@
 .tiled {
-  color: #fe640b;
+  color: #d86818;
   opacity: 1;
   border-width: 3px;
 }
 
 .split {
-  color: #fe640b;
+  color: #d86818;
   opacity: 1;
   border-width: 3px;
 }
 
 .stacked {
-  color: #fe640b;
+  color: #d86818;
   opacity: 1;
   border-width: 3px;
 }
 
 .tabbed {
-  color: #fe640b;
+  color: #d86818;
   opacity: 1;
   border-width: 3px;
 }
 
 .floated {
-  color: #6514de;
+  color: #663399;
   border-width: 3px;
   opacity: 1;
 }
 
 .window-tiled-border {
   border-width: 3px;
-  border-color: rgb(210,105,30);
+  border-color: #d86818;
   border-style: solid;
   border-radius: 14px;
 }
 
 .window-split-border {
   border-width: 3px;
-  border-color: #fe640b;
+  border-color: #d86818;
   border-style: solid;
   border-radius: 14px;
 }
 
 .window-stacked-border {
   border-width: 3px;
-  border-color: rgb(210,105,30);
+  border-color: #d86818;
   border-style: solid;
   border-radius: 14px;
 }
 
 .window-tabbed-border {
   border-width: 3px;
-  border-color: rgb(210,105,30);
+  border-color: #d86818;
   border-style: solid;
   border-radius: 14px;
 }
 
 .window-floated-border {
   border-width: 3px;
-  border-color: rgb(102,51,153);
+  border-color: #663399;
   border-style: solid;
   border-radius: 14px;
 }
@@ -80,7 +80,7 @@
 }
 
 .window-tabbed-tab {
-  background-color: rgba(54, 47, 45, 1);
+  background-color: #282828;
   border-radius: 8px;
   color: white;
   margin: 1px;
@@ -88,7 +88,7 @@
 }
 
 .window-tabbed-tab-active {
-  border-color: #fe640b;
+  border-color: #d86818;
   border-width: 1px;
 }
 
@@ -97,7 +97,7 @@
   margin: 4px;
   border-radius: 16px;
   width: 16px;
-  background-color: #e06666;
+  background-color: #d21e24;
 }
 
 .window-tabbed-tab-icon {
@@ -106,24 +106,24 @@
 
 .window-tilepreview-tiled {
   border-width: 1px;
-  border-color: rgba(210,105,30,0.3);
+  border-color: rgba(216, 104, 24, 0.3);
   border-style: solid;
   border-radius: 14px;
-  background-color: rgba(210,105,30,0.2);
+  background-color: rgba(216, 104, 24, 0.2);
 }
 
 .window-tilepreview-stacked {
   border-width: 1px;
-  border-color: rgba(210,105,30,0.3);
+  border-color: rgba(216, 104, 24, 0.3);
   border-style: solid;
   border-radius: 14px;
-  background-color: rgba(210,105,30,0.2);
+  background-color: rgba(216, 104, 24, 0.2);
 }
 
 .window-tilepreview-tabbed {
   border-width: 1px;
-  border-color: rgba(210,105,30,0.3);
+  border-color: rgba(216, 104, 24, 0.3);
   border-style: solid;
   border-radius: 14px;
-  background-color: rgba(210,105,30,0.2);
+  background-color: rgba(216, 104, 24, 0.2);
 }
