@@ -28,6 +28,7 @@
     gparted
     libappindicator
     ulauncher
+    protonvpn-gui
 
     # gaming
     steam
@@ -35,8 +36,6 @@
     winetricks
     protontricks
     protonup-qt
-
-    # add qemu/kvm
 
     # cli / tui
     age
@@ -59,7 +58,6 @@
     gh
     qmk
     podman-tui
-    haskellPackages.NanoID
     lazygit      # A simple terminal UI for git commands https://github.com/jesseduffield/lazygit
     delta        # A syntax-highlighting pager for git, diff, and grep output https://github.com/dandavison/delta
     zoxide       # A smarter cd command https://github.com/ajeetdsouza/zoxide
