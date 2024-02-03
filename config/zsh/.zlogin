@@ -33,7 +33,7 @@
   zrecompile -pq ${ZDOTDIR}/.zshenv
 
   # recompile all zsh or sh scripts
-  for f in {$ZDOTDIR,$ZPLUGINS}/**/*.*sh; do
+  for f in {$ZDOTDIR}/**/*.*sh; do
     zrecompile -pq $f
   done
 ) &!
