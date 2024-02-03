@@ -1,25 +1,22 @@
-{ config, pkgs, ... }:
+{ config, pkgs, modulesPath, ... }:
 
 {
   imports =  [
+    ( modulesPath = "/installer/cd-dvd/installation-cd-graphical-gnome.nix" )
     ./hardware-configuration.nix
     ./disko-config.nix
   ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
+      grub.enable = false;
+      grub.memtest86.enable = false;
     };
   };
 
   systemd.services.systemd-journald.enable = false;
-
-  networking = {
-    hostName = "nixos";
-    networkmanager.enable = true;
-  };
 
   nix = {
     settings.trusted-users = [ "root" "nixos" ];
@@ -30,68 +27,8 @@
 
   time.timeZone = "America/Sao_Paulo";
 
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  services.xserver = {
-    enable = true;
-    layout = "us";
-    xkbVariant = "";
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-    desktopManager.xterm.enable = false;
-    excludePackages = [ pkgs.xterm ];
-    libinput.enable = true;
-  };
-
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
-
-  services.spice-vdagentd.enable = true;
-  services.qemuGuest.enable = true;
-
-  services.getty.autologinUser = "nixos";
-
-  users = {
-    mutableUsers = false;
-    users.nixos = {
-      isNormalUser = true;
-      initialHashedPassword = "";
-      extraGroups = [ "networkmanager" "wheel" ];
-    };
-    users.root = {
-      initialHashedPassword = "";
-    };
-  };
-
-  security.sudo = {
-    enable = true;
-    wheelNeedsPassword = false;
-  };
-
   environment.systemPackages = with pkgs; [
-    neovim
-    curl
-    git
     age
-    pciutils
-    usbutils
-    zip
-    unzip
-    cryptsetup
-    parted
-    testdisk
-    gptfdisk
-    efivar
-    efibootmgr
-    gparted
-    firefox
     disko
   ];
 
@@ -115,7 +52,4 @@
     gnome-maps
   ]);
 
-  environment.variables.GC_INITIAL_HEAP_SIZE = "1M";
-
-  system.stateVersion = "23.11";
 }
