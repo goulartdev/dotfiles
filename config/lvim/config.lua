@@ -12,7 +12,11 @@ lvim.colorscheme = "onedark_dark"
 lvim.plugins = {
   { "lunarvim/colorschemes" },
   { "ThePrimeagen/vim-be-good" },
-  { "chrisbra/Colorizer" },
+  { "NvChad/nvim-colorizer.lua",
+    config = function()
+       require("colorizer").setup()
+    end
+  },
   {
     "olimorris/onedarkpro.nvim",
     priority = 1000,
@@ -97,4 +101,6 @@ lvim.plugins = {
   },
   { "nvim-treesitter/playground" }
 }
+
+
 
