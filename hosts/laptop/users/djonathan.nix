@@ -114,8 +114,6 @@
     search-light
     unblank
     vitals
-    # https://github.com/gdm-settings/gdm-settings
-    # https://github.com/jeffshee/gnome-ext-hanabi
   ]);
 
   xdg.dataFile = {
