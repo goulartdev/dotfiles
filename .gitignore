@@ -1,3 +1,3 @@
 *.zwc
 *.zwc.old
-.secret
+**/.zcompdump
