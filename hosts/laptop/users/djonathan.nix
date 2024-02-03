@@ -20,7 +20,8 @@
     qgis
     spotify
     steam
-    wine
+    #wine
+    wineWowPackages.stable
     winetricks
     protontricks
     protonup-qt
