@@ -216,7 +216,7 @@
   ]);
 
   nixpkgs.config.permittedInsecurePackages =
-    lib.optional (pkgs.obsidian.version == "1.4.16") "electron-25.9.0";
+    lib.optional (pkgs.obsidian.version == "1.5.3") "electron-25.9.0";
 
   environment.variables = rec {
     XDG_CACHE_HOME  = "$HOME/.cache";
