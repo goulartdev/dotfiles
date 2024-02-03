@@ -1,7 +1,3 @@
-# run disko using the config of the given host
-run-disko mode config *opts:
-  sudo nix run github:nix-community/disko -- --mode {{mode}} {{config}} {{opts}}
-
 # create synlink to dotfiles under ./config to XDG_CONFIG_HOME
 link-dotfiles:
   #!/usr/bin/env sh
