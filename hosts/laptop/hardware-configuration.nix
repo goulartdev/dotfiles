@@ -24,7 +24,7 @@
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/9c268980-3c92-4841-8c6f-dd2eaddfea0a";
+    { device = lib.mkForce "/dev/disk/by-uuid/9c268980-3c92-4841-8c6f-dd2eaddfea0a";
       fsType = "btrfs";
       options = [ "subvol=@home" ];
     };
@@ -32,31 +32,31 @@
   boot.initrd.luks.devices."crypted-main".device = "/dev/disk/by-uuid/f3de7af6-fc84-4ed4-90d7-3d8af379fe8b";
 
   fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/9c268980-3c92-4841-8c6f-dd2eaddfea0a";
+    { device = lib.mkForce "/dev/disk/by-uuid/9c268980-3c92-4841-8c6f-dd2eaddfea0a";
       fsType = "btrfs";
       options = [ "subvol=@nix" ];
     };
 
   fileSystems."/state" =
-    { device = "/dev/disk/by-uuid/9c268980-3c92-4841-8c6f-dd2eaddfea0a";
+    { device = lib.mkForce "/dev/disk/by-uuid/9c268980-3c92-4841-8c6f-dd2eaddfea0a";
       fsType = "btrfs";
       options = [ "subvol=@state" ];
     };
 
   fileSystems."/tmp" =
-    { device = "/dev/disk/by-uuid/9c268980-3c92-4841-8c6f-dd2eaddfea0a";
+    { device = lib.mkForce "/dev/disk/by-uuid/9c268980-3c92-4841-8c6f-dd2eaddfea0a";
       fsType = "btrfs";
       options = [ "subvol=@tmp" ];
     };
 
   fileSystems."/var/logs" =
-    { device = "/dev/disk/by-uuid/9c268980-3c92-4841-8c6f-dd2eaddfea0a";
+    { device = lib.mkForce "/dev/disk/by-uuid/9c268980-3c92-4841-8c6f-dd2eaddfea0a";
       fsType = "btrfs";
       options = [ "subvol=@logs" ];
     };
 
   fileSystems."/vol/media" =
-    { device = "/dev/disk/by-uuid/799bc1f9-776c-4ab2-90c9-71b568bd4e0a";
+    { device = lib.mkForce "/dev/disk/by-uuid/799bc1f9-776c-4ab2-90c9-71b568bd4e0a";
       fsType = "btrfs";
     };
 
