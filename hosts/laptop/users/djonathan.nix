@@ -1,29 +1,58 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   home.username = "djonathan";
   home.homeDirectory = "/home/djonathan";
 
-  home.stateVersion = "23.05"; # Please read the comment before changing.
+  home.stateVersion = "23.11";
   
   fonts.fontconfig.enable = true;
   
-  home.packages = with pkgs;[
-    zsh
-    curl
-    rsync
+  home.packages = (with pkgs;[
+    # GUI
+    gimp
+    inkscape
+    obsidian
+    qbittorrent
+    vlc
+    podman
+    postman
+    qgis
+    spotify
+    steam
+    protonup-qt
+    gamemode
+    vivaldi
+    vscode
+    gparted
+    gnome.gnome-tweaks
+    libappindicator
+    gradience
+
+    # add qemu/kvm, vial
+
+    # cli / tui
+    age
     git
+    curl
+    alacritty
+    pciutils
+    usbutils
+    lshw
+    nvtop
+    rsync
     sqlite
-    # alacritty # problemas com opengl
     zellij
     neovim
-    # helix
+    lunarvim
     gh
+    podman-tui
+    bitwarden-cli
     lazygit      # A simple terminal UI for git commands https://github.com/jesseduffield/lazygit
     delta        # A syntax-highlighting pager for git, diff, and grep output https://github.com/dandavison/delta
     zoxide       # A smarter cd command https://github.com/ajeetdsouza/zoxide
     bat          # cat alternative https://github.com/sharkdp/bat
-    lsd          # ls alternative https://github.com/lsd-rs/lsd
+    eza          # ls alternative https://github.com/eza-community/eza
     ripgrep      # grep alternative https://github.com/BurntSushi/ripgrep
     sd           # sed alternative https://github.com/chmln/sd
     hck          # replacement for cut that can use a regex delimiter https://github.com/sstadick/hck
@@ -32,8 +61,8 @@
     procs        # ps alternative https://github.com/dalance/procs
     bottom       # graphical process/system monitor for the terminal http://github.com/ClementTsang/bottom
     bandwhich    # Terminal bandwidth utilization tool https://github.com/imsnif/bandwhich
-    du-dust      # du alternative https://github.com/bootandy/dust
     duf          # df alternative https://github.com/muesli/duf
+    ncdu         # disk usage
     tealdeer     # tldr alternative https://github.com/dbrgn/tealdeer
     navi         # An interactive cheatsheet tool for the command-line https://github.com/denisidoro/navi
     grex         # Generate regular expressions from user-provided test cases https://github.com/pemistahl/grex
@@ -52,30 +81,64 @@
     # lf           # File manager https://github.com/gokcehan/lf
     broot        # File manager https://github.com/Canop/broot
     ripdrag      # lets you drag and drop files from and to the terminal https://github.com/nik012003/ripdrag
-  #  (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
-  ];
+    hyperfine    # benchmarking tool https://github.com/sharkdp/hyperfine
+    just
 
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
-  home.file = {
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
+    zsh-fast-syntax-highlighting
+    zsh-autosuggestions
+    zsh-powerlevel10k
+    zsh-vi-mode
+    zsh-nix-shell
+    nix-zsh-completions
+    atuin
 
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
+    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+  ]) ++ (with pkgs.gnomeExtensions;[
+    advanced-alttab-window-switcher 
+    appindicator
+    blur-my-shell
+    caffeine
+    color-picker
+    dash-to-dock
+    forge
+    gnome-40-ui-improvements 
+    just-perfection
+    mouse-follows-focus # 44 : https://github.com/LeonMatthes/mousefollowsfocus
+    pano 
+    prime-gpu-profile-selector
+    search-light
+    unblank
+    vitals
+    workspace-indicator-2 # 44
+    # https://github.com/gdm-settings/gdm-settings
+    # https://github.com/jeffshee/gnome-ext-hanabi
+  ]);
+
+  xdg.dataFile = {
+    "zsh/plugins/zsh-fast-syntax-highlighting".source = "${pkgs.zsh-fast-syntax-highlighting}/share/zsh-fast-syntax-highlighting"; 
+    "zsh/plugins/zsh-autosuggestions".source = "${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions";
+    "zsh/plugins/zsh-vi-mode".source = "${pkgs.zsh-vi-mode}/share/zsh-vi-mode";
+    "zsh/plugins/zsh-nix-shell".source = "${pkgs.zsh-nix-shell}/share/zsh-nix-shell";
+    "zsh/plugins/nix-zsh-completions".source = "${pkgs.nix-zsh-completions}/share/nix-zsh-completions";
+    "zsh/plugins/powerlevel10k".source = "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k";
   };
 
-  home.sessionVariables = {};
+  #home.activation = {
+  #  dotfiles = lib.hm.dag.entryAfter ["installPackages"] ''
+  #    if [[ -d $HOME/code/dotfiles ]]; then
+  #      $DRY_RUN_CMD cd $HOME/code/dotfiles && ${pkgs.just}/bin/just $VERBOSE_ARG sync-dotfiles
+  #    fi
+  #  '';
+  #};
 
-  home.sessionPath = [
-    "$HOME/.local/bin"
-  ];
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+  dconf.settings = {
+    "org/gnome/shell" = {
+      disable-user-extensions = false;
+      favorite-apps = [];
+      enabled-extensions = [];
+    };
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
+  };
 }

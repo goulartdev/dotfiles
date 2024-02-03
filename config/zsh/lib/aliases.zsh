@@ -16,32 +16,22 @@ for index ({1..9}) alias "${index}"="cd -${index} > /dev/null"; unset index
 
 alias mkd='mkdir -pv'
 alias rmd='rm -rf'
-# Copy with progress bar
 alias cp='rsync -ah --info=progress2'
 
 ## TOOLS
-alias vim='lvim'
-alias nvim='lvim'
-alias edit='$EDITOR'
+alias nv='nvim'
+alias lv='lvim'
+alias ed='$EDITOR'
 
-alias umamba='micromamba'
-
-alias grep='rg'
-alias cat='bat --style=auto'
-alias ls='lsd --icon=always --group-dirs=first -la '
-alias find='fd'
-alias ps='procs'
-alias sed='sd'
-alias grep='rg'
-alias top='btm'
+alias ls='eza --icons --group-directories-first -la'
 alias tldt='tealdeer'
+alias duf='duf --theme ansi'
 
 ## MISC
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 alias myip='curl ipinfo.io/ip'
-alias hsi='history | grep -i'
 
 ## GIT
 alias ga='git add'
@@ -52,5 +42,5 @@ alias gco='git checkout'
 alias gcor='git checkout --recurse-submodules'
 alias grset='git remote set-url'
 alias gcl='git clone --recurse-submodules'
+alias gst='git status'
 
-alias duf=duf --theme ansi
