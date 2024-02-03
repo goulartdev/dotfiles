@@ -19,7 +19,7 @@
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/F7B1-2B87";
+    { device = lib.mkForce "/dev/disk/by-uuid/F7B1-2B87";
       fsType = "vfat";
     };
 
