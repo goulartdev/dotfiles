@@ -29,7 +29,7 @@
       options = [ "subvol=@home" ];
     };
 
-  boot.initrd.luks.devices."crypted-main".device = "/dev/disk/by-uuid/f3de7af6-fc84-4ed4-90d7-3d8af379fe8b";
+  boot.initrd.luks.devices."crypted-main".device = lib.mkForce "/dev/disk/by-uuid/f3de7af6-fc84-4ed4-90d7-3d8af379fe8b";
 
   fileSystems."/nix" =
     { device = lib.mkForce "/dev/disk/by-uuid/9c268980-3c92-4841-8c6f-dd2eaddfea0a";
@@ -61,7 +61,7 @@
       fsType = "btrfs";
     };
 
-  boot.initrd.luks.devices."crypted-media".device = "/dev/disk/by-uuid/fd4d6106-e047-4e90-85e1-1acf728b9566";
+  boot.initrd.luks.devices."crypted-media".device = lib.mkForce "/dev/disk/by-uuid/fd4d6106-e047-4e90-85e1-1acf728b9566";
 
   swapDevices = [ ];
 
