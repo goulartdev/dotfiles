@@ -1,6 +1,7 @@
 shell:
-  program: /usr/bin/zsh
+  program: /usr/bin/env
   args:
+    - zsh
     - -l
     - -c
     - sleep 0.01; zellij attach --index 0 || zellij
