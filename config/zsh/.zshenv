@@ -25,3 +25,5 @@ export CUDA_CACHE_PATH="${XDG_CACHE_HOME}/nv"
 export WGETRC="${XDG_CONFIG_HOME}/wget/wgetrc"
 
 export CARGO_HOME="${XDG_DATA_HOME}/cargo"
+
+export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME}/npm/npmrc"
