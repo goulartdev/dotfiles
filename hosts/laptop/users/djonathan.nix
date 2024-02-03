@@ -19,18 +19,19 @@
     bruno
     qgis
     spotify
-    steam
-    #wine
-    wineWowPackages.waylandFull
-    winetricks
-    protontricks
-    protonup-qt
     vivaldi
     vscode
     gparted
     gnome.gnome-tweaks
     libappindicator
     gradience
+
+    # gaming
+    steam
+    wineWowPackages.waylandFull
+    winetricks
+    protontricks
+    protonup-qt
 
     # add qemu/kvm
 
