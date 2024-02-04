@@ -9,16 +9,21 @@ args = [
 ]
 
 [window]
-opacity = 0.9
 decorations = "none"
+opacity = 0.9
 
   [window.padding]
   x = 6
   y = 6
 
 [cursor]
+  [cursor.style]
+  shape = "Beam"
+  blinking = "Always"
+
   [cursor.vi_mode_style]
-  shape = "block"
+  shape = "Block"
+  blinking = "Always"
 
 [font]
 size = 12
