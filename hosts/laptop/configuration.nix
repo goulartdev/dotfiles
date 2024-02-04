@@ -116,9 +116,11 @@
 
   services.xserver = {
     enable = true;
-    layout = "us";
-    xkb.variant = "altgr-intl";
-    xkb.options = "";
+    xkb = {
+      layout = "us";
+      variant = "altgr-intl";
+      options = "";
+    };
     exportConfiguration = true;
     videoDrivers = ["i915" "nvidia"];
     displayManager.gdm.enable = true;
