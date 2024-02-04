@@ -5,10 +5,10 @@ export ZPLUGINS="${XDG_DATA_HOME}/zsh/plugins"
 export ZCOMPDUMP="${XDG_CACHE_HOME}/zsh/zcompdump-${ZSH_VERSION}"
 
 ## DEFAULT TOOLS
-export EDITOR=lvim
-export VISUAL=lvim
+export EDITOR=nvim
+export VISUAL=nvim
 export PAGER=less
-export MANPAGER='lvim +Man!'
+export MANPAGER='nvim +Man!'
 
 export RIPGREP_CONFIG_PATH="${XDG_CONFIG_HOME}/ripgrep/config"
 
