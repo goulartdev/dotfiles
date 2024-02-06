@@ -8,22 +8,13 @@ layout {
         format_space ""
         format_right "{mode}#[bg=blue,fg=black,bold] {swap_layout} "
 
-        mode_locked        "#[bg=yellow,fg=black,bold] {name} "
-        mode_resize        "#[bg=yellow,fg=black,bold] {name} "
-        mode_pane          "#[bg=yellow,fg=black,bold] {name} "
-        mode_tab           "#[bg=yellow,fg=black,bold] {name} "
-        mode_scroll        "#[bg=yellow,fg=black,bold] {name} "
-        mode_enter_search  "#[bg=yellow,fg=black,bold] {name} "
-        mode_search        "#[bg=yellow,fg=black,bold] {name} "
-        mode_rename_tab    "#[bg=yellow,fg=black,bold] {name} "
-        mode_rename_pane   "#[bg=yellow,fg=black,bold] {name} "
-        mode_session       "#[bg=yellow,fg=black,bold] {name} "
-        mode_move          "#[bg=yellow,fg=black,bold] {name} "
-        mode_prompt        "#[bg=yellow,fg=black,bold] {name} "
-        mode_tmux          "#[bg=yellow,fg=black,bold] {name} "
+        mode_default_to_mode "panel"
+        mode_normal          "#[]"
+        mode_pane            "#[bg=yellow,fg=black,bold] {name} "
 
-        tab_normal         "#[bg=#2e4040,fg=black] {index} #[bg=#435d5d,fg=black] {name} #[] "
-        tab_active         "#[bg=yellow,fg=black] {index} #[bg=blue,fg=black] {name} #[] "
+        tab_normal         "#[bg=#2e4040,fg=black] {index} #[bg=#435d5d,fg=black] {name} "
+        tab_active         "#[bg=yellow,fg=black] {index} #[bg=blue,fg=black] {name} "
+        tab_separator      " "
       }
     }
   }
