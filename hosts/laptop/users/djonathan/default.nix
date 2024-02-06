@@ -51,8 +51,8 @@
     sqlite
     zellij
     neovim
-    lunarvim
     wl-clipboard
+    rofi-wayland
     gh
     qmk
     podman-tui
@@ -91,6 +91,7 @@
     hyperfine    # benchmarking tool https://github.com/sharkdp/hyperfine
     just
 
+    # zsh plugins
     zsh-fast-syntax-highlighting
     zsh-autosuggestions
     zsh-powerlevel10k
