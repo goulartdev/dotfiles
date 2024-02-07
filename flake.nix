@@ -50,11 +50,11 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, impermanence, disko, agenix, rust-overlay, ... }@inputs:
+  outputs = { nixpkgs, ... }@inputs:
   let
     overlays = {
       nixpkgs.overlays = [
-        rust-overlay.overlays.default
+        inputs.rust-overlay.overlays.default
         (final: prev: {
           disko = inputs.disko.packages.x86_64-linux.disko;
           vlc = inputs.vlc.legacyPackages.x86_64-linux.vlc;
@@ -68,10 +68,11 @@
       system = "x86_64-linux";
       modules = [
         ./hosts/laptop/configuration.nix
-        agenix.nixosModules.default
-        home-manager.nixosModules.default 
-        disko.nixosModules.default
-        impermanence.nixosModules.impermanence
+        inputs.home-manager.nixosModules.default 
+        inputs.agenix.nixosModules.default
+        inputs.disko.nixosModules.default
+        inputs.impermanence.nixosModules.impermanence
+        inputs.auto-cpufreq.nixosModules.default
         overlays
       ];
     };
@@ -80,8 +81,8 @@
       system = "x86_64-linux";
       modules = [
         ./hosts/installer/configuration.nix
-        agenix.nixosModules.default
-        disko.nixosModules.default
+        inputs.agenix.nixosModules.default
+        inputs.disko.nixosModules.default
         overlays
       ];
     };
