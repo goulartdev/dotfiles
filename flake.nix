@@ -4,10 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    vlc = {
-      url = "github:NixOS/nixpkgs/75457994b8d28e951075d0fa8ec6605ba9585778";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    vlc.url = "github:NixOS/nixpkgs/75457994b8d28e951075d0fa8ec6605ba9585778";
 
     agenix = {
       url = "github:ryantm/agenix";
@@ -36,18 +33,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    atuin = {
-      url = "github:atuinsh/atuin";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
- 
-    eza = {
-      url = "github:eza-community/eza";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        rust-overlay.follows = "rust-overlay";
-      };
-    };
   };
 
   outputs = { nixpkgs, ... }@inputs:
@@ -56,8 +41,9 @@
       nixpkgs.overlays = [
         inputs.rust-overlay.overlays.default
         (final: prev: {
-          disko = inputs.disko.packages.x86_64-linux.disko;
+          disko = inputs.disko.packages.x86_64-linux.default;
           vlc = inputs.vlc.legacyPackages.x86_64-linux.vlc;
+          agenix = inputs.agenix.packages.x86_64-linux.default;
         })
         # (import ./pkgs)
       ];
