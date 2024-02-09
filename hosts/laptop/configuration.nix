@@ -23,7 +23,7 @@
   };
 
   nix = {
-    package = pkgs.nixFlakes;
+    package = pkgs.nixUnstable;
     settings.use-xdg-base-directories = true;
     extraOptions = ''
       experimental-features = nix-command flakes
