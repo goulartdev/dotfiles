@@ -57,19 +57,19 @@
   };
 
   # power management
-  programs.auto-cpufreq = {
-    enable = true;  
-    settings = {
-      battery = {
-        governor = "powersave";
-        turbo = "never";
-      };
-      charger = {
-        governor = "performance";
-        turbo = "auto";
-      };
-    };
-  };
+  # programs.auto-cpufreq = {
+  #   enable = true;  
+  #   settings = {
+  #     battery = {
+  #       governor = "powersave";
+  #       turbo = "never";
+  #     };
+  #     charger = {
+  #       governor = "performance";
+  #       turbo = "auto";
+  #     };
+  #   };
+  # };
 
   # Enable OpenGL
   hardware.opengl = {
