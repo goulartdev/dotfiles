@@ -188,7 +188,6 @@
     rng-tools
     openssl
     age
-    disko
     libusb1
   ]; 
 
