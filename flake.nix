@@ -39,7 +39,6 @@
         inputs.rust-overlay.overlays.default
         (final: prev: {
           vlc = inputs.vlc.legacyPackages.x86_64-linux.vlc;
-          agenix = inputs.agenix.packages.x86_64-linux.default;
         })
         # (import ./pkgs)
       ];
@@ -79,7 +78,7 @@
           nativeBuildInputs = with pkgs; [
             gcc # needed for installing some nvim plugins
             disko
-            agenix
+            inputs.agenix.packages.${system}.default
           ];
         };
       }
