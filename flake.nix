@@ -50,7 +50,7 @@
 
     nixosConfigurations = {
       laptop = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux" 
+        system = "x86_64-linux";
           modules = [
           ./hosts/laptop/configuration.nix
             inputs.home-manager.nixosModules.default 
@@ -61,7 +61,7 @@
           ];
       };
       installer = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux"
+        system = "x86_64-linux";
           modules = [
           ./hosts/installer/configuration.nix
             inputs.agenix.nixosModules.default
@@ -83,6 +83,6 @@
           ];
         };
       }
-    )
+    );
   };
 }
