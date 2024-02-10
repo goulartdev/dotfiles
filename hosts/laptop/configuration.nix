@@ -189,6 +189,7 @@
     openssl
     age
     disko
+    libusb1
   ]; 
 
   services.udev.packages = with pkgs; [
