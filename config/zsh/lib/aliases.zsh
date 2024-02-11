@@ -34,6 +34,7 @@ alias wifi-fix='sudo modprobe -r ath10k_pci && sudo modprobe ath10k_pci'
 
 ## GIT
 alias ga='git add'
+alias gun='git reset -- '
 alias gb='git branch'
 alias gbd='git branch --delete'
 alias gc='git commit --verbose'
