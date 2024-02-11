@@ -261,25 +261,25 @@ session_serialization false
 // Once these themes are defined, one of them should to be selected in the "theme" section of this file
 //
 themes {
-  my_theme {
-    fg 238 241 245
-    bg 24 27 34
-    red 210 30 36
-    green 34 139 34
-    yellow 218 165 32
-    blue 58 95 212
-    magenta 102 51 153
-    orange 210 105 30
-    cyan 0 139 139
-    black 7 8 10
-    white 238 241 245
+  default {
+    fg "#dfebed"
+    bg "#323641"
+    black "#010909"
+    red "#d21e24"
+    green "#228b22"
+    orange "#d86818"
+    yellow "#daa520"
+    blue "#3a5fd4"
+    magenta "#663399"
+    cyan "#008b8b"
+    white "#f3f7f8"
   }
 }
 
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "my_theme"
+theme "default"
 
 // The name of the default layout to load on startup
 // Default: "default"
