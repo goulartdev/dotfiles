@@ -210,7 +210,8 @@ require('lazy').setup({
   -- { "windwp/nvim-ts-autotag", opts = {} },
   { "ThePrimeagen/vim-be-good" },
   { "NvChad/nvim-colorizer.lua", opts = {} },
-  { "mfussenegger/nvim-dap" }
+  { "mfussenegger/nvim-dap" },
+  { "echasnovski/mini.surround", version = false, opts = {} },
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
