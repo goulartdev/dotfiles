@@ -37,36 +37,31 @@
     overlays = {
       nixpkgs.overlays = [
         inputs.rust-overlay.overlays.default
-        (final: prev: {
-          vlc = inputs.vlc.legacyPackages.x86_64-linux.vlc;
-        })
-        # (import ./pkgs)
+        (import ./pkgs)
       ];
     };
   in
   {
-    # overlays = import ./nix/overlays { inherit inputs; };
-
     nixosConfigurations = {
       laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-          modules = [
+        modules = [
           ./hosts/laptop/configuration.nix
-            inputs.home-manager.nixosModules.default 
-            inputs.agenix.nixosModules.default
-            inputs.disko.nixosModules.default
-            inputs.impermanence.nixosModules.impermanence
-            overlays
-          ];
+          inputs.home-manager.nixosModules.default 
+          inputs.agenix.nixosModules.default
+          inputs.disko.nixosModules.default
+          inputs.impermanence.nixosModules.impermanence
+          overlays
+        ];
       };
       installer = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-          modules = [
+        modules = [
           ./hosts/installer/configuration.nix
-            inputs.agenix.nixosModules.default
-            inputs.disko.nixosModules.default
-            overlays
-          ];
+          inputs.agenix.nixosModules.default
+          inputs.disko.nixosModules.default
+          overlays
+        ];
       };
     };
 

@@ -1,4 +1,4 @@
 final: prev:
 {
-  # xyz = prev.callPackage ./xyz.nix { };
+  vlc = prev.vlc.override { ffmpeg = prev.ffmpeg_4; };
 }
