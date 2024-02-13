@@ -70,6 +70,7 @@
     duf          # df alternative https://github.com/muesli/duf
     ncdu         # disk usage
     navi         # An interactive cheatsheet tool for the command-line https://github.com/denisidoro/navi
+    keyb
     grex         # Generate regular expressions from user-provided test cases https://github.com/pemistahl/grex
     gojq         # Command-line JSON processor https://github.com/itchyny/gojq
     jqp          # A TUI playground to experiment with gojq https://github.com/noahgorstein/jqp
