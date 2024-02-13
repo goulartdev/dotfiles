@@ -9,7 +9,7 @@ fi
 [[ $- != *i* ]] && return
 
 ## enable profiling
-#zmodload zsh/zprof
+# zmodload zsh/zprof
 
 ######################################################################
 ## NAVIGATION
@@ -75,7 +75,9 @@ source ${ZPLUGINS}/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ${ZPLUGINS}/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source ${ZPLUGINS}/zsh-vi-mode/zsh-vi-mode.zsh
 source ${ZPLUGINS}/zsh-nix-shell/nix-shell.plugin.zsh
+
 eval "$(atuin init zsh)"
+eval "$(zoxide init zsh)"
 
 autoload -Uz add-zsh-hook
 
@@ -102,3 +104,5 @@ done
 
 source ${ZPLUGINS}/powerlevel10k/powerlevel10k.zsh-theme
 source ${ZDOTDIR}/lib/p10k.zsh
+
+# zprof
