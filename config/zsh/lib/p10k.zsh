@@ -227,6 +227,9 @@
   typeset -g POWERLEVEL9K_PROMPT_CHAR_LEFT_RIGHT_WHITESPACE=
 
   ##################################[ dir: current directory ]##################################
+  typeset -g POWERLEVEL9K_HOME_SUB_ICON=
+  typeset -g POWERLEVEL9K_FODLER_ICON=
+  typeset -g POWERLEVEL9K_HOME_ICON=
   # Default current directory color.
   typeset -g POWERLEVEL9K_DIR_FOREGROUND=31
   # If directory is too long, shorten some of its segments to the shortest possible unique
