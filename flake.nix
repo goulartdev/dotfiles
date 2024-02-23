@@ -71,9 +71,9 @@
       in {
         default = pkgs.mkShell {
           nativeBuildInputs = with pkgs; [
-            gcc # needed for installing some nvim plugins
             disko
             inputs.agenix.packages.${system}.default
+            nil
           ];
         };
       }

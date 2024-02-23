@@ -1,10 +1,16 @@
 
 -- See `:help nvim-treesitter`
 -- Defer Treesitter setup after first render to improve startup time of 'nvim {filename}'
+
+local parser_path = vim.fn.stdpath ('data')..'/site'
+
+vim.opt.runtimepath:append(parser_path)
+
 vim.defer_fn(function()
   require('nvim-treesitter.configs').setup {
+    parser_install_dir = parser_path,
     -- Add languages to be installed here that you want installed for treesitter
-    ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash' },
+    ensure_installed = { 'c', 'cpp', 'lua', 'python', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash', 'yaml', 'toml' },
 
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
     auto_install = false,

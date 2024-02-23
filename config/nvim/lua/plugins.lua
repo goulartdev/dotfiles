@@ -1,3 +1,12 @@
+require('onedark').setup  {
+  style = 'darker',
+  transparent = true,
+  highlights = {
+    CursorLine = { bg = '$bg_d' },
+    IblScope = { fg = '$dark_purple', fmt = "nocombine" },
+  }
+}
+require('onedark').load()
 
 require('lazy').setup({
   -- Git related plugins
@@ -9,6 +18,9 @@ require('lazy').setup({
     -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
     dependencies = {
+      -- Automatically install LSPs to stdpath for neovim
+      { 'williamboman/mason.nvim', config = true },
+      'williamboman/mason-lspconfig.nvim',
       -- Useful status updates for LSP
       { 'j-hui/fidget.nvim', opts = {} },
       -- Additional lua configuration, makes nvim stuff amazing!
@@ -105,50 +117,6 @@ require('lazy').setup({
         map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>', { desc = 'select git hunk' })
       end,
     },
-  },
-  {
-    'navarasu/onedark.nvim',
-    priority = 1000,
-    lazy = false,
-    config = function()
-      require('onedark').setup {
-        style = 'darker',
-        transparent = true,
-        colors = {
-          -- black = "#0e1013",
-          -- bg0 = "#1f2329",
-          -- bg1 = "#282c34",
-          -- bg2 = "#30363f",
-          -- bg3 = "#323641",
-          -- bg_d = "#181b20",
-          -- bg_blue = "#61afef",
-          -- bg_yellow = "#e8c88c",
-          -- fg = "#a0a8b7",
-          -- purple = "#bf68d9",
-          -- green = "#8ebd6b",
-          -- orange = "#cc9057",
-          -- blue = "#4fa6ed",
-          -- yellow = "#e2b86b",
-          -- cyan = "#48b0bd",
-          -- red = "#e55561",
-          -- grey = "#535965",
-          -- light_grey = "#7a818e",
-          -- dark_cyan = "#266269",
-          -- dark_red = "#8b3434",
-          -- dark_yellow = "#835d1a",
-          -- dark_purple = "#7e3992",
-          -- diff_add = "#272e23",
-          -- diff_delete = "#2d2223",
-          -- diff_change = "#172a3a",
-          -- diff_text = "#274964",
-        },
-        highlights = {
-          CursorLine = { bg = '$bg_d' },
-          IblScope = { fg = '$dark_purple', fmt = "nocombine" },
-        }
-      }
-      require('onedark').load()
-    end,
   },
   {
     'nvim-lualine/lualine.nvim',

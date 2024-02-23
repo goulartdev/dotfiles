@@ -29,6 +29,7 @@
     libappindicator
     ulauncher
     protonvpn-gui
+    alacritty
 
     # gaming
     steam
@@ -42,7 +43,6 @@
     gnupg
     git
     curl
-    alacritty
     pciutils
     usbutils
     lshw
@@ -50,7 +50,7 @@
     rsync
     sqlite
     zellij
-    neovim
+    # neovim
     wl-clipboard
     gh
     podman-tui
@@ -115,6 +115,22 @@
     vitals
     super-key
   ]);
+
+  programs.neovim = {
+    enable = true;
+    extraPackages = with pkgs; [
+      lua-language-server
+      fzf
+      fd
+      gcc
+      curl
+      gzip
+      ripgrep
+      git
+      tree-sitter
+      unzip
+    ];
+  };
 
   xdg.dataFile = {
     "zsh/plugins/zsh-fast-syntax-highlighting".source = "${pkgs.zsh-fast-syntax-highlighting}/share/zsh/site-functions"; 

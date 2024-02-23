@@ -2,3 +2,4 @@
 *.zwc.old
 **/.zcompdump
 config/forge/config
+config/navi/navi.log
