@@ -4,9 +4,6 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    # waiting for https://github.com/NixOS/nixpkgs/pull/287016 to be merged
-    # vlc.url = "github:NixOS/nixpkgs/75457994b8d28e951075d0fa8ec6605ba9585778";
-
     agenix = {
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
