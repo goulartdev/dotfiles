@@ -50,7 +50,6 @@
     rsync
     sqlite
     zellij
-    # neovim
     wl-clipboard
     gh
     podman-tui
@@ -119,16 +118,22 @@
   programs.neovim = {
     enable = true;
     extraPackages = with pkgs; [
-      lua-language-server
-      fzf
-      fd
-      gcc
+      stdenv.cc
       curl
-      gzip
-      ripgrep
+      fd
+      fzf
       git
+      gnumake
+      gnutar
+      gzip
+      lua-language-server
+      nil # nix language server
+      ripgrep
       tree-sitter
       unzip
+    ];
+    extraLuaPackages = luaPkgs: with luaPkgs; [
+      jsregexp
     ];
   };
 
