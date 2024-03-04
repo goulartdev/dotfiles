@@ -47,12 +47,15 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
-vim.o.hlsearch = true
+vim.opt.hlsearch = true
 
-vim.o.termguicolors = true
+vim.opt.termguicolors = true
 
-vim.o.swapfile = false
-vim.o.backup = false
-vim.o.writebackup = false
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.writebackup = false
 
+vim.opt.showcmd = false;
+
+vim.opt.wildignore:append({ "*/node_modules/*", "*/.venv/*" })
 -- vim: ts=2 sts=2 sw=2 et

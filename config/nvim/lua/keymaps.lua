@@ -35,13 +35,16 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
-vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = 'Scroll halfscreen down and center current line' })
-vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = 'Scroll halfscreen aup nd center current line' })
-vim.keymap.set("n", "n", "nzzzv", { desc = 'Next search result and center line' })
-vim.keymap.set("n", "N", "Nzzzv", { desc = 'Prior search result and center line' })
+vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Scroll halfscreen down and center current line' })
+vim.keymap.set('n', '<C-u>', "<C-u>zz", { desc = 'Scroll halfscreen aup nd center current line' })
+vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Next search result and center line' })
+vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Prior search result and center line' })
 
 -- paste and delete without copying to register
-vim.keymap.set("x", "<leader>p", [["_dP]])
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+vim.keymap.set('x', '<leader>p', [["_dP]])
+vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]])
 
+vim.keymap.set('n', 'x', '"_x')
+vim.keymap.set('n', 'cl', '"_cl')
+vim.keymap.set('n', 'dl', '"_dl')
 -- vim: ts=2 sts=2 sw=2 et

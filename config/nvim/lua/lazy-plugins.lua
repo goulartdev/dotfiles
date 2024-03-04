@@ -12,6 +12,7 @@ require('lazy').setup {
   require 'kickstart/plugins/mini',
   require 'kickstart/plugins/treesitter',
   require 'kickstart/plugins/debug',
+  require 'kickstart/plugins/notify',
 }
 
 -- vim: ts=2 sts=2 sw=2 et

@@ -5,7 +5,7 @@ return {
       -- Useful status updates for LSP.
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
       { 'j-hui/fidget.nvim', opts = {} },
-      -- 'folke/neodev.nvim',
+      'folke/neodev.nvim',
     },
     config = function()
       -- Brief Aside: **What is LSP?**
@@ -160,6 +160,9 @@ return {
                 -- If lua_ls is really slow on your computer, you can try this instead:
                 -- library = { vim.env.VIMRUNTIME },
               },
+              completion = {
+                callSnippet = 'Replace',
+              },
               -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
               -- diagnostics = { disable = { 'missing-fields' } },
             },
@@ -169,16 +172,12 @@ return {
 
       local lspconfig = require('lspconfig');
 
-      for server, opts in pairs(servers) do
-        lspconfig[server].setup {
-          cmd = opts.cmd,
-          settings = opts.settings,
-          filetypes = opts.filetypes,
-          -- This handles overriding only values explicitly passed
-          -- by the server configuration above. Useful when disabling
-          -- certain features of an LSP (for example, turning off formatting for tsserver)
-          capabilities = vim.tbl_deep_extend('force', {}, capabilities, opts.capabilities or {}),
-        }
+      for server_name, server in pairs(servers) do
+        -- This handles overriding only values explicitly passed
+        -- by the server configuration above. Useful when disabling
+        -- certain features of an LSP (for example, turning off formatting for tsserver)
+        server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {});
+        lspconfig[server_name].setup(server)
       end
     end,
   },

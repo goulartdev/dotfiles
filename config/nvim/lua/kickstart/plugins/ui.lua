@@ -17,6 +17,7 @@ return {
         highlights = {
           CursorLine = { bg = '$bg_d' },
           IblScope = { fg = '$dark_purple', fmt = "nocombine" },
+          NotifyBackground = { bg = '#000000' },
         }
       }
       require('onedark').load()
@@ -26,10 +27,11 @@ return {
     'nvim-lualine/lualine.nvim',
     opts = {
       options = {
-        icons_enabled = false,
+        icons_enabled = true,
         theme = 'onedark',
         component_separators = '|',
         section_separators = '',
+        globalstatus = true,
       },
     },
   },
