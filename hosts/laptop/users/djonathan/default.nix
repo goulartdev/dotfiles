@@ -10,9 +10,9 @@
   home.homeDirectory = "/home/djonathan";
 
   home.stateVersion = "23.11";
-  
+ 
   fonts.fontconfig.enable = true;
-  
+ 
   home.packages = (with pkgs;[
     # GUI
     gimp
@@ -69,7 +69,6 @@
     duf          # df alternative https://github.com/muesli/duf
     ncdu         # disk usage
     navi         # An interactive cheatsheet tool for the command-line https://github.com/denisidoro/navi
-    keyb
     grex         # Generate regular expressions from user-provided test cases https://github.com/pemistahl/grex
     gojq         # Command-line JSON processor https://github.com/itchyny/gojq
     jqp          # A TUI playground to experiment with gojq https://github.com/noahgorstein/jqp
@@ -80,22 +79,11 @@
     noti         # Monitor a process and trigger a notification https://github.com/variadico/noti
     mkcert       # make locally trusted development certificates https://github.com/FiloSottile/mkcert
     pastel       # generate, analyze, convert and manipulate colors https://github.com/sharkdp/pastel
-    clipboard-jh # smart clipboard manager https://github.com/Slackadays/clipboard/
-    tokei        # displays statistics about your code https://github.com/XAMPPRocky/tokei
     # xplr         # File manager https://github.com/sayanarijit/xplr 
     # lf           # File manager https://github.com/gokcehan/lf
     broot        # File manager https://github.com/Canop/broot
-    ripdrag      # lets you drag and drop files from and to the terminal https://github.com/nik012003/ripdrag
     hyperfine    # benchmarking tool https://github.com/sharkdp/hyperfine
     just
-
-    # zsh plugins
-    zsh-fast-syntax-highlighting
-    zsh-autosuggestions
-    zsh-powerlevel10k
-    zsh-vi-mode
-    zsh-nix-shell
-    nix-zsh-completions
     atuin
 
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
@@ -126,11 +114,16 @@
       gnumake
       gnutar
       gzip
-      lua-language-server
-      nil # nix language server
       ripgrep
       tree-sitter
       unzip
+
+      # lua stuff
+      lua-language-server
+      stylua
+
+      # nix stuff
+      nil
     ];
     extraLuaPackages = luaPkgs: with luaPkgs; [
       jsregexp
@@ -145,13 +138,5 @@
     "zsh/plugins/nix-zsh-completions".source = "${pkgs.nix-zsh-completions}/share/zsh/plugins/nix";
     "zsh/plugins/powerlevel10k".source = "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k";
   };
-
-  #home.activation = {
-  #  dotfiles = lib.hm.dag.entryAfter ["installPackages"] ''
-  #    if [[ -d $HOME/code/dotfiles ]]; then
-  #      $DRY_RUN_CMD cd $HOME/code/dotfiles && ${pkgs.just}/bin/just $VERBOSE_ARG sync-dotfiles
-  #    fi
-  #  '';
-  #};
 
 }
