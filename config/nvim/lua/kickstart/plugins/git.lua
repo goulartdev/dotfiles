@@ -21,7 +21,7 @@ return {
         end
 
         map('n', '<leader>tb', gs.toggle_current_line_blame, { desc = 'toggle git blame line' })
-      end
+      end,
     },
   },
 }

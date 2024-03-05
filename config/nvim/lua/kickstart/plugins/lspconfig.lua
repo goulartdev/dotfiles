@@ -1,9 +1,8 @@
 return {
-  { -- LSP Configuration & Plugins
+  {
     'neovim/nvim-lspconfig',
     dependencies = {
       -- Useful status updates for LSP.
-      -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
       { 'j-hui/fidget.nvim', opts = {} },
       'folke/neodev.nvim',
     },
@@ -40,12 +39,6 @@ return {
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
         callback = function(event)
-          -- NOTE: Remember that lua is a real programming language, and as such it is possible
-          -- to define small helper and utility functions so you don't have to repeat yourself
-          -- many times.
-          --
-          -- In this case, we create a function that lets us more easily define mappings specific
-          -- for LSP related items. It sets the mode, buffer and description for us each time.
           local map = function(keys, func, desc)
             vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
           end
@@ -170,13 +163,13 @@ return {
         },
       }
 
-      local lspconfig = require('lspconfig');
+      local lspconfig = require 'lspconfig'
 
       for server_name, server in pairs(servers) do
         -- This handles overriding only values explicitly passed
         -- by the server configuration above. Useful when disabling
         -- certain features of an LSP (for example, turning off formatting for tsserver)
-        server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {});
+        server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
         lspconfig[server_name].setup(server)
       end
     end,

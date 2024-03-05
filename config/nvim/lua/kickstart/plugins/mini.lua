@@ -20,6 +20,6 @@ return {
       require('mini.pairs').setup()
       require('mini.comment').setup()
     end,
-  }
+  },
 }
 -- vim: ts=2 sts=2 sw=2 et

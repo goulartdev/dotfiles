@@ -1,10 +1,11 @@
 return {
   {
     'folke/todo-comments.nvim',
+    event = 'VimEnter',
     dependencies = { 'nvim-lua/plenary.nvim' },
     opts = {
-      signs = false
-    }
+      signs = false,
+    },
   },
   {
     'navarasu/onedark.nvim',
@@ -16,9 +17,9 @@ return {
         transparent = true,
         highlights = {
           CursorLine = { bg = '$bg_d' },
-          IblScope = { fg = '$dark_purple', fmt = "nocombine" },
+          IblScope = { fg = '$dark_purple', fmt = 'nocombine' },
           NotifyBackground = { bg = '#000000' },
-        }
+        },
       }
       require('onedark').load()
     end,
@@ -40,13 +41,13 @@ return {
     main = 'ibl',
     opts = {
       indent = {
-        char = '┊'
+        char = '┊',
       },
       scope = {
         char = '│',
         show_start = false,
         show_end = false,
-      }
+      },
     },
   },
 }
