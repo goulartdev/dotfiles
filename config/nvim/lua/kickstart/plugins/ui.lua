@@ -16,9 +16,9 @@ return {
         style = 'darker',
         transparent = true,
         highlights = {
-          CursorLine = { bg = '$bg_d' },
           IblScope = { fg = '$dark_purple', fmt = 'nocombine' },
           NotifyBackground = { bg = '#000000' },
+          FloatBorder = { fg = '$cyan', bg = 'none' },
         },
       }
       require('onedark').load()
