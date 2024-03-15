@@ -2,9 +2,32 @@ return {
   {
     'neovim/nvim-lspconfig',
     dependencies = {
-      -- Useful status updates for LSP.
+      { 'folke/neodev.nvim', opts = {} },
       { 'j-hui/fidget.nvim', opts = {} },
-      'folke/neodev.nvim',
+      { 'SmiteshP/nvim-navic' },
+      {
+        'SmiteshP/nvim-navbuddy',
+        dependencies = {
+          'MunifTanjim/nui.nvim',
+        },
+        opts = {
+          window = {
+            border = 'rounded',
+          },
+        },
+      },
+      {
+        'utilyre/barbecue.nvim',
+        dependencies = {
+          'nvim-tree/nvim-web-devicons',
+        },
+        opts = {
+          attach_navic = false,
+        },
+      },
+      { 'williambomam/mason.nvim', enabled = vim.g.use_mason },
+      { 'williambomam/mason-lspconfig.nvim', enabled = vim.g.use_mason },
+      { 'WhoIsSethDaniel/mason-toll-installer.nvim', enabled = vim.g.use_mason },
     },
     config = function()
       -- Brief Aside: **What is LSP?**
@@ -121,38 +144,16 @@ return {
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        -- clangd = {},
-        -- gopls = {},
-        -- pyright = {},
-        -- rust_analyzer = {},
-        -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
-        --
         -- Some languages (like typescript) have entire language plugins that can be useful:
         --    https://github.com/pmizio/typescript-tools.nvim
-        --
-        -- But for many setups, the LSP (`tsserver`) will work just fine
-        -- tsserver = {},
-        --
 
         nil_ls = {},
         lua_ls = {
           -- cmd = {...},
-          -- filetypes { ...},
-          -- capabilities = {},
+          -- filetypes {...},
+          -- capabilities = {...},
           settings = {
             Lua = {
-              runtime = { version = 'LuaJIT' },
-              workspace = {
-                checkThirdParty = false,
-                -- Tells lua_ls where to find all the Lua files that you have loaded
-                -- for your neovim configuration.
-                library = {
-                  '${3rd}/luv/library',
-                  unpack(vim.api.nvim_get_runtime_file('', true)),
-                },
-                -- If lua_ls is really slow on your computer, you can try this instead:
-                -- library = { vim.env.VIMRUNTIME },
-              },
               completion = {
                 callSnippet = 'Replace',
               },
@@ -164,13 +165,53 @@ return {
       }
 
       local lspconfig = require 'lspconfig'
+      local navbuddy = require 'nvim-navbuddy'
 
-      for server_name, server in pairs(servers) do
+      vim.keymap.set('n', '<leader>on', navbuddy.open, { desc = '[O]pen [N]avbuddy' })
+
+      local on_attach = function(client, bufnr)
+        if client.server_capabilities.documentSymbolProvider then
+          require('nvim-navic').attach(client, bufnr)
+          navbuddy.attach(client, bufnr)
+        end
+      end
+
+      local function setup_server(server_name, server)
         -- This handles overriding only values explicitly passed
         -- by the server configuration above. Useful when disabling
         -- certain features of an LSP (for example, turning off formatting for tsserver)
         server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+        server.on_attach = on_attach
         lspconfig[server_name].setup(server)
+      end
+
+      if vim.g.use_mason then
+        require('mason').setup()
+
+        local ensure_installed = vim.tbl_keys(servers or {})
+        vim.list_extend(ensure_installed, {
+          'stylua',
+        })
+
+        require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+
+        require('mason-lspconfig').setup {
+          handlers = {
+            function(server_name)
+              setup_server(server_name, servers[server_name] or {})
+            end,
+          },
+        }
+      else
+        for server_name, server in pairs(servers) do
+          setup_server(server_name, server)
+        end
+      end
+
+      local signs = { Error = '󰅚 ', Warn = '󰀪 ', Hint = '󰌶 ', Info = ' ' }
+      for type, icon in pairs(signs) do
+        local hl = 'DiagnosticSign' .. type
+        vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
       end
     end,
   },

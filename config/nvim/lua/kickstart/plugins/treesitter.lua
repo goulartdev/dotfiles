@@ -4,12 +4,12 @@ return {
     dependencies = {
       'nvim-treesitter/nvim-treesitter-textobjects',
       'JoosepAlviste/nvim-ts-context-commentstring',
-      {
-        'nvim-treesitter/nvim-treesitter-context',
-        opts = {
-          max_lines = 1,
-        },
-      },
+      -- {
+      --   'nvim-treesitter/nvim-treesitter-context',
+      --   opts = {
+      --     max_lines = 1,
+      --   },
+      -- },
     },
     build = ':TSUpdate',
     config = function()

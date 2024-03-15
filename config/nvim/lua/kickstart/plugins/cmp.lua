@@ -8,10 +8,12 @@ return {
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
       'rafamadriz/friendly-snippets',
+      'onsails/lspkind.nvim',
     },
     config = function()
       local cmp = require 'cmp'
       local luasnip = require 'luasnip'
+      local lspkind = require 'lspkind'
 
       require('luasnip.loaders.from_vscode').lazy_load()
 
@@ -24,20 +26,21 @@ return {
         completion = {
           completeopt = 'menu,menuone,noinsert',
         },
-        formating = {
-          fields = { 'kind', 'abbr', 'menu' },
-          source_names = {
-            nvim_lsp = '(LSP)',
-            path = '(path)',
-            luasnip = '(snip)',
+        formatting = {
+          format = lspkind.cmp_format {
+            mode = 'symbol_text',
+            maxwidth = function()
+              return math.floor(0.20 * vim.o.columns)
+            end,
+            ellipsis_char = '...',
+            menu = {
+              nvim_lsp = '[LSP]',
+              nvim_lua = '[api]',
+              path = '[path]',
+              luasnip = '[snip]',
+            },
           },
         },
-        duplicates = {
-          path = 1,
-          nvim_lsp = 0,
-          luasnip = 1,
-        },
-        duplicates_default = 0,
         experimental = {
           native_menu = false,
           ghost_text = false,
