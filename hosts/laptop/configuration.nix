@@ -105,7 +105,7 @@
       offload.enableOffloadCmd = true;
 
       reverseSync.enable = false; # try enabling this sometime
-	  };
+    };
   };
   
   boot.initrd.kernelModules = [ "i915" ];

@@ -115,6 +115,7 @@
       gnutar
       gzip
       ripgrep
+      gnused
       tree-sitter
       unzip
 
