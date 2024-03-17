@@ -70,10 +70,6 @@
           nativeBuildInputs = with pkgs; [
             disko
             inputs.agenix.packages.${system}.default
-
-            nodejs_latest.withPackages (nodePkgs: with nodePkgs; [
-              bash-language-server 
-            ])
           ];
         };
       }
