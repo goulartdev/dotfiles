@@ -19,7 +19,7 @@ alias rmd='rm -rf'
 alias cp='rsync -ah --info=progress2'
 
 ## TOOLS
-alias ed='$EDITOR'
+alias vim='nvim'
 
 alias ls='eza --icons --group-directories-first -la'
 alias duf='duf --theme ansi'
@@ -32,6 +32,7 @@ alias myip='curl ipinfo.io/ip'
 alias nvidia-settings='nvidia-settings --config=$XDG_CONFIG_HOME/nvidia/settings'
 alias wifi-fix='sudo modprobe -r ath10k_pci && sudo modprobe ath10k_pci'
 
+alias develop='nix develop -c zsh'
 ## GIT
 alias ga='git add'
 alias gun='git reset -- '

@@ -69,6 +69,15 @@ autoload -U +X bashcompinit && bashcompinit # automatically load bash completion
 source ${ZDOTDIR}/lib/aliases.zsh
 
 ######################################################################
+## autoload functions
+
+fpath=("${ZDOTDIR}/functions" $fpath)
+
+for func in ${ZDOTDIR}/functions/*; do
+  autoload -Uz ${func:t}
+done
+
+######################################################################
 ## PLUGINS
 
 source ${ZPLUGINS}/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -89,15 +98,6 @@ _zsh_autosuggest_strategy_atuin_search() {
 
 ZSH_AUTOSUGGEST_STRATEGY=atuin_search
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7f848e"
-
-######################################################################
-## autoload functions
-
-fpath=("${ZDOTDIR}/functions" $fpath)
-
-for func in ${ZDOTDIR}/functions/*; do
-  autoload -Uz ${func:t}
-done
 
 ######################################################################
 ## prompt
