@@ -1,9 +1,9 @@
 [core]
-	editor = nvim
+  editor = nvim
   pager = delta
 
 [init]
-	defaultBranch = main
+  defaultBranch = main
 
 [interactive]
   diffFilter = delta --color-only
@@ -16,6 +16,7 @@
 
 [diff]
   colorMoved = default
+
 [user]
-	email = contact@djonathan.dev
-	name = Djonathan Goulart 
+  email = contact@djonathan.dev
+  name = Djonathan Goulart
