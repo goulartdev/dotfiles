@@ -83,6 +83,7 @@
     # lf           # File manager https://github.com/gokcehan/lf
     broot        # File manager https://github.com/Canop/broot
     hyperfine    # benchmarking tool https://github.com/sharkdp/hyperfine
+    gum
     just
     atuin
 
