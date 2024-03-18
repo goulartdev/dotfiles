@@ -1,29 +1,27 @@
 return {
-  {
-    'folke/which-key.nvim',
-    event = 'VimEnter',
-    config = function()
-      require('which-key').setup()
+  'folke/which-key.nvim',
+  event = 'VimEnter',
+  config = function()
+    require('which-key').setup()
 
-      -- Document existing key chains
-      require('which-key').register {
-        ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
-        ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
-        ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
-        ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
-        ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
-        g = {
-          ['2'] = 'which_key_ignore',
-          ['3'] = 'which_key_ignore',
-          ['4'] = 'which_key_ignore',
-          ['5'] = 'which_key_ignore',
-          ['6'] = 'which_key_ignore',
-          ['7'] = 'which_key_ignore',
-          ['8'] = 'which_key_ignore',
-          ['9'] = 'which_key_ignore',
-        },
-      }
-    end,
-  },
+    -- Document existing key chains
+    require('which-key').register {
+      ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
+      ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
+      ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
+      ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
+      ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
+      g = {
+        ['2'] = 'which_key_ignore',
+        ['3'] = 'which_key_ignore',
+        ['4'] = 'which_key_ignore',
+        ['5'] = 'which_key_ignore',
+        ['6'] = 'which_key_ignore',
+        ['7'] = 'which_key_ignore',
+        ['8'] = 'which_key_ignore',
+        ['9'] = 'which_key_ignore',
+      },
+    }
+  end,
 }
 -- vim: ts=2 sts=2 sw=2 et

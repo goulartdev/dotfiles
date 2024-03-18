@@ -55,7 +55,34 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.writebackup = false
 
-vim.opt.showcmd = false;
+vim.opt.showcmd = false
 
-vim.opt.wildignore:append({ "*/node_modules/*", "*/.venv/*" })
+vim.opt.wildignore:append { '*/node_modules/*', '*/.venv/*' }
+
+local icons = require 'icons'
+
+vim.diagnostic.config {
+  signs = {
+    active = true,
+    values = {
+      { name = 'DiagnosticSignError', text = icons.diagnostics.Error },
+      { name = 'DiagnosticSignWarn', text = icons.diagnostics.Warn },
+      { name = 'DiagnosticSignHint', text = icons.diagnostics.Hint },
+      { name = 'DiagnosticSignInfo', text = icons.diagnostics.Info },
+    },
+  },
+  virtual_text = true,
+  update_in_insert = false,
+  underline = true,
+  severity_sort = true,
+  float = {
+    focusable = true,
+    style = 'minimal',
+    border = 'rounded',
+    source = 'always',
+    header = '',
+    prefix = '',
+  },
+}
+
 -- vim: ts=2 sts=2 sw=2 et

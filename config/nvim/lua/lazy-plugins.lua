@@ -2,7 +2,8 @@ require('lazy').setup({
   'tpope/vim-sleuth',
   { 'NvChad/nvim-colorizer.lua', opts = {} },
   -- "ThePrimeagen/vim-be-good,"
-  require 'kickstart.plugins.git',
+  require 'kickstart.plugins.gitsigns',
+  require 'kickstart.plugins.neogit',
   require 'kickstart.plugins.which-key',
   require 'kickstart.plugins.telescope',
   require 'kickstart.plugins.lspconfig',

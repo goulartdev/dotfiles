@@ -39,5 +39,45 @@ return {
     vim.keymap.set('n', '<M-]>', function()
       harpoon:list():next { ui_nav_wrap = true }
     end)
+
+    local function pinned_list()
+      local items = {}
+      for _, item in ipairs(harpoon:list().items) do
+        table.insert(items, {
+          bufnr = vim.fn.bufnr(item.value, true),
+          select = function()
+            harpoon.config.default.select(item, harpoon:list())
+          end,
+        })
+      end
+
+      return items
+    end
+
+    local function open_switcher()
+      local Path = require 'plenary.path'
+
+      vim.ui.select(pinned_list(), {
+        prompt = ' Buffers ',
+        format_item = function(item)
+          local path = vim.api.nvim_buf_get_name(item.bufnr)
+          return Path:new(path):make_relative(vim.loop.cwd())
+        end,
+      }, function(choice)
+        if choice == nil then
+          return
+        end
+
+        if choice.select then
+          choice.select()
+        else
+          vim.api.nvim_set_current_buf(choice.bufnr)
+        end
+      end)
+    end
+
+    vim.keymap.set('n', '<C-j>', open_switcher, { desc = '[H]arpoon [T]oggle quick menu' })
   end,
 }
+
+-- vim: ts=2 sts=2 sw=2 et

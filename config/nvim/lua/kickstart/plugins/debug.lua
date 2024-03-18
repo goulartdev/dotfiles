@@ -9,8 +9,10 @@
 return {
   'mfussenegger/nvim-dap',
   dependencies = {
-    -- Creates a beautiful debugger UI
     'rcarriga/nvim-dap-ui',
+    'theHamsta/nvim-dap-virtual-text',
+    { 'williamboman/mason.nvim', enabled = vim.g.use_mason },
+    { 'jay-babu/mason-nvim-dap.nvim', enabled = vim.g.use_mason },
 
     -- Add your own debuggers here
     -- 'leoluz/nvim-dap-go',
@@ -18,6 +20,14 @@ return {
   config = function()
     local dap = require 'dap'
     local dapui = require 'dapui'
+
+    if vim.g.use_mason then
+      require('mason-nvim-dap').setup {
+        automatic_setup = true,
+        handlers = {},
+        ensure_installed = {},
+      }
+    end
 
     -- Basic debugging keymaps, feel free to change to your liking!
     vim.keymap.set('n', '<F5>', dap.continue, { desc = 'Debug: Start/Continue' })
@@ -29,13 +39,10 @@ return {
       dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
     end, { desc = 'Debug: Set Breakpoint' })
 
-    -- Dap UI setup
-    -- For more information, see |:help nvim-dap-ui|
+    ---@diagnostic disable-next-line: missing-fields
     dapui.setup {
-      -- Set icons to characters that are more likely to work in every terminal.
-      --    Feel free to remove or use ones that you like more! :)
-      --    Don't feel like these are good choices.
       icons = { expanded = '▾', collapsed = '▸', current_frame = '*' },
+      ---@diagnostic disable-next-line: missing-fields
       controls = {
         icons = {
           pause = '⏸',
@@ -62,3 +69,5 @@ return {
     -- require('dap-go').setup()
   end,
 }
+
+-- vim: ts=2 sts=2 sw=2 et
