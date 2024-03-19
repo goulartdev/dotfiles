@@ -13,23 +13,28 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
--- https://github.com/ThePrimeagen/neovimrc/blob/f715b041310f89b11e68884c605b2b5d7a3f162b/lua/theprimeagen/remap.lua
-vim.keymap.set('n', '<leader>ge', vim.cmd.Ex, { desc = '[G]o to netrw/[E]x' })
+vim.keymap.set('n', '<leader>oe', vim.cmd.Ex, { desc = 'Open file Explorer' })
 
 vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Scroll halfscreen down and center current line' })
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Scroll halfscreen aup nd center current line' })
 vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Next search result and center line' })
 vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Prior search result and center line' })
 
-vim.keymap.set('n', '<leader>rw', [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]], { desc = '[R]eplace [W]ord' })
+vim.keymap.set('n', '<leader>rw', [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]], { desc = 'Replace current Word (buffer)' })
 
-vim.keymap.set('x', '<leader>p', [["_dP]], { desc = 'Paste without yanking' })
-vim.keymap.set('x', '<leader>d', [["_d]], { desc = 'Delete without yanking' })
+vim.keymap.set('v', '<leader>p', [["_dP]], { desc = 'Paste without yanking' })
 
-vim.keymap.set('n', 'x', '"_x', { desc = 'Delete current character without yanking it' })
-vim.keymap.set('n', 'cl', '"_cl', { desc = 'Change current character without yanking it' })
-vim.keymap.set('n', 'dl', '"_dl', { desc = 'Delete current character without yanking it' })
+vim.keymap.set('n', 'x', '"_x', { desc = 'Delete current character without yanking' })
+vim.keymap.set('n', 'cl', '"_cl', { desc = 'Change current character without yanking' })
+vim.keymap.set('n', 'dl', '"_dl', { desc = 'Delete current character without yanking' })
 
-vim.keymap.set('n', '<C-c>', '<cmd>bw<cr>', { desc = 'Wipeout current buffer' })
+vim.keymap.set('n', '<C-c>', '<cmd>bw<cr>', { desc = 'Close current buffer' })
 
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'help',
+  group = vim.api.nvim_create_augroup('HelpMappings', { clear = true }),
+  callback = function(ev)
+    vim.keymap.set('n', '<esc>', '<cmd>bw<cr>', { desc = 'Close current buffer', buffer = ev.buf })
+  end,
+})
 -- vim: ts=2 sts=2 sw=2 et

@@ -3,12 +3,13 @@ return {
   lazy = false,
   keys = {
     {
-      '<leader>nd',
+      '<leader>n',
       function()
         require('notify').dismiss { silent = true, pending = true }
       end,
-      desc = '[N]otifications [D]imiss all',
+      desc = 'dimiss all Notifications',
     },
+    { '<leader>sn', '<cmd>Telescope notify<cr>', desc = 'Search Notifications' },
   },
   opts = {
     timeout = 4000,
@@ -23,6 +24,13 @@ return {
     end,
     render = 'wrapped-compact',
     stages = 'fade',
+    icons = {
+      ERROR = require('icons').diagnostics.BoldError,
+      WARN = require('icons').diagnostics.BoldWarn,
+      INFO = require('icons').diagnostics.BoldInfo,
+      DEBUG = require('icons').diagnostics.BoldDebug,
+      TRACE = require('icons').diagnostics.Trace,
+    },
   },
   init = function()
     vim.notify = require 'notify'

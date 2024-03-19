@@ -4,6 +4,17 @@ return {
     'nvim-lua/plenary.nvim',
     'sindrets/diffview.nvim',
   },
+  keys = {
+    { '<leader>gg', '<cmd>Neogit<cr>', desc = 'open neoGit' },
+  },
+  opts = {
+    signs = {
+      hunk = { '', '' },
+      item = { require('icons').ui.ChevronRight, require('icons').ui.ChevronDown },
+      section = { require('icons').ui.ChevronRight, require('icons').ui.ChevronDown },
+    },
+  },
+  cmd = { 'Neogit' },
   config = true,
 }
 

@@ -9,7 +9,7 @@ layout {
         format_right "{mode}#[bg=blue,fg=black,bold] {swap_layout} "
 
         mode_default_to_mode "pane"
-        mode_normal          "#[]"
+        mode_locked          "#[]"
         mode_pane            "#[bg=yellow,fg=black,bold] {name} "
 
         tab_normal         "#[bg=#2e4040,fg=black] {index} #[bg=#435d5d,fg=black] {name} "

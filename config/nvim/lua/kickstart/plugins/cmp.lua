@@ -1,22 +1,37 @@
 return {
   'hrsh7th/nvim-cmp',
+  version = false,
   event = 'InsertEnter',
   dependencies = {
-    'L3MON4D3/LuaSnip',
+    {
+      'L3MON4D3/LuaSnip',
+      dependencies = {
+        {
+          'rafamadriz/friendly-snippets',
+          config = function()
+            require('luasnip.loaders.from_vscode').lazy_load()
+          end,
+        },
+      },
+    },
     'saadparwaiz1/cmp_luasnip',
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-path',
-    'rafamadriz/friendly-snippets',
+    'hrsh7th/cmp-buffer',
     'onsails/lspkind.nvim',
   },
-  config = function()
+  opts = function()
     local cmp = require 'cmp'
     local luasnip = require 'luasnip'
     local lspkind = require 'lspkind'
 
-    require('luasnip.loaders.from_vscode').lazy_load()
+    return {
+      enabled = function()
+        local disabled = require 'cmp.config.default'().enabled()
+        local context = require 'cmp.config.context'
 
-    cmp.setup {
+        return disabled or context.in_treesitter_capture 'comment'
+      end,
       snippet = {
         expand = function(args)
           luasnip.lsp_expand(args.body)
@@ -25,6 +40,7 @@ return {
       completion = {
         completeopt = 'menu,menuone,noinsert',
       },
+      ---@diagnostic disable-next-line: missing-fields
       formatting = {
         format = lspkind.cmp_format {
           mode = 'symbol_text',
@@ -38,6 +54,7 @@ return {
             nvim_lua = '[api]',
             path = '[path]',
             luasnip = '[snip]',
+            buffer = '[buf]',
           },
         },
       },
@@ -51,7 +68,8 @@ return {
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete {},
-        ['<C-y>'] = cmp.mapping.confirm { select = true },
+        ['<cr>'] = cmp.mapping.confirm { behavior = cmp.ConfirmBehavior.Insert, select = true },
+        ['<C-cr>'] = cmp.mapping.confirm { behavior = cmp.ConfirmBehavior.Replace, select = false },
         ['<C-e>'] = cmp.mapping.abort(),
         ['<C-l>'] = cmp.mapping(function()
           if luasnip.expand_or_locally_jumpable() then
@@ -64,11 +82,13 @@ return {
           end
         end, { 'i', 's' }),
       },
-      sources = {
+      sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
+      }, {
         { name = 'path' },
-      },
+        { name = 'buffer', keyword_length = 7 },
+      }),
       window = {
         completion = cmp.config.window.bordered {
           winhighlight = 'Normal:Normal,FloatBorder:FloatBorder,CursorLine:CursorLine,Search:None',
@@ -78,6 +98,21 @@ return {
         },
       },
     }
+
+    -- cmp.setup.cmdline(':', {
+    --   mapping = cmp.mapping.preset.cmdline(),
+    --   sources = cmp.config.sources {
+    --     { name = 'path' },
+    --   },
+    --   matching = { disallow_symbol_nonprefix_matching = false },
+    -- })
+
+    -- cmp.setup.cmdline({ '/', '?' }, {
+    --   mapping = cmp.mapping.preset.cmdline(),
+    --   sources = {
+    --     { name = 'buffer' }
+    --   }
+    -- })
   end,
 }
 

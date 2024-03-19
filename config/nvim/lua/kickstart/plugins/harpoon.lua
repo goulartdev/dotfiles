@@ -22,7 +22,7 @@ return {
       harpoon:list():remove()
     end, { desc = '[H]arpoon [R]emove current buffer' })
 
-    vim.keymap.set('n', '<C-h>', function()
+    vim.keymap.set('n', '<leader>ht', function()
       harpoon.ui:toggle_quick_menu(harpoon:list(), toggle_opts)
     end, { desc = '[H]arpoon [T]oggle quick menu' })
 
@@ -32,13 +32,13 @@ return {
       end, { desc = '[G]o to buffer [' .. i .. ']' })
     end
 
-    vim.keymap.set('n', '<M-[>', function()
-      harpoon:list():prev { ui_nav_wrap = true }
-    end)
-
-    vim.keymap.set('n', '<M-]>', function()
-      harpoon:list():next { ui_nav_wrap = true }
-    end)
+    -- vim.keymap.set('n', '<M-[>', function()
+    --   harpoon:list():prev { ui_nav_wrap = true }
+    -- end)
+    --
+    -- vim.keymap.set('n', '<M-]>', function()
+    --   harpoon:list():next { ui_nav_wrap = true }
+    -- end)
 
     local function pinned_list()
       local items = {}
@@ -76,7 +76,7 @@ return {
       end)
     end
 
-    vim.keymap.set('n', '<C-j>', open_switcher, { desc = '[H]arpoon [T]oggle quick menu' })
+    vim.keymap.set('n', '<leader>ht', open_switcher, { desc = '[H]arpoon [T]oggle quick menu' })
   end,
 }
 

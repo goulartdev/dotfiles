@@ -8,61 +8,83 @@ return {
   config = function()
     ---@diagnostic disable-next-line: missing-fields
     require('nvim-treesitter.configs').setup {
-      ensure_installed = { 'c', 'cpp', 'lua', 'python', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash', 'yaml', 'toml' },
+      ensure_installed = {
+        'c',
+        'cpp',
+        'lua',
+        'luadoc',
+        'luap',
+        'python',
+        'javascript',
+        'typescript',
+        'jsdoc',
+        'vimdoc',
+        'vim',
+        'bash',
+        'json',
+        'jsonc',
+        'yaml',
+        'toml',
+        'kdl',
+        'diff',
+        'html',
+        'regex',
+        'markdown',
+        'markdown_inline',
+      },
       auto_install = false,
-      highlight = { enable = true },
-      indent = { enable = true },
+      highlight = {
+        enable = true,
+        -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
+        --  If you are experiencing weird indenting issues, add the language to
+        --  the list of additional_vim_regex_highlighting and disabled languages for indent.
+        additional_vim_regex_highlighting = { 'ruby' },
+      },
+      indent = {
+        enable = true,
+        disable = { 'ruby' },
+      },
       incremental_selection = {
         enable = true,
         keymaps = {
           init_selection = '<c-space>',
           node_incremental = '<c-space>',
-          scope_incremental = '<c-s>',
-          node_decremental = '<M-space>',
+          scope_incremental = false,
+          node_decremental = '<bs>',
         },
       },
       textobjects = {
-        select = {
-          enable = true,
-          lookahead = true, -- Automatically jump forward to textobj
-          keymaps = {
-            -- You can use the capture groups defined in textobjects.scm
-            ['aa'] = '@parameter.outer',
-            ['ia'] = '@parameter.inner',
-            ['af'] = '@function.outer',
-            ['if'] = '@function.inner',
-            ['ac'] = '@class.outer',
-            ['ic'] = '@class.inner',
-            ['as'] = { query = '@scope', query_group = 'locals', desc = 'Select language scope' },
-          },
-        },
         move = {
           enable = true,
-          set_jumps = true, -- whether to set jumps in the jumplist
+          set_jumps = true,
           goto_next_start = {
-            [']m'] = '@function.outer',
-            [']]'] = '@class.outer',
+            [']p'] = '@parameter.outer',
+            [']f'] = '@function.outer',
+            [']c'] = '@class.outer',
           },
           goto_next_end = {
-            [']M'] = '@function.outer',
-            [']['] = '@class.outer',
+            [']F'] = '@function.outer',
+            [']C'] = '@class.outer',
           },
           goto_previous_start = {
-            ['[m'] = '@function.outer',
-            ['[['] = '@class.outer',
+            ['[p'] = '@parameter.outer',
+            ['[f'] = '@function.outer',
+            ['[c'] = '@class.outer',
           },
           goto_previous_end = {
-            ['[M'] = '@function.outer',
-            ['[]'] = '@class.outer',
+            ['[F'] = '@function.outer',
+            ['[C'] = '@class.outer',
           },
         },
         swap = {
           enable = true,
           swap_next = {
-            ['<leader>a'] = '@parameter.inner',
+            ['sp'] = '@parameter.inner',
+            ['se'] = '@element',
           },
           swap_previous = {
-            ['<leader>A'] = '@parameter.inner',
+            ['sP'] = '@parameter.inner',
+            ['sE'] = '@element',
           },
         },
       },
