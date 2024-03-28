@@ -39,6 +39,7 @@
     protonup-qt
 
     # cli / tui
+    doas-sudo-shim
     age
     gnupg
     git
