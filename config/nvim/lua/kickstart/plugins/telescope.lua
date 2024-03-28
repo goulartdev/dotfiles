@@ -55,6 +55,15 @@ return {
             },
           },
         },
+        find_files = {
+          find_command = { 'fd', '--type', 'f', '--color', 'never', '--hidden', '--exclude', '.git' },
+        },
+        grep_string = {
+          find_command = { 'rg', '--file', '--color', 'never', '--hidden', '-g', '!.git/*' },
+        },
+        live_grep = {
+          additional_args = { '--hidden', '-g', '!.git/*' },
+        },
       },
       extensions = {
         ['ui-select'] = {
