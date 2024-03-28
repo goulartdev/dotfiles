@@ -21,8 +21,10 @@ remove-broken-links:
 # run link-dotfiles, than remove-broken-links
 sync-dotfiles: link-dotfiles remove-broken-links
 
-system-update host:
+system-update host mode=switch:
   #!/usr/bin/env sh
-  nix flake update && git add flake.lock && git commit -m "system update"
-  nixos-rebuild switch --use-remote-sudo --flake ".#{{host}}" && \
-  nix store diff-closures $(\ls -d /nix/var/nix/profiles/*|tail -2)
+  nix flake update
+  git diff --quiet flake.lock || (git add flake.lock && git commit -m "system update")
+  nixos-rebuild {{mode}} --use-remote-sudo --flake ".#{{host}}" \
+  && nix store diff-closures $(\ls -d /nix/var/nix/profiles/*|tail -2)
+
