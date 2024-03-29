@@ -44,31 +44,31 @@ with lib.hm.gvariant;
       move-to-monitor-left = [ "<Control><Super>h" ];
       move-to-monitor-right = [ "<Control><Super>l" ];
       move-to-monitor-up = [ "<Control><Super>k" ];
-      move-to-workspace-1 = [ "<Shift><Super>semicolon" ];
-      move-to-workspace-2 = [ "<Shift><Super>F2" ];
-      move-to-workspace-3 = [ "<Shift><Super>F3" ];
-      move-to-workspace-4 = [ "<Shift><Super>F4" ];
-      move-to-workspace-last = [ "<Shift><Super>apostrophe" ];
+      move-to-workspace-1 = [ "<Shift><Super>1" ];
+      move-to-workspace-2 = [ "<Shift><Super>2" ];
+      move-to-workspace-3 = [ "<Shift><Super>3" ];
+      move-to-workspace-4 = [ "<Shift><Super>4" ];
+      move-to-workspace-last = [];
       move-to-workspace-left = [ "<Shift><Super>bracketleft" ];
       move-to-workspace-right = [ "<Shift><Super>bracketright" ];
       panel-run-dialog = [ "<Alt>F2" ];
       switch-applications = [ "<Super>Tab" ];
       switch-applications-backward = [ "<Shift><Super>Tab" ];
-      switch-group = [ "<Alt>Escape" ];
-      switch-group-backward = [ "<Shift><Alt>Escape" ];
+      switch-group = [];
+      switch-group-backward = [];
       switch-input-source = [];
       switch-input-source-backward = [];
       switch-panels = [];
       switch-panels-backward = [];
-      switch-to-workspace-1 = [ "<Super>semicolon" ];
-      switch-to-workspace-2 = [ "<Super>F2" ];
-      switch-to-workspace-3 = [ "<Super>F3" ];
-      switch-to-workspace-4 = [ "<Super>F4" ];
-      switch-to-workspace-last = [ "<Super>apostrophe" ];
+      switch-to-workspace-1 = [ "<Super>1" ];
+      switch-to-workspace-2 = [ "<Super>2" ];
+      switch-to-workspace-3 = [ "<Super>3" ];
+      switch-to-workspace-4 = [ "<Super>4" ];
+      switch-to-workspace-last = [];
       switch-to-workspace-left = [ "<Super>bracketleft" ];
       switch-to-workspace-right = [ "<Super>bracketright" ];
-      switch-windows = [ "<Alt>Tab" ];
-      switch-windows-backward = [ "<Shift><Alt>Tab" ];
+      switch-windows = [];
+      switch-windows-backward = [];
       toggle-maximized = [ "<Super>m" ];
     };
 
@@ -82,8 +82,8 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/mutter/keybindings" = {
-      toggle-tiled-left = [ "<Super>Left" ];
-      toggle-tiled-right = [ "<Super>Right" ];
+      toggle-tiled-left = [];
+      toggle-tiled-right = [];
     };
 
     "org/gnome/mutter/wayland/keybindings" = {
@@ -104,7 +104,7 @@ with lib.hm.gvariant;
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       name = "Trash";
-      binding = [ "<Super>b" ];
+      binding = [];
       command = "nautilus trash://";
     };  
 
@@ -113,7 +113,7 @@ with lib.hm.gvariant;
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
       ];
       help = [];
-      logout = [ "<Control><Super>BackSpace" ];
+      logout = [];
       magnifier = [];
       magnifier-zoom-in = [];
       magnifier-zoom-out = [];
@@ -194,12 +194,13 @@ with lib.hm.gvariant;
       disable-overview-on-startup = true;
       dock-position = "BOTTOM";
       height-fraction = 0.9;
+      hot-keys = false;
       intellihide-mode = "FOCUS_APPLICATION_WINDOWS";
       multi-monitor = true;
       preferred-monitor = -2;
       preferred-monitor-by-connector = "eDP-1";
-      shortcut = [ "<Super>q" ];
-      shortcut-text = "<Super>q";
+      shortcut = [];
+      shortcut-text = "";
       transparency-mode = "FIXED";
     };
 
@@ -220,14 +221,14 @@ with lib.hm.gvariant;
       con-tabbed-layout-toggle = [ "<Super>t" ];
       con-tabbed-showtab-decoration-toggle = [];
       focus-border-toggle = [];
-      prefs-open = [ "<Super>slash" ];
+      prefs-open = [];
       prefs-tiling-toggle = [];
       window-focus-down = [ "<Super>j" ];
       window-focus-left = [ "<Super>h" ];
       window-focus-right = [ "<Super>l" ];
       window-focus-up = [ "<Super>k" ];
-      window-gap-size-decrease = [ "<Shift><Super>minus" ];
-      window-gap-size-increase = [ "<Shift><Super>plus" ];
+      window-gap-size-decrease = [];
+      window-gap-size-increase = [];
       window-move-down = [];
       window-move-left = [];
       window-move-right = [];
@@ -252,7 +253,7 @@ with lib.hm.gvariant;
       window-swap-up = [ "<Shift><Super>k" ];
       window-toggle-always-float = [ "<Shift><Super>g" ];
       window-toggle-float = [ "<Super>g" ];
-      workspace-active-tile-toggle = [ "<Shift><Super>t" ];
+      workspace-active-tile-toggle = [];
     };
 
     "org/gnome/shell/extensions/gnome-ui-tune" = {
