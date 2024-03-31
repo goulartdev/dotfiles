@@ -5,6 +5,9 @@ return {
     'JoosepAlviste/nvim-ts-context-commentstring',
   },
   build = ':TSUpdate',
+  keys = {
+    { '<leader>ut', '<cmd>TSUpdate<cr>', desc = 'Update Treesitter parsers' },
+  },
   config = function()
     ---@diagnostic disable-next-line: missing-fields
     require('nvim-treesitter.configs').setup {

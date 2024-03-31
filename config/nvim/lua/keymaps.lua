@@ -13,7 +13,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
-vim.keymap.set('n', '<leader>oe', vim.cmd.Ex, { desc = 'Open file Explorer' })
+vim.keymap.set('n', '<leader>of', vim.cmd.Ex, { desc = 'Open File explorer' })
 
 vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Scroll halfscreen down and center current line' })
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Scroll halfscreen aup nd center current line' })
@@ -35,6 +35,10 @@ vim.api.nvim_create_autocmd('FileType', {
   group = vim.api.nvim_create_augroup('HelpMappings', { clear = true }),
   callback = function(ev)
     vim.keymap.set('n', '<esc>', '<cmd>bw<cr>', { desc = 'Close current buffer', buffer = ev.buf })
+    vim.keymap.set('n', 'q', '<cmd>bw<cr>', { desc = 'Close current buffer', buffer = ev.buf })
   end,
 })
+
+vim.keymap.set('n', '<leader>up', '<cmd>Lazy update<cr>', { desc = 'Update Plugins' })
+
 -- vim: ts=2 sts=2 sw=2 et

@@ -13,6 +13,7 @@ require('lazy').setup({
   require 'kickstart.plugins.nvim-lint',
   require 'kickstart.plugins.onedark',
   require 'kickstart.plugins.todo-comments',
+  require 'kickstart.plugins.bufferline',
   require 'kickstart.plugins.lualine',
   require 'kickstart.plugins.ident-blankline',
   require 'kickstart.plugins.mini',
@@ -25,8 +26,14 @@ require('lazy').setup({
   require 'kickstart.plugins.spectre',
   require 'kickstart.plugins.text-case',
 }, {
+  install = {
+    colorscheme = { 'onedark' },
+  },
   ui = {
     border = 'rounded',
+  },
+  diff = {
+    cmd = 'diffview.nvim',
   },
 })
 

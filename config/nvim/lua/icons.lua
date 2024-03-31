@@ -110,6 +110,7 @@ return {
     Note = '',
     Package = '',
     Pencil = '󰏫',
+    Pin = '󰐃',
     Plus = '',
     Project = '',
     Search = '',
