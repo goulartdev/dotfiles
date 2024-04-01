@@ -127,6 +127,7 @@
 
       # nix stuff
       nil
+      nixfmt
     ];
     extraLuaPackages = luaPkgs: with luaPkgs; [
       jsregexp
