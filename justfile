@@ -21,6 +21,10 @@ remove-broken-links:
 # run link-dotfiles, than remove-broken-links
 sync-dotfiles: link-dotfiles remove-broken-links
 
+system-rebuild host mode='switch':
+  nixos-rebuild {{mode}} --use-remote-sudo --flake ".#{{host}}" \
+  && nix store diff-closures $(\ls -d /nix/var/nix/profiles/*|tail -2)
+
 system-update host mode='switch':
   #!/usr/bin/env sh
   nix flake update
