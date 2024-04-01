@@ -82,6 +82,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/mutter/keybindings" = {
+      switch-monitor = [];
       toggle-tiled-left = [];
       toggle-tiled-right = [];
     };
