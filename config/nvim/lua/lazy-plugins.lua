@@ -1,7 +1,5 @@
 require('lazy').setup({
   'tpope/vim-sleuth',
-  { 'NvChad/nvim-colorizer.lua', opts = {} },
-  -- "ThePrimeagen/vim-be-good,"
   require 'kickstart.plugins.gitsigns',
   require 'kickstart.plugins.diffview',
   require 'kickstart.plugins.neogit',
@@ -12,6 +10,7 @@ require('lazy').setup({
   require 'kickstart.plugins.cmp',
   require 'kickstart.plugins.nvim-lint',
   require 'kickstart.plugins.onedark',
+  require 'kickstart.plugins.colorizer',
   require 'kickstart.plugins.todo-comments',
   require 'kickstart.plugins.bufferline',
   require 'kickstart.plugins.lualine',
@@ -21,7 +20,6 @@ require('lazy').setup({
   require 'kickstart.plugins.debug',
   require 'kickstart.plugins.notify',
   require 'kickstart.plugins.trouble',
-  -- require 'kickstart.plugins.harpoon',
   require 'kickstart.plugins.dial',
   require 'kickstart.plugins.spectre',
   require 'kickstart.plugins.text-case',

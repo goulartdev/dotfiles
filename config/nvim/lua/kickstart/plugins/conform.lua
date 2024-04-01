@@ -13,6 +13,7 @@ return {
       }
     end,
     formatters_by_ft = {
+      javascript = { 'prettier' },
       lua = { 'stylua' },
       python = function(bufnr)
         if require('conform').get_formatter_info('ruff_format', bufnr).available then
@@ -21,7 +22,6 @@ return {
           return { 'isort', 'black' }
         end
       end,
-      javascript = { 'prettier' },
     },
   },
 }

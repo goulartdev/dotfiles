@@ -19,6 +19,7 @@ return {
 
     -- Document existing key chains
     require('which-key').register({
+      b = { name = 'Buffer', _ = 'which_key_ignore' },
       c = { name = 'Code', _ = 'which_key_ignore' },
       g = { name = 'Git', _ = 'which_key_ignore' },
       h = { name = 'Hunk', _ = 'which_key_ignore' },

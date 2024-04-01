@@ -79,11 +79,22 @@ return {
         map('<leader>cr', telescope.lsp_references, 'Code References')
         map('<leader>ci', telescope.lsp_implementations, 'Code Implementations')
         map('<leader>ct', telescope.lsp_type_definitions, 'Code Type definition')
+        map('<leader>ca', vim.lsp.buf.code_action, 'Code Action')
+        map('<leader>cf', function()
+          vim.lsp.buf.format { async = true }
+        end, 'Code Format')
+
+        map('<leader>li', '<cmd>LspInfo<cr>', 'Lsp Info')
+
+        -- TODO: List options with telescope (lspconfig.utils may help)
+        -- map('<leader>lr', '<cmd>LspRestart<cr>', 'Lsp Restart')
+        -- map('<leader>ls', '<cmd>LspStart<cr>', 'Lsp Start')
+        -- map('<leader>lS', '<cmd>LspStop<cr>', 'Lsp Stop')
+        map('<leader>ll', '<cmd>LspLog<cr>', 'Lsp Log')
 
         map('<leader>rv', vim.lsp.buf.rename, 'Rename Variable')
-        map('<leader>ca', vim.lsp.buf.code_action, 'Code Action')
 
-        map('K', vim.lsp.buf.hover, 'Hover Documentation')
+        map('K', vim.lsp.buf.hover, 'Hover DocumenLspStoptation')
 
         -- map('<leader>gC', '<cmd>TextCaseOpenTelescopeLSPChange<cr>', 'Code Case convert')
 
@@ -109,6 +120,8 @@ return {
 
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+
+    require('lspconfig.ui.windows').default_options = { border = 'rounded' }
 
     local handlers = {
       ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' }),
@@ -137,6 +150,8 @@ return {
       cssls = {},
       eslint = {},
       pyright = {
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#pyright
+        -- https://github.com/microsoft/pyright
         settings = {
           pyright = {
             -- Using Ruff's import organizer
@@ -150,7 +165,10 @@ return {
           },
         },
       },
-      ruff_lsp = {},
+      ruff_lsp = {
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#ruff
+        -- https://github.com/astral-sh/ruff
+      },
       angularls = {},
       dockerls = {},
       docker_compose_language_service = {},
@@ -169,7 +187,15 @@ return {
         filetypes = { 'sh', 'zsh' },
       },
       autotools_ls = {},
-      nil_ls = {},
+      nil_ls = {
+        settings = {
+          ['nil'] = {
+            formatting = {
+              command = { 'nixfmt' },
+            },
+          },
+        },
+      },
       lua_ls = {
         settings = {
           Lua = {

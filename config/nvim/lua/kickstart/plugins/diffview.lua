@@ -29,6 +29,7 @@ return {
           { 'n', pfx 'cB', actions.conflict_choose_all 'base', { desc = 'Choose Base (whole file)' } },
           { 'n', pfx 'cA', actions.conflict_choose_all 'all', { desc = 'Choose All (whole file)' } },
           { 'n', 'dC', actions.conflict_choose_all 'none', { desc = 'Delete Conflict region (whole file)' } },
+          { 'n', 'q', diffview.close, { desc = 'Quit diffview' } },
         },
         file_panel = {
           { 'n', 'q', diffview.close, { desc = 'Quit diffview' } },
@@ -49,6 +50,7 @@ return {
           vim.opt_local.wrap = false
           vim.opt_local.list = false
 
+          require('colorizer').detach_from_buffer(bufnr)
           require('which-key').register({
             c = { name = 'Conflict Choose', _ = 'which_key_ignore' },
           }, {
