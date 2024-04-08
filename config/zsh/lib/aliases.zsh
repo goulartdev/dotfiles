@@ -44,4 +44,5 @@ alias gcor='git checkout --recurse-submodules'
 alias grset='git remote set-url'
 alias gcl='git clone --recurse-submodules'
 alias gst='git status'
+alias lg='lazygit'
 
