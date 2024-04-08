@@ -145,10 +145,27 @@ return {
 
       -- Some languages (like typescript) have entire language plugins that can be useful:
       --    https://github.com/pmizio/typescript-tools.nvim
-      emmet_language_server = {},
-      html = {},
-      cssls = {},
-      eslint = {},
+      emmet_language_server = {
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#emmet_language_server
+        -- https://github.com/olrtg/emmet-language-server
+      },
+      html = {
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#emmet_language_server
+        -- https://github.com/hrsh7th/vscode-langservers-extracted
+      },
+      cssls = {
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#cssls
+        -- https://github.com/hrsh7th/vscode-langservers-extracted
+      },
+      eslint = {
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#eslint
+        -- https://github.com/hrsh7th/vscode-langservers-extracted
+        -- https://github.com/microsoft/vscode-eslint
+      },
+      -- basedpyright = {
+      --   -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#basedpyright
+      --   -- https://github.com/detachhead/basedpyright?tab=readme-ov-file
+      -- },
       pyright = {
         -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#pyright
         -- https://github.com/microsoft/pyright
@@ -169,11 +186,26 @@ return {
         -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#ruff
         -- https://github.com/astral-sh/ruff
       },
-      angularls = {},
-      dockerls = {},
-      docker_compose_language_service = {},
-      marksman = {},
+      angularls = {
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#angularls
+        -- https://github.com/angular/vscode-ng-language-service
+        -- https://github.com/NixOS/nixpkgs/issues/244019
+      },
+      dockerls = {
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#dockerls
+        -- https://github.com/rcjsuen/dockerfile-language-server-nodejs
+      },
+      docker_compose_language_service = {
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#docker_compose_language_service
+        -- https://github.com/microsoft/compose-language-service
+      },
+      marksman = {
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#marksman
+        -- https://github.com/artempyanykh/marksman
+      },
       jsonls = {
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#jsonls
+        -- https://github.com/hrsh7th/vscode-langservers-extracted
         settings = {
           json = {
             schemas = require('schemastore').json.schemas,
@@ -181,13 +213,26 @@ return {
           },
         },
       },
-      yamlls = {},
-      taplo = {},
+      yamlls = {
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#yamlls
+        -- https://github.com/redhat-developer/yaml-language-server
+      },
+      taplo = {
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#taplo
+        -- https://taplo.tamasfe.dev/cli/usage/language-server.html
+      },
       bashls = {
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#bashls
+        -- https://github.com/bash-lsp/bash-language-server
         filetypes = { 'sh', 'zsh' },
       },
-      autotools_ls = {},
+      autotools_ls = {
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#autotools_ls
+        -- https://github.com/Freed-Wu/autotools-language-server
+      },
       nil_ls = {
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#nil_ls
+        -- https://github.com/oxalica/nil
         settings = {
           ['nil'] = {
             formatting = {
@@ -197,6 +242,8 @@ return {
         },
       },
       lua_ls = {
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#lua_ls
+        -- https://github.com/luals/lua-language-server
         settings = {
           Lua = {
             completion = {
