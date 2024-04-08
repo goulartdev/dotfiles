@@ -52,7 +52,7 @@ zmodload zsh/complist # give access to menuselect keymap; should be called befor
 autoload -Uz compinit 
 
 if [[ -n ${ZCOMPDUMP}(#qN.mh+24) ]]; then
-  compinit -d $ZCOMPDUMP
+  rm $ZCOMPDUMP && compinit -d $ZCOMPDUMP
 else
   compinit -C -d $ZCOMPDUMP
 fi
