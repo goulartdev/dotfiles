@@ -288,12 +288,12 @@ themes {
     bg "#323641"
     black "#010909"
     red "#bb2525"
-    green "#227722"
+    green "#449944"
     orange "#d86818"
     yellow "#daa520"
     blue "#3a5fd4"
-    magenta "#663399"
-    cyan "#008b8b"
+    magenta "#8855bb"
+    cyan "#00abab"
     white "#f3f7f8"
   }
 }
