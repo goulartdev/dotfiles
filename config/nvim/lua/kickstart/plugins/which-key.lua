@@ -23,6 +23,7 @@ return {
       c = { name = 'Code', _ = 'which_key_ignore' },
       g = { name = 'Git', _ = 'which_key_ignore' },
       h = { name = 'Hunk', _ = 'which_key_ignore' },
+      l = { name = 'Lsp', _ = 'which_key_ignore' },
       o = { name = 'Open', _ = 'which_key_ignore' },
       r = { name = 'Rename/Replace', _ = 'which_key_ignore' },
       s = { name = 'Search', _ = 'which_key_ignore' },
