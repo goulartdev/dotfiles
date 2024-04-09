@@ -128,6 +128,11 @@ return {
       ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' }),
       ['window/showMessage'] = function(_, method, params, client_id)
         local client = vim.lsp.get_client_by_id(client_id)
+
+        if client == nil then
+          return
+        end
+
         local severity = { 'ERROR', 'WARN', 'INFO', 'INFO' }
         vim.notify(method.message, severity[params.type], {
           title = 'LSP | ' .. client.name,
@@ -166,7 +171,7 @@ return {
       --   -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#basedpyright
       --   -- https://github.com/detachhead/basedpyright?tab=readme-ov-file
       -- },
-      pyright = {
+      basedpyright = {
         -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#pyright
         -- https://github.com/microsoft/pyright
         settings = {
