@@ -74,9 +74,9 @@ mkYarnPackage rec {
       mv $dir $out/libexec/${pname}/node_modules
     done
 
-    patchShebands --build $out/libexec/${pname}/bin/ng.js
+    patchShebangs --build $out/libexec/${pname}/bin/ng.js
 
-    ls -s $out/libexec/${pname}/bin/ng.js bin/ng
+    ln -s $out/libexec/${pname}/bin/ng.js bin/ng
 
     runHook postInstall
   '';
