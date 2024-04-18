@@ -1,5 +1,5 @@
 vim.g.mapleader = ' '
-vim.g.maplocalleader = ','
+vim.g.maplocalleader = '\\'
 
 vim.g.use_mason = vim.env.NVIM_USE_MASON == '1'
 

@@ -15,7 +15,7 @@ return {
         -- bg_yellow = "#f2cc81",
         -- fg = "#93a4c3",
         red = '#bb2525',
-        green = '#449944',
+        green = '#338822',
         orange = '#d86818',
         yellow = '#daa520',
         blue = '#3a5fd4',
@@ -31,7 +31,6 @@ return {
         diff_delete = '#3f0001',
         diff_change = '#291c00',
         diff_text = '#493706',
-        -- diff_text = '#493706',
       },
       highlights = {
         NormalFloat = { fg = '$fg', bg = 'none' },
