@@ -5,6 +5,7 @@ require('lazy').setup({
   require 'kickstart.plugins.neogit',
   require 'kickstart.plugins.which-key',
   require 'kickstart.plugins.telescope',
+  require 'kickstart.plugins.mason',
   require 'kickstart.plugins.lspconfig',
   require 'kickstart.plugins.conform',
   require 'kickstart.plugins.cmp',
@@ -23,6 +24,8 @@ require('lazy').setup({
   require 'kickstart.plugins.dial',
   require 'kickstart.plugins.spectre',
   require 'kickstart.plugins.text-case',
+  require 'kickstart.plugins.auto-session',
+  require 'kickstart.plugins.typescript-tools',
 }, {
   install = {
     colorscheme = { 'onedark' },

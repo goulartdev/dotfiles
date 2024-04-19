@@ -87,4 +87,6 @@ vim.diagnostic.config {
 
 vim.opt.fillchars:append { diff = '⋰' }
 
+vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,localoptions,globals'
+
 -- vim: ts=2 sts=2 sw=2 et
