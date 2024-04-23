@@ -13,7 +13,12 @@ return {
       }
     end,
     formatters_by_ft = {
-      javascript = { 'prettier' },
+      javascript = { 'biome', 'prettier' },
+      typescript = { 'biome', 'prettier' },
+      css = { 'prettier' },
+      scss = { 'prettier' },
+      html = { 'prettier' },
+      json = { 'biome', 'prettier' },
       lua = { 'stylua' },
       python = function(bufnr)
         if require('conform').get_formatter_info('ruff_format', bufnr).available then

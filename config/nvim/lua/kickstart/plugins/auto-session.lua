@@ -1,12 +1,15 @@
 return {
   {
     'rmagatti/auto-session',
+    lazy = false,
     opts = {
-      log_level = 'error',
-      auto_session_suppress_dirs = { '~/code' },
       auto_session_use_git_branch = true,
+      auto_session_create_enabled = false,
       auto_save_enabled = true,
       auto_restore_enabled = true,
+    },
+    keys = {
+      { '<leader>S', '<cmd>SessionSave<cr>', desc = 'Save session' },
     },
   },
   {
@@ -17,7 +20,7 @@ return {
     },
     opts = {},
     keys = {
-      { '<leader>ss', '<cmd>Telescope session-lens search_session<cr>' },
+      { '<leader>ss', '<cmd>Telescope session-lens search_session<cr>', desc = 'Search Sessions' },
     },
   },
 }
