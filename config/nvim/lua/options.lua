@@ -71,7 +71,7 @@ vim.diagnostic.config {
       { name = 'DiagnosticSignInfo', text = icons.diagnostics.Info },
     },
   },
-  virtual_text = true,
+  virtual_text = false,
   update_in_insert = false,
   underline = true,
   severity_sort = true,

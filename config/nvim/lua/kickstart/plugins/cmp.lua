@@ -24,6 +24,7 @@ return {
     local cmp = require 'cmp'
     local luasnip = require 'luasnip'
     local lspkind = require 'lspkind'
+    local compare = cmp.config.compare
 
     return {
       enabled = function()
@@ -57,6 +58,9 @@ return {
             buffer = '[buf]',
           },
         },
+      },
+      sorting = {
+        comparators = { compare.sort_text },
       },
       experimental = {
         native_menu = false,

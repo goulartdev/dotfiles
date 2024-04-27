@@ -59,6 +59,10 @@ return {
         BufferLineModifiedVisible = { fg = '$green', bg = '$bg0' },
         BufferLineGroupSeparator = { bg = '$bg_d' },
         BufferLineGroupLabel = { fg = '$fg', bg = '$bg_d' },
+        BufferLineHint = { fg = '$grey', bg = '$bg_d' },
+        BufferLineInfo = { fg = '$grey', bg = '$bg_d' },
+        BufferLineWarning = { fg = '$grey', bg = '$bg_d' },
+        BufferLineError = { fg = '$grey', bg = '$bg_d' },
       },
     }
     require('onedark').load()

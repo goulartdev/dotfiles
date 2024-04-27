@@ -111,6 +111,33 @@ return {
       end,
     }
 
+    local lspconfig = require 'lspconfig'
+    local navbuddy = require 'nvim-navbuddy'
+
+    vim.keymap.set('n', '<leader>cn', navbuddy.open, { desc = 'Code Navegation' })
+
+    local on_attach = function(client, bufnr)
+      if client.server_capabilities.documentSymbolProvider then
+        require('nvim-navic').attach(client, bufnr)
+        navbuddy.attach(client, bufnr)
+      end
+
+      vim.api.nvim_create_autocmd('CursorHold', {
+        buffer = bufnr,
+        callback = function()
+          local opts = {
+            focusable = false,
+            close_events = { 'BufLeave', 'CursorMoved', 'InsertEnter', 'FocusLost' },
+            border = 'rounded',
+            source = 'always',
+            prefix = ' ',
+            scope = 'cursor',
+          }
+          vim.diagnostic.open_float(nil, opts)
+        end,
+      })
+    end
+
     local servers = {
       -- ls = {
       --    cmd = {...},
@@ -157,6 +184,12 @@ return {
       ruff_lsp = {
         -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#ruff
         -- https://github.com/astral-sh/ruff
+        -- https://github.com/astral-sh/ruff-lsp
+        on_attach = function(client, bufnr)
+          on_attach(client, bufnr)
+          client.server_capabilities.hoverProvider = false
+        end,
+        mason_skip = true,
       },
       angularls = {
         -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#angularls
@@ -227,24 +260,12 @@ return {
       },
     }
 
-    local lspconfig = require 'lspconfig'
-    local navbuddy = require 'nvim-navbuddy'
-
-    vim.keymap.set('n', '<leader>cn', navbuddy.open, { desc = 'Code Navegation' })
-
-    local on_attach = function(client, bufnr)
-      if client.server_capabilities.documentSymbolProvider then
-        require('nvim-navic').attach(client, bufnr)
-        navbuddy.attach(client, bufnr)
-      end
-    end
-
     local function setup_server(server_name, server)
       -- This handles overriding only values explicitly passed
       -- by the server configuration above. Useful when disabling
       -- certain features of an LSP (for example, turning off formatting for tsserver)
       server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-      server.on_attach = on_attach
+      server.on_attach = server.on_attach or on_attach
       server.handlers = handlers
       lspconfig[server_name].setup(server)
     end
@@ -252,7 +273,10 @@ return {
     if vim.g.use_mason then
       require('mason').setup()
 
-      local ensure_installed = vim.tbl_keys(servers or {})
+      local ensure_installed = vim.tbl_filter(function(server)
+        return not servers[server].mason_skip
+      end, vim.tbl_keys(servers or {}))
+
       vim.list_extend(ensure_installed, {
         'stylua',
       })

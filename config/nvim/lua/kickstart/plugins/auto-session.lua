@@ -3,7 +3,6 @@ return {
     'rmagatti/auto-session',
     lazy = false,
     opts = {
-      auto_session_use_git_branch = true,
       auto_session_create_enabled = false,
       auto_save_enabled = true,
       auto_restore_enabled = true,
