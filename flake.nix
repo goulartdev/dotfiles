@@ -4,6 +4,11 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    duckdb = {
+      url = "github:goulartdev/nixpkgs/fix/duckdb";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     agenix = {
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,17 +30,21 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
   };
 
-  outputs = { nixpkgs, ... }@inputs:
+  outputs =
+    { nixpkgs, ... }@inputs:
     let
       forAllSystems = nixpkgs.lib.genAttrs [ "x86_64-linux" ];
       overlays = {
-        nixpkgs.overlays =
-          [ inputs.rust-overlay.overlays.default (import ./pkgs) ];
+        nixpkgs.overlays = [
+          inputs.rust-overlay.overlays.default
+          (import ./pkgs)
+          (final: prev: { duckdb = inputs.duckdb.legacyPackages.x86_64-linux.duckdb; })
+        ];
       };
-    in {
+    in
+    {
       nixosConfigurations = {
         laptop = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
@@ -59,15 +68,19 @@
         };
       };
 
-      devShells = forAllSystems (system:
-        let pkgs = nixpkgs.legacyPackages.${system};
-        in {
+      devShells = forAllSystems (
+        system:
+        let
+          pkgs = nixpkgs.legacyPackages.${system};
+        in
+        {
           default = pkgs.mkShell {
             nativeBuildInputs = with pkgs; [
               disko
               inputs.agenix.packages.${system}.default
             ];
           };
-        });
+        }
+      );
     };
 }
