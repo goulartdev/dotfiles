@@ -4,10 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    duckdb = {
-      url = "github:goulartdev/nixpkgs/fix/duckdb";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    duckdb.url = "github:goulartdev/nixpkgs/fix/duckdb";
 
     agenix = {
       url = "github:ryantm/agenix";
