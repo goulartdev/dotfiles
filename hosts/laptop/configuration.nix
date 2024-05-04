@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }: 
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   imports = [
@@ -7,7 +12,7 @@
   ];
 
   system.stateVersion = "23.11";
-  
+
   documentation.nixos.enable = false;
 
   boot = {
@@ -23,11 +28,11 @@
   };
 
   nix = {
-    package = pkgs.nixUnstable;
+    package = pkgs.nixVersions.latest;
     settings.use-xdg-base-directories = true;
     extraOptions = ''
       experimental-features = nix-command flakes
-    '';   
+    '';
     gc = {
       automatic = true;
       dates = "weekly";
@@ -36,22 +41,25 @@
   };
 
   nixpkgs.config.allowUnfree = true;
-  
+
   time.timeZone = "America/Sao_Paulo";
 
-  i18n.defaultLocale = "en_US.UTF-8"; 
- 
+  i18n.defaultLocale = "en_US.UTF-8";
+
   networking = {
-    hostName = "laptop"; 
+    hostName = "laptop";
     networkmanager.enable = true;
     wireguard.enable = true;
-  };  
+  };
 
   security = {
     sudo.enable = false;
     doas.enable = true;
     doas.extraRules = [
-      { groups = ["wheel"]; persist = true; }
+      {
+        groups = [ "wheel" ];
+        persist = true;
+      }
     ];
     polkit.enable = true;
   };
@@ -98,16 +106,16 @@
       # Make sure to use the correct Bus ID values (sudo lshw -c display)
       intelBusId = "PCI:0:2:0";
       nvidiaBusId = "PCI:1:0:0";
-      
+
       # there is a bug, but it works (https://github.com/NixOS/nixpkgs/issues/187543)
       # offloading with steam (https://nixos.wiki/wiki/Nvidia)
-      offload.enable = true; 
+      offload.enable = true;
       offload.enableOffloadCmd = true;
 
       reverseSync.enable = false; # try enabling this sometime
     };
   };
-  
+
   boot.initrd.kernelModules = [ "i915" ];
 
   environment.variables = {
@@ -122,15 +130,18 @@
       options = "";
     };
     exportConfiguration = true;
-    videoDrivers = ["i915" "nvidia"];
+    videoDrivers = [
+      "i915"
+      "nvidia"
+    ];
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
     desktopManager.xterm.enable = false;
-    excludePackages = [ pkgs.xterm ]; 
+    excludePackages = [ pkgs.xterm ];
   };
- 
+
   hardware.bluetooth.enable = true;
- 
+
   services.fstrim.enable = true;
 
   sound = {
@@ -161,11 +172,15 @@
   # Define user accounts
   users.defaultUserShell = pkgs.zsh;
   users.mutableUsers = false;
-  users.users = { 
+  users.users = {
     djonathan = {
       isNormalUser = true;
       hashedPasswordFile = config.age.secrets.djonathan-login.path;
-      extraGroups = [ "wheel" "networkmanager" "libvirtd" ];
+      extraGroups = [
+        "wheel"
+        "networkmanager"
+        "libvirtd"
+      ];
       useDefaultShell = true;
       # openssh.authorizedKeys.keys =  [ "ssh-dss AAAAB3NzaC1kc3MAAACBAPIkGWVEt4..." ];
     };
@@ -180,7 +195,7 @@
   };
 
   environment.localBinInPath = true;
-  
+
   environment.systemPackages = with pkgs; [
     neovim
     curl
@@ -189,46 +204,47 @@
     openssl
     age
     libusb1
-  ]; 
-
-  services.udev.packages = with pkgs; [
-    qmk-udev-rules
   ];
+
+  services.udev.packages = with pkgs; [ qmk-udev-rules ];
 
   programs.gamemode.enable = true;
 
-  environment.gnome.excludePackages = (with pkgs; [
-    gnome-tour
-    gnome-connections
-    gnome-text-editor
-    gedit
-  ]) ++ (with pkgs.gnome; [
-    baobab 
-    cheese
-    gnome-music
-    epiphany 
-    geary 
-    gnome-characters
-    totem
-    gnome-contacts
-    gnome-weather
-    simple-scan
-    seahorse
-    gnome-maps
-  ]);
+  environment.gnome.excludePackages =
+    (with pkgs; [
+      gnome-tour
+      gnome-connections
+      gnome-text-editor
+      gedit
+    ])
+    ++ (with pkgs.gnome; [
+      baobab
+      cheese
+      gnome-music
+      epiphany
+      geary
+      gnome-characters
+      totem
+      gnome-contacts
+      gnome-weather
+      simple-scan
+      seahorse
+      gnome-maps
+    ]);
 
-  nixpkgs.config.permittedInsecurePackages =
-    lib.optional (pkgs.obsidian.version == "1.5.3") "electron-25.9.0";
+  nixpkgs.config.permittedInsecurePackages = lib.optional (
+    pkgs.obsidian.version == "1.5.3"
+  ) "electron-25.9.0";
 
   environment.variables = rec {
-    XDG_CACHE_HOME  = "$HOME/.cache";
+    XDG_CACHE_HOME = "$HOME/.cache";
     XDG_CONFIG_HOME = "$HOME/.config";
-    XDG_DATA_HOME   = "$HOME/.local/share";
-    XDG_STATE_HOME  = "$HOME/.local/state";
+    XDG_DATA_HOME = "$HOME/.local/share";
+    XDG_STATE_HOME = "$HOME/.local/state";
     XDG_RUNTIME_DIR = "/run/user/$(id -u)";
     ZDOTDIR = "$XDG_CONFIG_HOME/zsh";
   };
-  
+
   environment.persistence."/state" = {
     hideMounts = true;
     directories = [
@@ -240,12 +256,12 @@
     ];
     files = [
       "/etc/machine-id"
-#      { file = "/etc/nix/id_rsa"; parentDirectory = { mode = "u=rwx,g=,o="; }; }
+      #      { file = "/etc/nix/id_rsa"; parentDirectory = { mode = "u=rwx,g=,o="; }; }
     ];
   };
 
   # services.openssh.enable = true;
-  
+
   #systemd.services.foo = {
   #  script = ''
   #    ln -sf /tmp /var/tmp
@@ -263,5 +279,4 @@
       defaultNetwork.settings.dns_enabled = true;
     };
   };
-
 }
