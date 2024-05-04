@@ -32,3 +32,8 @@ system-update host mode='switch':
   nixos-rebuild {{mode}} --use-remote-sudo --flake ".#{{host}}" \
   && nix store diff-closures $(\ls -d /nix/var/nix/profiles/*|tail -2)
 
+system-gc:
+  #!/usr/bin/env sh
+  sudo nix profile wipe-history --profile /nix/var/nix/profiles/system
+  nix profile wipe-history --profile ~/.local/state/nix/profiles/home-manager
+  nix store gc
