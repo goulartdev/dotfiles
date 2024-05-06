@@ -16,7 +16,6 @@ return {
       },
       keymaps = {
         view = {
-          { 'n', '<esc>', diffview.close, { desc = 'Quit diffview' } },
           { 'n', pfx 'e', actions.focus_files, { desc = 'Bring focus to the file panel' } },
           { 'n', pfx 'b', actions.toggle_files, { desc = 'Toggle the file panel.' } },
           { 'n', pfx 'co', actions.conflict_choose 'ours', { desc = 'Choose Ours' } },
@@ -33,7 +32,9 @@ return {
         },
         file_panel = {
           { 'n', 'q', diffview.close, { desc = 'Quit diffview' } },
-          { 'n', '<esc>', diffview.close, { desc = 'Quit diffview' } },
+        },
+        file_history_panel = {
+          { 'n', 'q', diffview.close, { desc = 'Quit diffview' } },
         },
       },
       icons = {
