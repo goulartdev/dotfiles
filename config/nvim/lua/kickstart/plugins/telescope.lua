@@ -98,7 +98,6 @@ return {
     vim.keymap.set('n', '<leader><leader>', function()
       builtin.buffers(require('telescope.themes').get_dropdown {
         previewer = false,
-        initial_mode = 'normal',
       })
     end, { desc = 'find existing buffers' })
 
