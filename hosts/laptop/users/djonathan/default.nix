@@ -48,7 +48,7 @@
       pciutils
       usbutils
       lshw
-      nvtop
+      nvtopPackages.full
       rsync
       sqlite
       zellij
