@@ -31,6 +31,7 @@
       ulauncher
       protonvpn-gui
       alacritty
+      irpf
 
       # gaming
       steam
