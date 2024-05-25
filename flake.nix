@@ -4,8 +4,6 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    vlc.url = "github:NixOS/nixpkgs/c52a056f18257a888169ed42951a47a39e702440";
-
     duckdb.url = "github:goulartdev/nixpkgs/fix/duckdb";
 
     agenix = {
@@ -39,10 +37,7 @@
         nixpkgs.overlays = [
           inputs.rust-overlay.overlays.default
           (import ./pkgs)
-          (final: prev: {
-            duckdb = inputs.duckdb.legacyPackages.x86_64-linux.duckdb;
-            vlc = inputs.vlc.legacyPackages.x86_64-linux.vlc;
-          })
+          (final: prev: { duckdb = inputs.duckdb.legacyPackages.x86_64-linux.duckdb; })
         ];
       };
     in
