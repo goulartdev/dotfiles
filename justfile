@@ -21,10 +21,12 @@ remove-broken-links:
 # run link-dotfiles, than remove-broken-links
 sync-dotfiles: link-dotfiles remove-broken-links
 
+# rebuid the system then run diff between generations
 system-rebuild host mode='switch':
   nixos-rebuild {{mode}} --use-remote-sudo --flake ".#{{host}}" \
   && nix store diff-closures $(\ls -d /nix/var/nix/profiles/*|tail -2)
 
+# update and rebuild the system, then run diff between generations
 system-update host mode='switch':
   #!/usr/bin/env sh
   nix flake update
@@ -32,6 +34,7 @@ system-update host mode='switch':
   nixos-rebuild {{mode}} --use-remote-sudo --flake ".#{{host}}" \
   && nix store diff-closures $(\ls -d /nix/var/nix/profiles/*|tail -2)
 
+# collect garbage on nix store, system and home-manager
 system-gc:
   #!/usr/bin/env sh
   sudo nix profile wipe-history --profile /nix/var/nix/profiles/system
