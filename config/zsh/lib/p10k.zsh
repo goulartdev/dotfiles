@@ -365,6 +365,7 @@
 
   #####################################[ vcs: git status ]######################################
   # Branch icon. Set this parameter to '\UE0A0 ' for the popular Powerline branch icon.
+  typeset -g POWERLEVEL9K_VCS_GIT_REMOTE_ICONS=()
   typeset -g POWERLEVEL9K_VCS_BRANCH_ICON='\uF126 '
 
   # Untracked files icon. It's really a question mark, your font isn't broken.
