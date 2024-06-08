@@ -54,9 +54,7 @@
       sqlite
       zellij
       wl-clipboard
-      gh
-      podman-tui
-      lazygit # A simple terminal UI for git commands https://github.com/jesseduffield/lazygit
+      lazygit
       delta # A syntax-highlighting pager for git, diff, and grep output https://github.com/dandavison/delta
       zoxide # A smarter cd command https://github.com/ajeetdsouza/zoxide
       bat # cat alternative https://github.com/sharkdp/bat
