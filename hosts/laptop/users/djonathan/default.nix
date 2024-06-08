@@ -99,7 +99,6 @@
       forge
       gnome-40-ui-improvements
       just-perfection
-      pano
       unblank
       vitals
       super-key
