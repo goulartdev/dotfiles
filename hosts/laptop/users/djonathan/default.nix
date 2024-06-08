@@ -79,13 +79,13 @@
       noti # Monitor a process and trigger a notification https://github.com/variadico/noti
       mkcert # make locally trusted development certificates https://github.com/FiloSottile/mkcert
       pastel # generate, analyze, convert and manipulate colors https://github.com/sharkdp/pastel
-      # xplr         # File manager https://github.com/sayanarijit/xplr 
-      # lf           # File manager https://github.com/gokcehan/lf
       broot # File manager https://github.com/Canop/broot
       hyperfine # benchmarking tool https://github.com/sharkdp/hyperfine
       gum
       just
       atuin
+      newsboat
+      oh-my-posh
 
       (nerdfonts.override { fonts = [ "FiraCode" ]; })
     ])
