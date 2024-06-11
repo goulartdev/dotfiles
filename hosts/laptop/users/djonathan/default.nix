@@ -21,6 +21,7 @@
       obsidian
       qbittorrent
       vlc
+      mpv
       bruno
       qgis
       spotify
