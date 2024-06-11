@@ -3,8 +3,7 @@
     height: unset;
     max-height: 34px;
   }
-  
-  .button-toolbar button[name="PanelNotes"],
+
   .button-toolbar button[name="PanelTranslate"],
   .button-toolbar button[name="PanelMail"],
   .button-toolbar button[name="PanelCalendar"],
@@ -30,7 +29,7 @@
     max-height: 286px;
   }
 
-  .quick-commands > .ReactVirtualized__List {
+  .quick-commands>.ReactVirtualized__List {
     padding: 3px;
     box-sizing: initial !important;
     max-width: 514px;
@@ -50,8 +49,9 @@
 }
 
 footer .toolbar .button-toolbar {
+
   button[name="MailStatus"],
   button[name="CalendarStatus"] {
     display: none;
   }
-}        
+}
