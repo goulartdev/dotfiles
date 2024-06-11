@@ -39,6 +39,13 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
-vim.keymap.set('n', '<leader>up', '<cmd>Lazy update<cr>', { desc = 'Update Plugins' })
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'newsboat',
+  group = vim.api.nvim_create_augroup('NewsboarMappings', { clear = true }),
+  callback = function(ev)
+    vim.keymap.set('n', '<esc>', '<cmd>q!<cr>', { desc = 'Close current buffer', buffer = ev.buf })
+    vim.keymap.set('n', 'q', '<cmd>q!<cr>', { desc = 'Close current buffer', buffer = ev.buf })
+  end,
+})
 
 -- vim: ts=2 sts=2 sw=2 et
