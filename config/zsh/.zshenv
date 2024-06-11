@@ -8,6 +8,7 @@ export ZCOMPDUMP="${XDG_CACHE_HOME}/zsh/zcompdump-${ZSH_VERSION}"
 export EDITOR=nvim
 export VISUAL=nvim
 export PAGER=less
+export BROWSER=vivaldi
 export MANPAGER='nvim +Man!'
 
 export RIPGREP_CONFIG_PATH="${XDG_CONFIG_HOME}/ripgrep/config"
