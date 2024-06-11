@@ -1,0 +1,146 @@
+confirm-mark-all-feeds-read no
+confirm-mark-feed-read no
+show-read-articles no
+show-read-feeds no
+text-width 90
+pager "nvim -mRc 'silent argdo set filetype=newsboat | set textwidth=90' %f"
+keep-articles-days 30
+show-keymap-hint yes
+show-title-bar yes
+swap-title-and-hints no
+
+feedlist-title-format " %?F?Feeds&Your feeds? (%u unread, %t total)%?F? matching filter `%F'&?%?T? - tag `%T'&?"
+#feedlist-format "%4i %n %11u %t %T"
+articlelist-title-format " Articles in feed '%T' (%u unread, %t total)%?F? matching filter `%F'&?"
+#articlelist-format "%4i %f %D %6L %?T?|%-17T| ?%t"
+selecttag-title-format " Select Tag"
+#selecttag-format "%4i %T (%u)"
+dialogs-title-format " Dialogs"
+dirbrowser-title-format " %?O?Open Directory&Save File? - %f"
+filebrowser-title-format " %?O?Open File&Save File? - %f"
+help-title-format " Help"
+itemview-title-format " Article '%T' (%u unread, %t total)"
+searchresult-title-format " Search results for '%s' (%u unread, %t total)%?F? matching filter '%F'&?"
+selectfilter-title-format " Select Filter"
+urlview-title-format " URLs"
+
+#datetime-format "%b %d"
+#highlight-feed <filterexpr> <fgcolor> <bgcolor> [<attribute> …​]
+#search-highlight-colors black yellow bold
+
+color title black color8
+color listnormal blue black
+color listfocus yellow black
+color listnormal_unread cyan black
+color listfocus_unread yellow black
+color info black color8
+color hint-key black color8 bold
+color article color246 black
+
+macro v set browser "vlc" ; open-in-browser ; set browser vivaldi
+
+unbind-key  S # save (article) ARTICLELIST ARTICLE SEARCHRESULTSLIST
+unbind-key ^k # random-unread
+unbind-key  e # enqueue ARTICLELIST SEARCHRESULTSLIST ARTICLE
+unbind-key  d # pb-download PODBOAT
+unbind-key  D # pb-delete PODBOAT
+unbind-key  c # pb-cancel PODBOAT
+unbind-key  P # pb-purge PODBOAT
+unbind-key  a # pb-toggle-download-all PODBOAT
+unbind-key  p # pb-play PODBOAT
+unbind-key  m # pb-mark-as-finished PODBOAT
+unbind-key  + # pb-increase-max-dls PODBOAT
+unbind-key  - # pb-decrease-max-dls PODBOAT
+unbind-key  $ # purge-deleted ARTICLELIST SEARCHRESULTSLIST
+unbind-key  C # mark-all-feeds-read
+unbind-key  o # open-in-browser
+unbind-key  O # open-in-browser-and-mark-read
+unbind-key  j # next-feed ARTICLELIST
+unbind-key  k # prev-feed ARTICLELIST
+unbind-key  J # next FEEDLIST ARTICLELIST ARTICLE DIALOGS DIRBROWSER FILEBROWSER FILTERSELECTION TAGSELECTION URLVIEW SEARCHRESULTSLIST PODBOAT
+unbind-key  K # prev FEEDLIST ARTICLELIST ARTICLE DIALOGS DIRBROWSER FILEBROWSER FILTERSELECTION TAGSELECTION URLVIEW SEARCHRESULTSLIST PODBOAT
+unbind-key ^n # next-unread-feed ARTICLELIST
+unbind-key ^p # prev-unread-feed ARTICLELIST
+unbind-key  N # toggle-article-read ARTICLELIST SEARCHRESULTSLIST ARTICLE
+unbind-key ENTER
+
+bind-key  l open feedlist
+bind-key  l open filebrowser
+bind-key  l open articlelist
+bind-key  l open tagselection
+bind-key  l open filterselection
+bind-key  l open urlview
+bind-key  l open dialogs
+bind-key  l open dirbrowser
+bind-key  l open searchresultslist
+bind-key  h quit filebrowser
+bind-key  h quit articlelist
+bind-key  h quit tagselection
+bind-key  h quit filterselection
+bind-key  h quit urlview
+bind-key  h quit dialogs
+bind-key  h quit dirbrowser
+bind-key  h quit searchresultslist
+bind-key  j next feedlist 
+bind-key  j next articlelist
+bind-key  j next filterselection
+bind-key  j next tagselection
+bind-key  j next urlview
+bind-key  j next searchresultslist
+bind-key  j next dialogs
+bind-key  j next dirbrowser
+bind-key  j next filebrowser
+bind-key  ] next article
+bind-key  k prev feedlist
+bind-key  k prev articlelist
+bind-key  k prev filterselection
+bind-key  k prev tagselection
+bind-key  k prev urlview
+bind-key  k prev searchresultslist
+bind-key  k prev dialogs
+bind-key  k prev dirbrowser
+bind-key  k prev filebrowser
+bind-key  [ prev article
+bind-key  g home
+bind-key  G end
+bind-key  J next-feed articlelist
+bind-key  K prev-feed articlelist
+bind-key  N next-unread-feed articlelist
+bind-key  P prev-unread-feed articlelist
+bind-key  x open-in-browser feedlist
+bind-key  x open-in-browser articlelist
+bind-key  x open-in-browser searchresultslist
+bind-key  x open-in-browser article
+bind-key  x open-in-browser urlview
+bind-key  X open-in-browser-and-mark-read feedlist
+bind-key  X open-in-browser-and-mark-read articlelist
+bind-key  X open-in-browser-and-mark-read searchresultslist
+bind-key  X open-in-browser-and-mark-read article
+bind-key  X open-in-browser-and-mark-read urlview
+bind-key  z toggle-show-read-feeds feedlist
+bind-key  z toggle-show-read-feeds articlelist
+bind-key  z toggle-show-read-feeds searchresultslist
+bind-key  a mark-feed-read feedlist
+bind-key  a mark-feed-read articlelist
+bind-key  a mark-feed-read searchresultslist
+bind-key  A mark-all-feeds-read feedlist
+bind-key  A mark-all-feeds-read articlelist
+bind-key  A mark-all-feeds-read searchresultslist
+bind-key ^a toggle-article-read article
+bind-key ^a toggle-article-read articlelist
+bind-key ^a toggle-article-read searchresultslist
+bind-key  d delete-article articlelist
+bind-key  d delete-article searchresultslist
+bind-key  d delete-article article
+bind-key  D delete-all-articles articlelist
+bind-key  D delete-all-articles searchresultslist
+bind-key ^d purge-deleted articlelist
+bind-key ^d purge-deleted searchresultslist
+bind-key  s sort feedlist
+bind-key  s sort articlelist
+bind-key  s sort searchresultslist
+bind-key  S rev-sort feedlist
+bind-key  S rev-sort articlelist
+bind-key  S rev-sort searchresultslist
+bind-key  j down
+bind-key  k up
