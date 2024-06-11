@@ -47,3 +47,4 @@ alias gcl='git clone --recurse-submodules'
 alias gst='git status'
 alias lg='lazygit'
 
+alias news='newsboat --quiet'
