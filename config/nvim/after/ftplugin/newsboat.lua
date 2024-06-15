@@ -1,0 +1,6 @@
+vim.api.nvim_buf_set_keymap(0, 'n', '<esc>', '<cmd>q!<cr>', { desc = 'Close current buffer' })
+vim.api.nvim_buf_set_keymap(0, 'n', 'q', '<cmd>q!<cr>', { desc = 'Close current buffer' })
+vim.api.nvim_buf_set_keymap(0, 'n', 'j', 'jzz', { desc = 'Mode one line down and center current line' })
+vim.api.nvim_buf_set_keymap(0, 'n', 'k', 'kzz', { desc = 'Move on line up and center current line' })
+vim.api.nvim_buf_set_keymap(0, 'v', 'j', 'jzz', { desc = 'Mode one line down and center current line' })
+vim.api.nvim_buf_set_keymap(0, 'v', 'k', 'kzz', { desc = 'Move on line up and center current line' })
