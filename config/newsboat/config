@@ -2,8 +2,8 @@ confirm-mark-all-feeds-read no
 confirm-mark-feed-read no
 show-read-articles no
 show-read-feeds no
-text-width 90
-pager "nvim -mRc 'silent argdo set filetype=newsboat | set textwidth=90' %f"
+text-width 80
+pager "nvim -mRc 'silent argdo set filetype=newsboat' %f"
 keep-articles-days 30
 show-keymap-hint yes
 show-title-bar yes
