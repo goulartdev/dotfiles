@@ -120,6 +120,7 @@
       ripgrep
       tree-sitter
       unzip
+      lua
       luajitPackages.luarocks
 
       lua-language-server
