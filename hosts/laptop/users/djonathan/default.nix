@@ -120,6 +120,7 @@
       ripgrep
       tree-sitter
       unzip
+      luajitPackages.luarocks
 
       lua-language-server
       stylua
