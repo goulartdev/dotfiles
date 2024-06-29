@@ -143,7 +143,6 @@
   services.fstrim.enable = true;
 
   sound = {
-    enable = true;
     mediaKeys.enable = true;
   };
   hardware.pulseaudio.enable = false;
