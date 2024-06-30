@@ -120,6 +120,7 @@
       ripgrep
       tree-sitter
       unzip
+      cargo
       lua51Packages.lua
       luajitPackages.luarocks
 
