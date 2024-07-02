@@ -25,6 +25,9 @@
       systemd-boot.configurationLimit = 10;
       efi.canTouchEfiVariables = true;
     };
+    kernel.sysctl = {
+      "kernel.yama.ptrace_scope" = 0;
+    };
   };
 
   nix = {
