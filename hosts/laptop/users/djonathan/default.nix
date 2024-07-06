@@ -122,7 +122,7 @@
       unzip
       cargo
       lua51Packages.lua
-      luajitPackages.luarocks
+      lua51Packages.luarocks
 
       lua-language-server
       stylua
