@@ -79,7 +79,7 @@ vim.diagnostic.config {
     focusable = true,
     style = 'minimal',
     border = 'rounded',
-    source = 'always',
+    source = 'if_many',
     header = '',
     prefix = '',
   },
@@ -88,5 +88,11 @@ vim.diagnostic.config {
 vim.opt.fillchars:append { diff = '⋰' }
 
 vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,localoptions,globals'
+
+vim.filetype.add {
+  pattern = {
+    ['.*.conf.template'] = 'nginx',
+  },
+}
 
 -- vim: ts=2 sts=2 sw=2 et

@@ -1,7 +1,6 @@
 return {
   'neovim/nvim-lspconfig',
   dependencies = {
-    { 'folke/neodev.nvim', opts = {} },
     { 'j-hui/fidget.nvim', opts = {} },
     { 'SmiteshP/nvim-navic', opts = { icons = require('icons').kind } },
     { 'b0o/SchemaStore.nvim' },
@@ -195,6 +194,14 @@ return {
         -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#angularls
         -- https://github.com/angular/vscode-ng-language-service
         -- https://github.com/NixOS/nixpkgs/issues/244019
+      },
+      zls = {
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#zls
+        -- https://github.com/zigtools/zls
+      },
+      nginx_language_server = {
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#nginx_language_server
+        -- https://pypi.org/project/nginx-language-server/
       },
       dockerls = {
         -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#dockerls

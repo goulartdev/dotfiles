@@ -43,6 +43,7 @@ return {
         'vim',
         'vimdoc',
         'yaml',
+        'zig',
       },
       auto_install = false,
       highlight = {

@@ -26,6 +26,8 @@ require('lazy').setup({
   require 'kickstart.plugins.text-case',
   require 'kickstart.plugins.auto-session',
   require 'kickstart.plugins.typescript-tools',
+  require 'kickstart.plugins.lazydev',
+  require 'kickstart.plugins.gitignore',
 }, {
   install = {
     colorscheme = { 'onedark' },

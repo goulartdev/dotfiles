@@ -30,4 +30,6 @@ vim.keymap.set('n', 'dl', '"_dl', { desc = 'Delete current character without yan
 
 vim.keymap.set('n', '<C-c>', '<cmd>bw<cr>', { desc = 'Close current buffer' })
 
+vim.keymap.set('n', '<leader>up', '<cmd>Lazy update<cr>', { desc = 'Update Plugins' })
+
 -- vim: ts=2 sts=2 sw=2 et

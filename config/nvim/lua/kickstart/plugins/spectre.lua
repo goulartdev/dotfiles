@@ -8,11 +8,9 @@ return {
       },
     },
   },
-  config = function()
-    vim.keymap.set('n', '<leader>rf', require('spectre').toggle, {
-      desc = 'Replace in cwd Files (spectre)',
-    })
-  end,
+  keys = {
+    { '<leader>rf', '<cmd>lua require("spectre").toggle()<cr>', desc = 'Replace in cwd Files (spectre)' },
+  },
 }
 
 -- vim: ts=2 sts=2 sw=2 et

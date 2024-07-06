@@ -18,7 +18,6 @@ return {
     }
 
     require('mini.bufremove').setup()
-    require('mini.comment').setup()
     require('mini.jump').setup()
     require('mini.pairs').setup()
     require('mini.splitjoin').setup()

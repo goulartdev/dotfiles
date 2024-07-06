@@ -1,23 +1,27 @@
 return {
   'folke/trouble.nvim',
-  dependencies = { 'nvim-tree/nvim-web-devicons' },
-  opts = {
-    fold_open = require('icons').ui.ChevronDown,
-    fold_closed = require('icons').ui.ChevronRight,
-    use_diagnostic_signs = true,
-    include_declaration = {},
+  dependencies = {
+    'nvim-tree/nvim-web-devicons',
   },
-  cmd = { 'Trouble', 'TroubleToggle' },
+  opts = {
+    icons = {
+      indent = {
+        fold_open = require('icons').ui.ChevronDown,
+        fold_closed = require('icons').ui.ChevronRight,
+      },
+    },
+  },
+  cmd = { 'Trouble' },
   keys = {
-    { '<leader>cd', '<cmd>TroubleToggle document_diagnostics<cr>', desc = 'Code Diagnostics (document)' },
-    { '<leader>cD', '<cmd>TroubleToggle workspace_diagnostics<cr>', desc = 'Code Diagnostics (workspace)' },
-    { '<leader>ol', '<cmd>TroubleToggle loclist<cr>', desc = 'Open Location list' },
-    { '<leader>oq', '<cmd>TroubleToggle quickfix<cr>', desc = 'Open Quickfix list' },
+    { '<leader>cd', '<cmd>Trouble diagnostics toggle filter.buf=0<cr>', desc = 'Code Diagnostics (current buffer)' },
+    { '<leader>cD', '<cmd>Trouble diagnostics toggle<cr>', desc = 'Code Diagnostics' },
+    { '<leader>ol', '<cmd>Trouble loclist toggle<cr>', desc = 'Location list' },
+    { '<leader>oq', '<cmd>Trouble qflist toggle<cr>', desc = 'Quickfix list' },
     {
       '[q',
       function()
         if require('trouble').is_open() then
-          require('trouble').previous { skip_groups = true, jump = true }
+          require('trouble').prev()
         else
           local ok, err = pcall(vim.cmd.cprev)
           if not ok then
@@ -31,7 +35,7 @@ return {
       ']q',
       function()
         if require('trouble').is_open() then
-          require('trouble').next { skip_groups = true, jump = true }
+          require('trouble').next()
         else
           local ok, err = pcall(vim.cmd.cnext)
           if not ok then
@@ -42,7 +46,9 @@ return {
       desc = 'Next Quickfix item',
     },
   },
-  config = function()
+  config = function(_, opts)
+    require('trouble').setup(opts)
+
     vim.api.nvim_create_autocmd('FileType', {
       pattern = 'Trouble',
       group = vim.api.nvim_create_augroup('TroubleMappings', { clear = true }),
