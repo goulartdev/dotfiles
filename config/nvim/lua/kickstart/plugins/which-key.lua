@@ -2,7 +2,10 @@ return {
   'folke/which-key.nvim',
   event = 'VimEnter',
   opts = {
-    window = {
+    icons = {
+      rules = false,
+    },
+    win = {
       border = 'single',
     },
   },
@@ -17,30 +20,40 @@ return {
   config = function(_, opts)
     require('which-key').setup(opts)
 
-    -- Document existing key chains
-    require('which-key').register({
-      b = { name = 'Buffer', _ = 'which_key_ignore' },
-      c = { name = 'Code', _ = 'which_key_ignore' },
-      g = { name = 'Git', _ = 'which_key_ignore' },
-      h = { name = 'Hunk', _ = 'which_key_ignore' },
-      l = { name = 'Lsp', _ = 'which_key_ignore' },
-      o = { name = 'Open', _ = 'which_key_ignore' },
-      r = { name = 'Rename/Replace', _ = 'which_key_ignore' },
-      s = { name = 'Search', _ = 'which_key_ignore' },
-      u = { name = 'Update', _ = 'which_key_ignore' },
-    }, { prefix = '<leader>' })
+    require('which-key').add {
+      { '<leader>b', group = 'Buffer' },
+      { '<leader>b_', hidden = true },
+      { '<leader>c', group = 'Code' },
+      { '<leader>c_', hidden = true },
+      { '<leader>d', group = 'Debug' },
+      { '<leader>d_', hidden = true },
+      { '<leader>g', group = 'Git' },
+      { '<leader>g_', hidden = true },
+      { '<leader>h', group = 'Hunk' },
+      { '<leader>h_', hidden = true },
+      { '<leader>l', group = 'Lsp' },
+      { '<leader>l_', hidden = true },
+      { '<leader>o', group = 'Open' },
+      { '<leader>o_', hidden = true },
+      { '<leader>r', group = 'Rename/Replace' },
+      { '<leader>r_', hidden = true },
+      { '<leader>s', group = 'Search' },
+      { '<leader>s_', hidden = true },
+      { '<leader>u', group = 'Update' },
+      { '<leader>u_', hidden = true },
+    }
 
-    require('which-key').register({
-      ['1'] = 'which_key_ignore',
-      ['2'] = 'which_key_ignore',
-      ['3'] = 'which_key_ignore',
-      ['4'] = 'which_key_ignore',
-      ['5'] = 'which_key_ignore',
-      ['6'] = 'which_key_ignore',
-      ['7'] = 'which_key_ignore',
-      ['8'] = 'which_key_ignore',
-      ['9'] = 'which_key_ignore',
-    }, { prefix = 'g' })
+    require('which-key').add {
+      { 'g1', hidden = true },
+      { 'g2', hidden = true },
+      { 'g3', hidden = true },
+      { 'g4', hidden = true },
+      { 'g5', hidden = true },
+      { 'g6', hidden = true },
+      { 'g7', hidden = true },
+      { 'g8', hidden = true },
+      { 'g9', hidden = true },
+    }
   end,
 }
 

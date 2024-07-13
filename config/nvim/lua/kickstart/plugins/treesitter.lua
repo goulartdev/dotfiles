@@ -28,6 +28,7 @@ return {
         'jsdoc',
         'json',
         'jsonc',
+        'just',
         'kdl',
         'lua',
         'luadoc',
