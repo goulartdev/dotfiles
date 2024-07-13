@@ -19,6 +19,7 @@ return {
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-buffer',
     'onsails/lspkind.nvim',
+    'echasnovski/mini.icons',
   },
   opts = function()
     local cmp = require 'cmp'
@@ -45,7 +46,7 @@ return {
       formatting = {
         format = lspkind.cmp_format {
           mode = 'symbol_text',
-          symbol_map = require('icons').kind,
+          symbol_map = require('mini.icons').list 'lsp',
           maxwidth = function()
             return math.floor(0.20 * vim.o.columns)
           end,

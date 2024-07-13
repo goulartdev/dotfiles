@@ -2,7 +2,7 @@ return {
   'akinsho/bufferline.nvim',
   version = '*',
   dependencies = {
-    'nvim-tree/nvim-web-devicons',
+    'echasnovski/mini.icons',
   },
   config = function()
     local bufferline = require 'bufferline'
@@ -27,7 +27,7 @@ return {
           },
           items = {
             bufferline.groups.builtin.pinned:with {
-              icon = require('icons').ui.Pin,
+              icon = '󰐃',
             },
             {
               id = 'modified',

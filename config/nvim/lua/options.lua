@@ -59,16 +59,14 @@ vim.opt.showcmd = false
 
 vim.opt.wildignore:append { '*/node_modules/*', '*/.venv/*' }
 
-local icons = require 'icons'
-
 vim.diagnostic.config {
   signs = {
     active = true,
     values = {
-      { name = 'DiagnosticSignError', text = icons.diagnostics.Error },
-      { name = 'DiagnosticSignWarn', text = icons.diagnostics.Warn },
-      { name = 'DiagnosticSignHint', text = icons.diagnostics.Hint },
-      { name = 'DiagnosticSignInfo', text = icons.diagnostics.Info },
+      { name = 'DiagnosticSignError', text = '' },
+      { name = 'DiagnosticSignWarn', text = '' },
+      { name = 'DiagnosticSignHint', text = '󰌶' },
+      { name = 'DiagnosticSignInfo', text = '' },
     },
   },
   virtual_text = false,

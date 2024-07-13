@@ -7,13 +7,13 @@ return {
   keys = {
     { '<leader>gg', '<cmd>Neogit<cr>', desc = 'open neoGit' },
   },
-  opts = {
-    signs = {
-      hunk = { '', '' },
-      item = { require('icons').ui.ChevronRight, require('icons').ui.ChevronDown },
-      section = { require('icons').ui.ChevronRight, require('icons').ui.ChevronDown },
-    },
-  },
+  opts = function()
+    return {
+      signs = {
+        hunk = { '', '' },
+      },
+    }
+  end,
   cmd = { 'Neogit' },
   config = true,
 }

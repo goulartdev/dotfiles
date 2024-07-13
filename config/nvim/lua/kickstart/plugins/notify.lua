@@ -25,11 +25,11 @@ return {
     render = 'wrapped-compact',
     stages = 'fade',
     icons = {
-      ERROR = require('icons').diagnostics.BoldError,
-      WARN = require('icons').diagnostics.BoldWarn,
-      INFO = require('icons').diagnostics.BoldInfo,
-      DEBUG = require('icons').diagnostics.BoldDebug,
-      TRACE = require('icons').diagnostics.Trace,
+      ERROR = '',
+      WARN = '',
+      INFO = '',
+      DEBUG = '',
+      TRACE = '✎',
     },
   },
   init = function()

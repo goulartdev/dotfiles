@@ -1,16 +1,5 @@
 return {
   'folke/trouble.nvim',
-  dependencies = {
-    'nvim-tree/nvim-web-devicons',
-  },
-  opts = {
-    icons = {
-      indent = {
-        fold_open = require('icons').ui.ChevronDown,
-        fold_closed = require('icons').ui.ChevronRight,
-      },
-    },
-  },
   cmd = { 'Trouble' },
   keys = {
     { '<leader>cd', '<cmd>Trouble diagnostics toggle filter.buf=0<cr>', desc = 'Code Diagnostics (current buffer)' },

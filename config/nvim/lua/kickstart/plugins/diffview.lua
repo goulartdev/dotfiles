@@ -1,6 +1,5 @@
 return {
   'sindrets/diffview.nvim',
-  dependencies = { 'nvim-tree/nvim-web-devicons' },
   opts = function()
     local diffview = require 'diffview'
     local actions = require 'diffview.actions'
@@ -12,7 +11,7 @@ return {
     return {
       enhanced_diff_hl = true,
       file_panel = {
-        listing_style = 'list',
+        -- listing_style = 'list',
       },
       keymaps = {
         view = {
@@ -37,27 +36,16 @@ return {
           { 'n', 'q', diffview.close, { desc = 'Quit diffview' } },
         },
       },
-      icons = {
-        folder_closed = require('icons').ui.Folder,
-        folder_open = require('icons').ui.FolderOpen,
-      },
-      signs = {
-        fold_closed = require('icons').ui.ChevronRight,
-        fold_open = require('icons').ui.ChevronDown,
-        done = require('icons').ui.Check,
-      },
       hooks = {
         diff_buf_read = function(bufnr)
           vim.opt_local.wrap = false
           vim.opt_local.list = false
 
           require('colorizer').detach_from_buffer(bufnr)
-          require('which-key').register({
-            c = { name = 'Conflict Choose', _ = 'which_key_ignore' },
-          }, {
-            buffer = bufnr,
-            prefix = '<localleader>',
-          })
+          require('which-key').add {
+            { '<localleader>c', buffer = bufnr, group = 'Conflict Choose' },
+            { '<localleader>c_', buffer = bufnr, hidden = true },
+          }
         end,
       },
     }

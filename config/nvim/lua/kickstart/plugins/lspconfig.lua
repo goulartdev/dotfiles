@@ -2,27 +2,38 @@ return {
   'neovim/nvim-lspconfig',
   dependencies = {
     { 'j-hui/fidget.nvim', opts = {} },
-    { 'SmiteshP/nvim-navic', opts = { icons = require('icons').kind } },
+    {
+      'SmiteshP/nvim-navic',
+      dependencies = { 'echasnovski/mini.icons' },
+      opts = function()
+        return {
+          icons = require('mini.icons').list 'lsp',
+        }
+      end,
+    },
     { 'b0o/SchemaStore.nvim' },
     {
       'SmiteshP/nvim-navbuddy',
       dependencies = {
         'MunifTanjim/nui.nvim',
+        'echasnovski/mini.icons',
       },
-      opts = {
-        icons = vim.tbl_map(function(value)
-          return value .. ' '
-        end, require('icons').kind),
-        window = {
-          border = 'rounded',
-        },
-      },
+      opts = function()
+        return {
+          icons = vim.tbl_map(function(value)
+            return value .. ' '
+          end, require('mini.icons').list 'lsp'),
+          window = {
+            border = 'rounded',
+          },
+        }
+      end,
     },
     {
       'utilyre/barbecue.nvim',
-      dependencies = {
-        'nvim-tree/nvim-web-devicons',
-      },
+      -- dependencies = {
+      --   'nvim-tree/nvim-web-devicons',
+      -- },
       opts = {
         attach_navic = false,
       },
