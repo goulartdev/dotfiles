@@ -26,7 +26,6 @@
       qgis
       spotify
       vivaldi
-      vscode
       gparted
       libappindicator
       ulauncher
@@ -69,20 +68,16 @@
       bandwhich # Terminal bandwidth utilization tool https://github.com/imsnif/bandwhich
       duf # df alternative https://github.com/muesli/duf
       ncdu # disk usage
-      navi # An interactive cheatsheet tool for the command-line https://github.com/denisidoro/navi
       grex # Generate regular expressions from user-provided test cases https://github.com/pemistahl/grex
       gojq # Command-line JSON processor https://github.com/itchyny/gojq
       jqp # A TUI playground to experiment with gojq https://github.com/noahgorstein/jqp
       xh # Tool for sending HTTP requests https://github.com/ducaale/xh
       doggo # Command-line DNS Client https://github.com/mr-karan/doggo
       dive # A tool for exploring each layer in a docker image https://github.com/wagoodman/dive
-      glow # Render markdown on the CLI https://github.com/charmbracelet/glow
       noti # Monitor a process and trigger a notification https://github.com/variadico/noti
       mkcert # make locally trusted development certificates https://github.com/FiloSottile/mkcert
-      pastel # generate, analyze, convert and manipulate colors https://github.com/sharkdp/pastel
       broot # File manager https://github.com/Canop/broot
       hyperfine # benchmarking tool https://github.com/sharkdp/hyperfine
-      gum
       just
       atuin
       newsboat
@@ -128,16 +123,14 @@
       stylua
       nil
       nixfmt-rfc-style
-
-      emmet-language-server
-      vscode-langservers-extracted
+      bash-language-server
       marksman
       taplo
-      angular-language-server
       yaml-language-server
-      dockerfile-language-server-nodejs
-      docker-compose-language-service
 
+      # vscode-langservers-extracted
+      # emmet-language-server
+      # angular-language-server
       # nodePackages.bash-language-server
       # autotools_ls, basedpyright 
     ];

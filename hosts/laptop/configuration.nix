@@ -216,27 +216,23 @@
       gnome-connections
       gnome-text-editor
       gedit
-    ])
-    ++ (with pkgs.gnome; [
       baobab
       cheese
-      gnome-music
       epiphany
       geary
-      gnome-characters
       totem
-      gnome-contacts
-      gnome-weather
       simple-scan
       seahorse
+    ])
+    ++ (with pkgs.gnome; [
+      gnome-music
+      gnome-characters
+      gnome-contacts
+      gnome-weather
       gnome-maps
     ]);
 
-  nixpkgs.config.permittedInsecurePackages = lib.optional (
-    pkgs.obsidian.version == "1.5.3"
-  ) "electron-25.9.0";
-
-  environment.variables = rec {
+  environment.variables = {
     XDG_CACHE_HOME = "$HOME/.cache";
     XDG_CONFIG_HOME = "$HOME/.config";
     XDG_DATA_HOME = "$HOME/.local/share";
@@ -261,13 +257,6 @@
   };
 
   # services.openssh.enable = true;
-
-  #systemd.services.foo = {
-  #  script = ''
-  #    ln -sf /tmp /var/tmp
-  #  '';
-  #  wantedBy = [ "multi-user.target" ];
-  #}; 
 
   programs.virt-manager.enable = true;
 
