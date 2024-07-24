@@ -90,6 +90,7 @@ vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,
 vim.filetype.add {
   pattern = {
     ['.*.conf.template'] = 'nginx',
+    ['.*/zsh/functions/.*'] = 'sh',
   },
 }
 
