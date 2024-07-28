@@ -76,7 +76,7 @@
       dive # A tool for exploring each layer in a docker image https://github.com/wagoodman/dive
       noti # Monitor a process and trigger a notification https://github.com/variadico/noti
       mkcert # make locally trusted development certificates https://github.com/FiloSottile/mkcert
-      broot # File manager https://github.com/Canop/broot
+      yazi # File manager https://github.com/sxyazi/yazi
       hyperfine # benchmarking tool https://github.com/sharkdp/hyperfine
       just
       atuin
@@ -84,6 +84,7 @@
       oh-my-posh
 
       (nerdfonts.override { fonts = [ "FiraCode" ]; })
+      fira-sans
     ])
     ++ (with pkgs.gnomeExtensions; [
       advanced-alttab-window-switcher
