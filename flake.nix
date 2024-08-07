@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    duckdb.url = "github:goulartdev/nixpkgs/fix/duckdb";
+    # duckdb.url = "github:goulartdev/nixpkgs/fix/duckdb";
 
     agenix = {
       url = "github:ryantm/agenix";
@@ -37,7 +37,6 @@
         nixpkgs.overlays = [
           inputs.rust-overlay.overlays.default
           (import ./pkgs)
-          (final: prev: { duckdb = inputs.duckdb.legacyPackages.x86_64-linux.duckdb; })
         ];
       };
     in
