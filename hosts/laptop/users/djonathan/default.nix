@@ -20,7 +20,6 @@
       inkscape
       obsidian
       qbittorrent
-      vlc
       mpv
       bruno
       qgis
@@ -31,6 +30,7 @@
       ulauncher
       protonvpn-gui
       alacritty
+      wezterm
 
       # gaming
       steam
@@ -54,6 +54,7 @@
       zellij
       wl-clipboard
       lazygit
+      atac
       delta # A syntax-highlighting pager for git, diff, and grep output https://github.com/dandavison/delta
       zoxide # A smarter cd command https://github.com/ajeetdsouza/zoxide
       bat # cat alternative https://github.com/sharkdp/bat
