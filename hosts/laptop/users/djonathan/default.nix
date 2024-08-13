@@ -31,6 +31,7 @@
       protonvpn-gui
       alacritty
       wezterm
+      zed-editor
 
       # gaming
       steam
@@ -133,7 +134,6 @@
       # vscode-langservers-extracted
       # emmet-language-server
       # angular-language-server
-      # nodePackages.bash-language-server
       # autotools_ls, basedpyright 
     ];
     extraLuaPackages = luaPkgs: with luaPkgs; [ jsregexp ];
