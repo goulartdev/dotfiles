@@ -266,4 +266,6 @@
       defaultNetwork.settings.dns_enabled = true;
     };
   };
+
+  programs.nix-ld.enable = true;
 }
