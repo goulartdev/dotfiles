@@ -191,10 +191,9 @@ return {
           },
         },
       },
-      ruff_lsp = {
+      ruff = {
         -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#ruff
         -- https://github.com/astral-sh/ruff
-        -- https://github.com/astral-sh/ruff-lsp
         on_attach = function(client, bufnr)
           on_attach(client, bufnr)
           client.server_capabilities.hoverProvider = false
