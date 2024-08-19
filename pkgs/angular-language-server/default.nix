@@ -5,7 +5,7 @@
   fetchFromGitHub,
 }:
 let
-  version = "17.3.1";
+  version = "18.1.2";
   name = "angular-language-server";
   package = mkYarnPackage rec {
     pname = "${name}-package";
@@ -59,7 +59,7 @@ let
         dist/server/src/server.js
 
       cat deps/ng-template/server/package.json \
-        | sed s/0.0.0-PLACEHOLDER/17.3.1/ > deps/ng-template/dist/server/package.json
+        | sed s/0.0.0-PLACEHOLDER/${version}/ > deps/ng-template/dist/server/package.json
 
       cp -r deps/ng-template/server/bin deps/ng-template/dist/server/bin
 
