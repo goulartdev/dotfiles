@@ -124,6 +124,8 @@
       marksman
       taplo
       yaml-language-server
+      vscode-langservers-extracted
+      emmet-language-server
     ];
     extraLuaPackages = luaPkgs: with luaPkgs; [ jsregexp ];
   };
