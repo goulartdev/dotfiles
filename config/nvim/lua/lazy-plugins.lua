@@ -1,5 +1,5 @@
 require('lazy').setup({
-  'tpope/vim-sleuth',
+  -- 'tpope/vim-sleuth',
   require 'kickstart.plugins.gitsigns',
   require 'kickstart.plugins.diffview',
   require 'kickstart.plugins.neogit',
