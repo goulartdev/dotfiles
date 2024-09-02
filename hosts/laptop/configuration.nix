@@ -239,6 +239,11 @@
     ZDOTDIR = "$XDG_CONFIG_HOME/zsh";
   };
 
+  environment.sessionVariables = {
+    FONTCONFIG_FILE = "/etc/fonts/fonts.conf";
+    FONTCONFIG_PATH = "/etc/fonts";
+  };
+
   environment.persistence."/state" = {
     hideMounts = true;
     directories = [
