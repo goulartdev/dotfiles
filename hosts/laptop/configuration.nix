@@ -208,8 +208,9 @@
 
   programs.gamemode.enable = true;
 
-  environment.gnome.excludePackages =
-    (with pkgs; [
+  environment.gnome.excludePackages = (
+    with pkgs;
+    [
       gnome-tour
       gnome-connections
       gnome-text-editor
@@ -221,14 +222,13 @@
       totem
       simple-scan
       seahorse
-    ])
-    ++ (with pkgs.gnome; [
       gnome-music
       gnome-characters
       gnome-contacts
       gnome-weather
       gnome-maps
-    ]);
+    ]
+  );
 
   environment.variables = {
     XDG_CACHE_HOME = "$HOME/.cache";
