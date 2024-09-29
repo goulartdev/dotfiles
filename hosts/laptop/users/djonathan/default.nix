@@ -77,6 +77,8 @@
       just
       atuin
       newsboat
+      zip
+      unzip
       oh-my-posh
 
       (nerdfonts.override { fonts = [ "FiraCode" ]; })
