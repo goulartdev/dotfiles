@@ -46,5 +46,6 @@ alias grset='git remote set-url'
 alias gcl='git clone --recurse-submodules'
 alias gst='git status'
 alias lg='lazygit'
+alias gw='git worktree'
 
 alias news='newsboat --quiet'
