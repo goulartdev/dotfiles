@@ -32,6 +32,7 @@
       alacritty
       wezterm
       zed-editor
+      libreoffice
 
       # gaming
       steam
