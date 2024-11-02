@@ -33,6 +33,8 @@
       wezterm
       zed-editor
       libreoffice
+      hunspellDicts.en_US
+      aspellDicts.en
 
       # gaming
       steam
