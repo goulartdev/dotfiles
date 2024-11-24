@@ -103,7 +103,8 @@
     powerManagement.finegrained = false; # incompatible with pascal
     open = false; # incompatible with pascal
     nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    # package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
     prime = {
       # Make sure to use the correct Bus ID values (sudo lshw -c display)
       intelBusId = "PCI:0:2:0";
