@@ -84,7 +84,7 @@
       unzip
       oh-my-posh
 
-      (nerdfonts.override { fonts = [ "FiraCode" ]; })
+      nerd-fonts.fira-code
       fira-sans
     ])
     ++ (with pkgs.gnomeExtensions; [
