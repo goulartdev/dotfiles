@@ -1,4 +1,4 @@
-[shell]
+[terminal.shell]
 program = "/usr/bin/env"
 args = [
   "zsh",
@@ -204,3 +204,5 @@ bindings = [
   { key = "ArrowUp",             action = "SearchHistoryPrevious",     mode = "Search" },
   { key = "ArrowDown",           action = "SearchHistoryNext",         mode = "Search" },
 ]
+
+[terminal]
