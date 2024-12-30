@@ -25,7 +25,13 @@ export AWS_CONFIG_FILE="${XDG_CONFIG_HOME}/aws/config"
 
 export CARGO_HOME="${XDG_DATA_HOME}/cargo"
 
+export NODE_REPL_HISTORY="${XDG_DATA_HOME}/node_repl_history"
 export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME}/npm/npmrc"
 
+export PYTHON_HISTORY="${XDG_DATA_HOME}/python_history"
+export PYTHONPYCACHEPREFIX="${XDG_CACHE_HOME}/python"
+export PYTHONUSERBASE="${XDG_DATA_HOME}/python"
 export PIPENV_VENV_IN_PROJECT=1
 export PIPENV_DONT_LOAD_ENV=1
+
+export DUCKDB_HISTORY="${XDG_DATA_HOME}/duckdb_history"
