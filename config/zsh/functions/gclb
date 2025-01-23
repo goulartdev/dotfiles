@@ -1,0 +1,13 @@
+(
+  set -euo pipefail
+
+  url="$1"
+  basename="${url##*/}"
+  name=${2:-${basename%.*}}
+
+  mkdir "$name"
+
+  git -C "$name" clone --bare "${url}" .git
+  git -C "$name" config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
+  git -C "$name" fetch
+)
