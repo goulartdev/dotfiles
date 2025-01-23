@@ -69,7 +69,7 @@
 
   # power management
   # programs.auto-cpufreq = {
-  #   enable = true;  
+  #   enable = true;
   #   settings = {
   #     battery = {
   #       governor = "powersave";
@@ -203,6 +203,7 @@
     openssl
     age
     libusb1
+    podman-compose
   ];
 
   services.udev.packages = with pkgs; [ qmk-udev-rules ];
