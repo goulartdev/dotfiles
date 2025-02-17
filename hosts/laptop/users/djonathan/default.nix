@@ -58,7 +58,7 @@
       zellij
       wl-clipboard
       lazygit
-      atac
+      posting
       delta
       zoxide
       bat
