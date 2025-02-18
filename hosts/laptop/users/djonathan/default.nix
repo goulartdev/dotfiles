@@ -132,6 +132,7 @@
       yaml-language-server
       vscode-langservers-extracted
       emmet-language-server
+      dockerfile-language-server-nodejs
     ];
     extraLuaPackages = luaPkgs: with luaPkgs; [ jsregexp ];
   };
