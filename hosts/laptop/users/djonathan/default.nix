@@ -38,6 +38,7 @@
 
       # gaming
       steam
+      steam-run
       wineWowPackages.waylandFull
       winetricks
       protontricks
