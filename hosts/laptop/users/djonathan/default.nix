@@ -83,7 +83,7 @@
       newsboat
       zip
       unzip
-      oh-my-posh
+      # oh-my-posh
 
       nerd-fonts.fira-code
       fira-sans
@@ -133,6 +133,7 @@
       vscode-langservers-extracted
       emmet-language-server
       dockerfile-language-server-nodejs
+      yaml-language-server
     ];
     extraLuaPackages = luaPkgs: with luaPkgs; [ jsregexp ];
   };
