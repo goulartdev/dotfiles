@@ -134,6 +134,7 @@
       emmet-language-server
       dockerfile-language-server-nodejs
       yaml-language-server
+      postgres-lsp
     ];
     extraLuaPackages = luaPkgs: with luaPkgs; [ jsregexp ];
   };
