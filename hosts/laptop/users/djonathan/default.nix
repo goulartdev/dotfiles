@@ -135,6 +135,7 @@
       dockerfile-language-server-nodejs
       yaml-language-server
       postgres-lsp
+      nginx-language-server
     ];
     extraLuaPackages = luaPkgs: with luaPkgs; [ jsregexp ];
   };
