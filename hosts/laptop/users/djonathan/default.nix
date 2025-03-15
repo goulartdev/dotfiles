@@ -35,6 +35,7 @@
       libreoffice
       hunspellDicts.en_US
       aspellDicts.en
+      termius
 
       # gaming
       steam
