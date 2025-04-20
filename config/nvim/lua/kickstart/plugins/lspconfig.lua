@@ -275,6 +275,11 @@ return {
           },
         },
       },
+      postgres_lsp = {
+        cmd = { 'postgres_lsp', 'lsp-proxy' },
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#postgres_lsp
+        -- https://github.com/supabase/postgres_lspa
+      },
     }
 
     local function setup_server(server_name, server)
@@ -311,10 +316,6 @@ return {
       for server_name, server in pairs(servers) do
         setup_server(server_name, server)
       end
-    end
-
-    for _, sign in ipairs(vim.tbl_get(vim.diagnostic.config(), 'signs', 'values') or {}) do
-      vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text .. ' ', numhl = sign.name })
     end
   end,
 }
