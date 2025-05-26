@@ -35,3 +35,8 @@ export PIPENV_VENV_IN_PROJECT=1
 export PIPENV_DONT_LOAD_ENV=1
 
 export DUCKDB_HISTORY="${XDG_DATA_HOME}/duckdb_history"
+
+export PSQLRC="${XDG_CONFIG_HOME}/pg/psqlrc"
+export PSQL_HISTORY="${XDG_STATE_HOME}/psql_history"
+export PGPASSFILE="${XDG_CONFIG_HOME}/pg/pgpass"
+export PGSERVICEFILE="${XDG_CONFIG_HOME}/pg/pg_service.conf"
