@@ -190,6 +190,13 @@ return {
             },
           },
         },
+        capabilities = {
+          workspace = {
+            didChangeWatchedFiles = {
+              dynamicRegistration = true,
+            },
+          },
+        },
       },
       ruff = {
         -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#ruff
@@ -276,7 +283,6 @@ return {
         },
       },
       postgres_lsp = {
-        cmd = { 'postgres_lsp', 'lsp-proxy' },
         -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#postgres_lsp
         -- https://github.com/supabase/postgres_lspa
       },
