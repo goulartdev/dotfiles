@@ -120,8 +120,8 @@
       tree-sitter
       unzip
       cargo
+      inotify-tools
       lua51Packages.lua
-      lua51Packages.luarocks
 
       lua-language-server
       stylua
