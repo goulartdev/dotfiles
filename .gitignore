@@ -4,3 +4,5 @@
 config/forge/config
 config/navi/navi.log
 config/newsboat/urls
+yazi.toml-*
+config.kdl.bak
