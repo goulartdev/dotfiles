@@ -16,8 +16,6 @@
   home.packages =
     (with pkgs; [
       # GUI
-      gimp
-      inkscape
       obsidian
       qbittorrent
       mpv
