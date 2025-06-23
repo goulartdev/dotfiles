@@ -147,10 +147,10 @@
 
   services.fstrim.enable = true;
 
-  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   # linux audio: https://www.youtube.com/watch?v=HxEXMHcwtlI
   services.pipewire = {
+    enable = true;
     pulse.enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
