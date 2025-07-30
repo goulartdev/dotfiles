@@ -52,6 +52,7 @@
   networking = {
     hostName = "laptop";
     networkmanager.enable = true;
+    networkmanager.plugins = with pkgs; [ networkmanager-openvpn ];
     wireguard.enable = true;
   };
 
