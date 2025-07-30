@@ -134,7 +134,6 @@
       vscode-langservers-extracted
       emmet-language-server
       dockerfile-language-server-nodejs
-      yaml-language-server
       postgres-lsp
       nginx-language-server
     ];
