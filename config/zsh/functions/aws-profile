@@ -1,0 +1,1 @@
+export AWS_PROFILE=$(aws configure list-profiles | fzf --height=40% --layout=reverse --preview-window=hidden --border=none --no-separator --info=hidden || echo "$AWS_PROFILE")

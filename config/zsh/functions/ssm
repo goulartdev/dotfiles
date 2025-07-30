@@ -1,0 +1,16 @@
+(
+  set -euo pipefail
+
+  if [ -z "${AWS_PROFILE+x}" ]; then
+    aws-profile
+  fi
+
+  id=$(aws ec2 describe-instances --query "Reservations[*].Instances[*].{PrivateIP:PrivateIpAddress,Name:Tags[?Key=='Name']|[0].Value,Type:InstanceType,Status:State.Name,InstanceId:InstanceId}" --output=table \
+    | sed -e '1,3d;$d' \
+    | fzf --header-lines 2 --height=40% --layout=reverse --preview-window=hidden --border=none --no-separator --delimiter "|" --info=hidden \
+    | awk -F\| '{gsub(/[ \s]+/, "", $2); print $2}')
+
+  if [ -n "$id" ]; then
+    aws ssm start-session --document-name AWS-StartInteractiveCommand --parameters command="tmux new-session -A -s ${USER} 2> /dev/null || bash" --target "$id"
+  fi
+)
