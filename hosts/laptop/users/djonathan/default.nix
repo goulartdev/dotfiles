@@ -44,6 +44,8 @@
       protonup-qt
 
       # cli / tui
+      awscli2
+      ssm-session-manager-plugin
       doas-sudo-shim
       age
       gnupg
