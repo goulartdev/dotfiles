@@ -144,7 +144,8 @@
         "home-manager": "home-manager_2",
         "impermanence": "impermanence",
         "nixpkgs": "nixpkgs",
-        "rust-overlay": "rust-overlay"
+        "rust-overlay": "rust-overlay",
+        "termius": "termius"
       }
     },
     "rust-overlay": {
@@ -179,6 +180,22 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "termius": {
+      "locked": {
+        "lastModified": 1752998453,
+        "narHash": "sha256-ThDJaKGgj6ynTkGIKCgC7dmgI6Ko82xHaavoZ6nXYpI=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "ed9b5119c4dbdc714de0125b73eb575d9371a2fa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "ed9b5119c4dbdc714de0125b73eb575d9371a2fa",
         "type": "github"
       }
     }
