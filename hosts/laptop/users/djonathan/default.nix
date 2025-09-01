@@ -34,6 +34,7 @@
       hunspellDicts.en_US
       aspellDicts.en
       termius
+      openvpn3
 
       # gaming
       steam
