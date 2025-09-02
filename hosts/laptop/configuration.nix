@@ -129,22 +129,25 @@
     VDPAU_DRIVER = "va_gl";
   };
 
-  services.xserver = {
-    enable = true;
-    xkb = {
-      layout = "us";
-      variant = "altgr-intl";
-      options = "";
+  services = {
+    xserver = {
+      enable = true;
+      xkb = {
+        layout = "us";
+        variant = "altgr-intl";
+        options = "";
+      };
+      exportConfiguration = true;
+      videoDrivers = [
+        "i915"
+        "nvidia"
+      ];
+      desktopManager.xterm.enable = false;
+      excludePackages = [ pkgs.xterm ];
     };
-    exportConfiguration = true;
-    videoDrivers = [
-      "i915"
-      "nvidia"
-    ];
+
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
-    desktopManager.xterm.enable = false;
-    excludePackages = [ pkgs.xterm ];
   };
 
   hardware.bluetooth.enable = true;
