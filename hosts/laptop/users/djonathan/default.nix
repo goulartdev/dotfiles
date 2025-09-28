@@ -133,7 +133,7 @@
       yaml-language-server
       vscode-langservers-extracted
       emmet-language-server
-      dockerfile-language-server-nodejs
+      dockerfile-language-server
       postgres-lsp
       nginx-language-server
     ];
