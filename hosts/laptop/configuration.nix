@@ -44,9 +44,6 @@
   };
 
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.permittedInsecurePackages = [
-    "libsoup-2.74.3"
-  ];
 
   time.timeZone = "America/Sao_Paulo";
 
