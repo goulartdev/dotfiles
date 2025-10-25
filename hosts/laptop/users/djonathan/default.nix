@@ -70,8 +70,8 @@
       sd
       fd
       fzf
-      procs
-      bottom
+      btop-cuda
+      impala
       duf
       ncdu
       grex
