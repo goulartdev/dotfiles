@@ -60,6 +60,7 @@
       zellij
       wl-clipboard
       lazygit
+      lazydocker
       posting
       delta
       zoxide
