@@ -5,6 +5,9 @@
 [init]
   defaultBranch = main
 
+[pull]
+	rebase = true
+
 [interactive]
   diffFilter = delta --color-only
 
