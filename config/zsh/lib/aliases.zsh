@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 ## NAVIGATION
+alias cd="zd"
 
 alias -g ...='../..'
 alias -g ....='../../..'
