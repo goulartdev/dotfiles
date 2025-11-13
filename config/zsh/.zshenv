@@ -6,6 +6,7 @@ export ZCOMPDUMP="${XDG_CACHE_HOME}/zsh/zcompdump-${ZSH_VERSION}"
 
 ## DEFAULT TOOLS
 export EDITOR=nvim
+export SUDO_EDITOR="$EDITOR"
 export VISUAL=nvim
 export PAGER=less
 export BROWSER=vivaldi
