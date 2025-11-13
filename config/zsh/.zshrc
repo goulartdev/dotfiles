@@ -92,6 +92,15 @@ fi
 eval "$(atuin init zsh)"
 eval "$(zoxide init zsh)"
 
+if command -v fzf &> /dev/null; then
+  if [[ -f /usr/share/fzf/completion.zsh ]]; then
+    source /usr/share/fzf/completion.zsh
+  fi
+  if [[ -f /usr/share/fzf/key-bindings.zsh ]]; then
+    source /usr/share/fzf/key-bindings.zsh
+  fi
+fi
+
 autoload -Uz add-zsh-hook
 
 # This will find the most frequently issued command issued exactly in this directory, 
