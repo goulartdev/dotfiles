@@ -1,13 +1,18 @@
-vim.g.mapleader = ' '
-vim.g.maplocalleader = '\\'
+vim.g.enable_mason = vim.env.NVIM_ENABLE_MASON == "1"
 
-vim.g.use_mason = vim.env.NVIM_USE_MASON == '1'
+require("config.lazy")
 
-require 'options'
-require 'keymaps'
-require 'lazy-bootstrap'
-require 'lazy-plugins'
-
--- vim.lsp.set_log_level('DEBUG')
-
--- vim: ts=2 sts=2 sw=2 et
+-- TODO:
+-- snacks.nvim
+-- nvim-mini/mini.colors
+-- nvim-mini/mini.hues
+-- diffview
+-- mini.diff or gitsigns?
+-- octo
+--
+-- text-case
+-- typescript-tools
+-- schemastore
+-- kulala.nvim
+-- eslint
+-- lang: angular astro docker git json markdown nix python sql toml typescript  yaml zig
