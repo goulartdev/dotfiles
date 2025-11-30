@@ -4,8 +4,6 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    termius.url = "github:NixOS/nixpkgs/ed9b5119c4dbdc714de0125b73eb575d9371a2fa";
-
     agenix = {
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -37,13 +35,6 @@
         nixpkgs.overlays = [
           inputs.rust-overlay.overlays.default
           (import ./pkgs)
-          (final: prev: {
-            termius =
-              (import inputs.termius {
-                inherit (final) system;
-                config.allowUnfree = true;
-              }).termius;
-          })
         ];
       };
     in
