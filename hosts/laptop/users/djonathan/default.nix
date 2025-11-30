@@ -23,7 +23,6 @@
       qgis
       spotify
       vivaldi
-      gparted
       libappindicator
       ulauncher
       protonvpn-gui

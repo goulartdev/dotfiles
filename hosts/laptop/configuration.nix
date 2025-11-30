@@ -208,6 +208,7 @@
     age
     libusb1
     podman-compose
+    gparted
   ];
 
   services.udev.packages = with pkgs; [ qmk-udev-rules ];
