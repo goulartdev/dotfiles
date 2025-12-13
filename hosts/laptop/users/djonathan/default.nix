@@ -134,7 +134,7 @@
       vscode-langservers-extracted
       emmet-language-server
       dockerfile-language-server
-      postgres-lsp
+      postgres-language-serve
       nginx-language-server
     ];
     extraLuaPackages = luaPkgs: with luaPkgs; [ jsregexp ];
