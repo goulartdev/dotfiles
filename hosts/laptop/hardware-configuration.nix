@@ -12,7 +12,7 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "none";
+    { device = lib.mkForce "none";
       fsType = "tmpfs";
     };
 
