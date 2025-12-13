@@ -142,7 +142,7 @@
 
   xdg.dataFile = {
     "zsh/plugins/zsh-fast-syntax-highlighting".source =
-      "${pkgs.zsh-fast-syntax-highlighting}/share/zsh/site-functions";
+      "${pkgs.zsh-fast-syntax-highlighting}/share/zsh/plugins/fast-syntax-highlighting";
     "zsh/plugins/zsh-autosuggestions".source = "${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions";
     "zsh/plugins/zsh-vi-mode".source = "${pkgs.zsh-vi-mode}/share/zsh-vi-mode";
     "zsh/plugins/zsh-nix-shell".source = "${pkgs.zsh-nix-shell}/share/zsh-nix-shell";
