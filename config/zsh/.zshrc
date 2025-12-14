@@ -82,7 +82,7 @@ done
 ## PLUGINS
 
 source ${ZPLUGINS}/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ${ZPLUGINS}/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source ${ZPLUGINS}/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source ${ZPLUGINS}/zsh-vi-mode/zsh-vi-mode.zsh
 
 if [[ -f "${ZPLUGINS}/zsh-nix-shell/nix-shell.plugin.zsh" ]]; then
