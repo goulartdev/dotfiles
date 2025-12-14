@@ -34,7 +34,6 @@ alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
 alias sudo='doas '
 alias myip='curl ipinfo.io/ip'
 alias nvidia-settings='nvidia-settings --config=$XDG_CONFIG_HOME/nvidia/settings'
-alias wifi-fix='sudo modprobe -r ath10k_pci && sudo modprobe ath10k_pci'
 
 alias develop='nix develop -c zsh'
 
