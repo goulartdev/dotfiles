@@ -24,7 +24,9 @@ alias cp='rsync -ah --info=progress2'
 alias vim='nvim'
 
 alias ls='eza --icons --group-directories-first -la'
+alias lt='eza --tree --level=2 --long --icons --git'
 alias duf='duf --theme ansi'
+alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
 
 ## MISC
 
