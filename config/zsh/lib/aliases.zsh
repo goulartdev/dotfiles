@@ -2,6 +2,8 @@
 
 ## NAVIGATION
 
+alias cd="zd"
+
 alias -g ...='../..'
 alias -g ....='../../..'
 alias -g .....='../../../..'
