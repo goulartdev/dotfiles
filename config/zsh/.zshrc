@@ -103,14 +103,23 @@ _zsh_autosuggest_strategy_atuin_search() {
 ZSH_AUTOSUGGEST_STRATEGY=atuin_search
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7f848e"
 
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
-  --color=fg:#dfebed,fg+:#dfebed,bg:#010909,bg+:#192323
-  --color=hl:#3a5fd4,hl+:#008b8b,info:#dfebed,marker:#d86818
-  --color=prompt:#226622,spinner:#d86818,pointer:#3a5fd4,header:#dfebed
-  --color=gutter:#010909,border:#663399,preview-fg:#dfebed,preview-bg:#010909
-  --color=label:#dfebed,query:#dfebed
-  --border="rounded" --border-label="" --preview-window="border-rounded" --prompt=" "
-  --marker="" --pointer="◆" --separator="─" --scrollbar="▌" --info="right"'
+if command -v fzf &> /dev/null; then
+  if [[ -f /usr/share/fzf/completion.zsh ]]; then
+    source /usr/share/fzf/completion.zsh
+  fi
+  if [[ -f /usr/share/fzf/key-bindings.zsh ]]; then
+    source /usr/share/fzf/key-bindings.zsh
+  fi
+
+  export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+    --color=fg:#dfebed,fg+:#dfebed,bg:#010909,bg+:#192323
+    --color=hl:#3a5fd4,hl+:#008b8b,info:#dfebed,marker:#d86818
+    --color=prompt:#226622,spinner:#d86818,pointer:#3a5fd4,header:#dfebed
+    --color=gutter:#010909,border:#663399,preview-fg:#dfebed,preview-bg:#010909
+    --color=label:#dfebed,query:#dfebed
+    --border="rounded" --border-label="" --preview-window="border-rounded" --prompt=" "
+    --marker="" --pointer="◆" --separator="─" --scrollbar="▌" --info="right"'
+fi
 
 ######################################################################
 ## prompt
