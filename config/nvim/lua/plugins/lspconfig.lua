@@ -99,6 +99,10 @@ return {
         -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#yamlls
         -- https://github.com/redhat-developer/yaml-language-server
       },
+      cssls = {
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#cssls
+        -- https://github.com/hrsh7th/vscode-langservers-extracted
+      },
       -- jsonls = {
       --   -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#jsonls
       --   -- https://github.com/hrsh7th/vscode-langservers-extracted
