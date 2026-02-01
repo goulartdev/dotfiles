@@ -54,8 +54,12 @@ return {
           -- SnacksDashboardKey = { fg = "$orange" },
           -- SnacksPickerBorder = { fg = "$green" },
 
+          StatusLine = { bg = "$bg1" },
+
           BufferLineBufferSelected = { fg = "$fg", bg = "$bg0" },
           BufferLineBufferVisible = { fg = "$fg", bg = "$bg0" },
+          BufferLineDuplicateSelected = { fg = "$fg", bg = "$bg0" },
+          BufferLineDuplicateVisible = { fg = "$fg", bg = "$bg0" },
           BufferLineIndicatorSelected = { fg = "$orange", bg = "$bg0" },
           BufferLineIndicatorVisible = { fg = "$bg0", bg = "$bg0" },
           BufferLineNumbers = { fg = "$orange" },
