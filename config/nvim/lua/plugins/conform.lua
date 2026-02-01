@@ -3,6 +3,7 @@ return {
   opts = {
     formatters_by_ft = {
       kdl = { "kdlfmt" },
+      python = { "ruff_format", "ruff_organize_imports" },
     },
   },
 }
