@@ -31,7 +31,6 @@ alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
 ## MISC
 
 # Enable aliases to be sudo’ed
-alias sudo='doas '
 alias myip='curl ipinfo.io/ip'
 alias nvidia-settings='nvidia-settings --config=$XDG_CONFIG_HOME/nvidia/settings'
 

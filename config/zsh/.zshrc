@@ -5,6 +5,9 @@ if [[ -r "${XDG_CACHE_HOME}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+typeset -U path
+path=( "$HOME/.local/bin" $path )
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -33,11 +36,6 @@ HISTDB_FILE="${XDG_STATE_HOME}/zsh/history.db"
 
 # https://github.com/sorin-ionescu/prezto/blob/master/modules/completion/init.zsh
 # https://github.com/robbyrussell/oh-my-zsh/blob/master/lib/completion.zsh
-
-if [[ -f "${ZPLUGINS}/nix-zsh-completions/nix-zsh-completions.plugin.zsh" ]]; then
-  source ${ZPLUGINS}/nix-zsh-completions/nix-zsh-completions.plugin.zsh
-  fpath=( "${ZPLUGINS}/nix-zsh-completions" $fpath )
-fi
 
 setopt COMPLETE_IN_WORD  # Complete from both ends of a word.
 setopt ALWAYS_TO_END     # Move cursor to the end of a completed word.
@@ -84,10 +82,6 @@ done
 source ${ZPLUGINS}/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ${ZPLUGINS}/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source ${ZPLUGINS}/zsh-vi-mode/zsh-vi-mode.zsh
-
-if [[ -f "${ZPLUGINS}/zsh-nix-shell/nix-shell.plugin.zsh" ]]; then
-    source ${ZPLUGINS}/zsh-nix-shell/nix-shell.plugin.zsh
-fi
 
 eval "$(atuin init zsh)"
 eval "$(zoxide init zsh)"
