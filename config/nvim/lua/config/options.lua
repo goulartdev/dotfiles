@@ -66,6 +66,8 @@ vim.filetype.add({
   pattern = {
     [".*.conf.template"] = "nginx",
     [".*/zsh/functions/.*"] = "sh",
+    [".*.conf.template"] = "nginx",
+    [".*/dotfiles/scripts/.*"] = "sh",
   },
 })
 
