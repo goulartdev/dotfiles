@@ -1,0 +1,36 @@
+#!/bin/bash
+
+set -euo pipefail
+
+src_dir=$(realpath "./scripts")
+bin_dir="$HOME/.local/bin"
+
+mkdir -p "$bin_dir"
+
+echo "--- Syncing and Linking ---"
+
+for file in "$src_dir"/*; do
+  if [ -f "$file" ]; then
+    filename=$(basename "$file")
+    target="$bin_dir/$filename"
+
+    chmod +x "$file"
+    ln -sf "$file" "$target"
+
+    echo "Linked: $filename"
+  fi
+done
+
+echo -e "\n--- Cleaning up broken links ---"
+for link in "$bin_dir"/*; do
+    if [ -L "$link" ] && [ ! -e "$link" ]; then
+        link_target=$(readlink "$link") || continue
+
+        if [[ "$link_target" == "$src_dir"* ]]; then
+            echo "Removing broken link: $(basename "$link")"
+            rm "$link"
+        fi
+    fi
+done
+
+echo "Success! All scripts are linked to $bin_dir."
