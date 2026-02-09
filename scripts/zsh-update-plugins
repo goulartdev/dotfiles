@@ -1,0 +1,31 @@
+#!/bin/bash
+
+set -euo pipefail
+
+output=${ZPLUGINS:-${XDG_DATA_HOME/zsh/plugins:-$HOME/.local/share/zsh/plugins}}
+
+mkdir -p $output
+
+plugins=(
+  https://github.com/romkatv/powerlevel10k
+  https://github.com/zsh-users/zsh-autosuggestions
+  https://github.com/jeffreytse/zsh-vi-mode
+  https://github.com/zdharma-continuum/fast-syntax-highlighting
+)
+
+for url in "${plugins[@]}"; do
+  repo_name="${url##*/}"
+  target_path="$output/$repo_name"
+
+  if [ -d "$target_path" ]; then
+    echo "Updating $repo_name..."
+    git -C "$target_path" pull
+    echo
+  else
+    echo "Cloning $repo_name..."
+    git clone "$url" "$target_path"
+    echo
+  fi
+done
+
+show-done

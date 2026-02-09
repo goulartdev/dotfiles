@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# from https://github.com/basecamp/omarchy/blob/dev/bin/omarchy-show-done
+
+echo
+gum spin --spinner "globe" --title "Done! Press any key to close..." -- bash -c 'read -t 7 -n 1 -s'
