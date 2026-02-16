@@ -1,0 +1,35 @@
+[
+  {
+    "context": "Editor && !menu",
+    "bindings": {
+      "ctrl-c": "pane::CloseActiveItem"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "space s f": "file_finder::Toggle",
+      "space s g": "pane::DeploySearch",
+      "space space": "tab_switcher::Toggle",
+      "ctrl-enter": "repl::Run",
+      "ctrl-]": "pane::ActivateNextItem",
+      "ctrl-[": "pane::ActivatePrevItem",
+      "s r": ["vim::PushOperator", { "ChangeSurrounds": {} }],
+      "s a": ["vim::PushOperator", { "AddSurrounds": {} }],
+      "s d": ["vim::PushOperator", "DeleteSurrounds"]
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual",
+    "bindings": {
+      "s a": ["vim::PushOperator", { "AddSurrounds": {} }]
+    }
+  },
+  {
+    "context": "TabSwitcher",
+    "bindings": {
+      "k": "menu::SelectPrev",
+      "j": "menu::SelectNext"
+    }
+  }
+]
