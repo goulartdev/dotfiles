@@ -85,6 +85,7 @@ source ${ZPLUGINS}/zsh-vi-mode/zsh-vi-mode.zsh
 
 eval "$(atuin init zsh)"
 eval "$(zoxide init zsh)"
+eval "$(mise activate zsh)"
 
 autoload -Uz add-zsh-hook
 
