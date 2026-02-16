@@ -1,7 +1,7 @@
 return {
   {
     "mason-org/mason.nvim",
-    enabled = vim.g.enable_mason,
+    -- enabled = vim.g.enable_mason,
     opts = {
       ui = {
         border = "rounded",

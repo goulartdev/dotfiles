@@ -34,7 +34,7 @@ return {
         emmet_language_server = {
           -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#emmet_language_server
           -- https://github.com/olrtg/emmet-language-server
-          mason = false,
+          mason = true,
         },
       },
     },

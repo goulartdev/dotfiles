@@ -69,10 +69,10 @@ return {
         -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#dockerls
         -- https://github.com/rcjsuen/dockerfile-language-server-nodejs
       },
-      nginx_language_server = {
-        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#nginx_language_server
-        -- https://pypi.org/project/nginx-language-server/
-      },
+      -- nginx_language_server = {
+      --   -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#nginx_language_server
+      --   -- https://pypi.org/project/nginx-language-server/
+      -- },
       marksman = {
         -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#marksman
         -- https://github.com/artempyanykh/marksman
@@ -89,11 +89,6 @@ return {
         -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#bashls
         -- https://github.com/bash-lsp/bash-language-server
         filetypes = { "sh", "zsh" },
-      },
-      hyprls = {
-        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#hyprls
-        -- https://github.com/hyprland-community/hyprls
-        mason = false,
       },
       yamlls = {
         -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#yamlls

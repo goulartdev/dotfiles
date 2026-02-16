@@ -1,4 +1,4 @@
-vim.g.enable_mason = vim.env.NVIM_ENABLE_MASON == "1"
+-- vim.g.enable_mason = vim.env.NVIM_ENABLE_MASON == "1"
 
 require("config.lazy")
 

@@ -20,7 +20,7 @@ return {
         angularls = {
           -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#angularls
           -- https://github.com/angular/vscode-ng-language-service
-          mason = false,
+          mason = true,
         },
       },
       setup = {
