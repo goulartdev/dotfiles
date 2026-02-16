@@ -1,3 +1,6 @@
+spawn-at-startup "ibus-daemon" "-rxRd"
+
+
 // Include dms files
 config-notification {
     disable-failed
@@ -17,8 +20,6 @@ input {
 	    layout "us"
 	    variant "altgr-intl"
     }
-
-    numlock
   }
 
   touchpad {
@@ -29,6 +30,7 @@ input {
   mouse {}
 
   trackpoint {}
+
 }
 
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
@@ -179,6 +181,7 @@ recent-windows {
     Alt+Shift+grave { previous-window filter="app-id"; }
   }
 }
+
 
 include "dms/colors.kdl"
 include "dms/layout.kdl"
