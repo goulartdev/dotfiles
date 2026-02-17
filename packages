@@ -15,6 +15,8 @@ gimp
 git
 git-delta
 glow
+gnome-calculator
+gnome-keyring
 gum
 hyperfine
 ibus
@@ -27,6 +29,7 @@ lshw
 mise
 mkcert
 mpv
+nautilus
 ncdu
 neovim
 newsboat
