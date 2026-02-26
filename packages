@@ -1,11 +1,13 @@
 atuin
 aws-cli-v2
+aws-session-manager-plugin
 bat
 bluetui
 btop
 caligula
 duckdb
 duf
+evince
 eza
 fd
 fzf
@@ -16,6 +18,7 @@ git
 git-delta
 glow
 gnome-calculator
+gnome-disk-utility
 gnome-keyring
 gum
 hyperfine
@@ -54,6 +57,7 @@ sd
 spotify-launcher
 sqlite
 steam
+tippecanoe
 tree-sitter-cli
 unzip
 usbutils
