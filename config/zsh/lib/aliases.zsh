@@ -34,8 +34,6 @@ alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
 alias myip='curl ipinfo.io/ip'
 alias nvidia-settings='nvidia-settings --config=$XDG_CONFIG_HOME/nvidia/settings'
 
-alias develop='nix develop -c zsh'
-
 ## GIT
 alias ga='git add'
 alias gun='git reset -- '
