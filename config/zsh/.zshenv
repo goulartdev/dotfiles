@@ -44,3 +44,5 @@ export PGSERVICEFILE="${XDG_CONFIG_HOME}/pg/pg_service.conf"
 
 export DOCKER_HOST="unix://${XDG_RUNTIME_DIR}/podman/podman.sock"
 export PODMAN_COMPOSE_WARNING_LOGS=false
+
+export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/gcr/ssh"
