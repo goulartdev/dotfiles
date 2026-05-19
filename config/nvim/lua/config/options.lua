@@ -16,36 +16,6 @@ vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = "split"
 
--- vim.diagnostic.config {
---   signs = {
---     active = true,
---     text = {
---       [vim.diagnostic.severity.ERROR] = ' ',
---       [vim.diagnostic.severity.WARN] = ' ',
---       [vim.diagnostic.severity.INFO] = ' ',
---       [vim.diagnostic.severity.HINT] = '󰌶 ',
---     },
---     numhl = {
---       [vim.diagnostic.severity.ERROR] = 'DiagnosticSignError',
---       [vim.diagnostic.severity.WARN] = 'DiagnosticSignWarn',
---       [vim.diagnostic.severity.INFO] = 'DiagnosticSignInfo',
---       [vim.diagnostic.severity.HINT] = 'DiagnosticSignHint',
---     },
---   },
---   virtual_text = false,
---   update_in_insert = false,
---   underline = true,
---   severity_sort = true,
---   float = {
---     focusable = true,
---     style = 'minimal',
---     border = 'rounded',
---     source = 'if_many',
---     header = '',
---     prefix = '',
---   },
--- }
-
 vim.opt.fillchars:append({ diff = "⋰" })
 
 vim.opt.sessionoptions = {
@@ -64,7 +34,6 @@ vim.opt.sessionoptions = {
 
 vim.filetype.add({
   pattern = {
-    [".*.conf.template"] = "nginx",
     [".*/zsh/functions/.*"] = "sh",
     [".*.conf.template"] = "nginx",
     [".*/dotfiles/scripts/.*"] = "sh",
