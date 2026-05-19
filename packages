@@ -1,3 +1,9 @@
+fcitx5
+fcitx5-gtk
+fcitx5-qt
+sushi
+satty
+
 atuin
 aws-cli-v2
 aws-session-manager-plugin
@@ -28,6 +34,7 @@ just
 lazydocker
 lazygit
 libreoffice-fresh
+libsecret
 lshw
 mise
 mkcert
@@ -39,6 +46,7 @@ newsboat
 niri
 nvtop
 obsidian
+opencode
 openssl
 pciutils
 podman
