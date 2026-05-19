@@ -1,5 +1,7 @@
 spawn-at-startup "ibus-daemon" "-rxRd"
 
+// spawn-at-startup "systemctl" "--user" "import-environment" "$(env | cut -d'=' -f 1)"
+spawn-at-startup "dbus-update-activation-environment" "--systemd" "--all"
 
 // Include dms files
 config-notification {
