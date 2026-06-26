@@ -4,6 +4,9 @@ return {
     formatters_by_ft = {
       kdl = { "kdlfmt" },
       python = { "ruff_format", "ruff_organize_imports" },
+      javascript = { "biome-check" },
+      typescript = { "biome-check" },
+      json = { "biome-check" },
     },
   },
 }
