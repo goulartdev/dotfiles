@@ -1,9 +1,4 @@
 *.zwc
 *.zwc.old
 **/.zcompdump
-config/forge/config
-config/navi/navi.log
 config/newsboat/urls
-yazi.toml-*
-config.kdl.bak
-config/*.old
